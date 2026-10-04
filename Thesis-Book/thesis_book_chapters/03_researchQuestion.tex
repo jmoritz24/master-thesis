@@ -2,5 +2,18 @@
 
 \chapter{Wissenschaftliche Fragestellung}\label{cha:researchQuestion}
 
-TODO
+Diese Arbeit untersucht, wie gut sich MOMENT-1-small für eine cloudbasierte \ac{RUL}-Prognose mit fehlerhaften Sensordaten eignet. Als Vergleich dienen ein \ac{LSTM} und ein \ac{TCN}, die speziell für diese Aufgabe trainiert werden. Bewertet werden die Prognosequalität und der Aufwand für den Betrieb in der Cloud. Daraus ergibt sich folgende Forschungsfrage:
 
+\begin{quote}
+	Wie unterscheiden sich MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} bei der \ac{RUL}-Prognose mit fehlerhaften \ac{CMAPSS}-Sensordaten hinsichtlich Prognosequalität, Robustheit, Inferenzlatenz, Ressourcenbedarf und Cloud-Kosten?
+\end{quote}
+
+\noindent Zur Beantwortung der Forschungsfrage werden folgende Teilfragen untersucht:
+
+\begin{enumerate}
+	\item Wie verändern sich die Prognosefehler der Modelle bei unterschiedlichen Arten und Stärken von Sensorfehlern?
+	\item Welche Unterschiede zeigen sich bei Inferenzlatenz, Durchsatz und Ressourcenbedarf unter vergleichbaren Betriebsbedingungen?
+	\item In welchem Verhältnis stehen die Kosten des Cloud-Betriebs zur erreichten Prognosequalität und Robustheit?
+\end{enumerate}
+
+Für die Hauptuntersuchung ist \ac{CMAPSS} FD001 vorgesehen. FD003 soll den Vergleich ergänzen. Das Training für die \ac{RUL}-Prognose erfolgt ohne zusätzlich erzeugte Sensorfehler. Erst die Testdaten werden verändert, um eine Verschlechterung der Datenqualität während des Betriebs nachzubilden. Die Modelle werden nicht nachträglich an diese Testfehler angepasst.

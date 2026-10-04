@@ -52,10 +52,15 @@
 \patchcmd{\chapter}{\clearpage}{}{}{}
 \makeatother
 
+% Kurzfassung und Haupttext führen Abkürzungen unabhängig voneinander ein.
+\acresetall
 \input{thesis_book_chapters/00_abstract_de}
+\acresetall
 \input{thesis_book_chapters/01_introduction}
+\newpage
 \input{thesis_book_chapters/02_relatedWork}
 \input{thesis_book_chapters/03_researchQuestion}
+\newpage
 \input{thesis_book_chapters/04_methodologicalApproach}
 \input{thesis_book_chapters/05_documentStructure}
 \input{thesis_book_chapters/06_results}
@@ -68,4 +73,3 @@
 \printbibliography[title=\literatureLabel]
 
 \end{document}
-

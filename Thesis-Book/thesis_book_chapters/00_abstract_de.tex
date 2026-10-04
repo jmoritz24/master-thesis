@@ -3,7 +3,10 @@
 \chapter*{Kurzfassung}
 \addcontentsline{toc}{chapter}{Kurzfassung}
 
-TODO
+Bei der datenbasierten Instandhaltung wird die verbleibende Nutzungsdauer einer Maschine, die \ac{RUL}, aus Sensordaten geschätzt. Im Betrieb können diese Daten jedoch unvollständig oder durch Messfehler verändert sein. Erste Studien setzen \acp{TSFM} für die \ac{RUL}-Prognose ein. In der bisherigen Literaturrecherche wurde kein direkter Vergleich gefunden, der ihre Prognosequalität gegenüber etablierten Modellen bei gleichen künstlich erzeugten Sensorfehlern untersucht und zugleich den Aufwand des Cloud-Betriebs erfasst.
+
+Die geplante Arbeit vergleicht MOMENT-1-small mit einem \ac{LSTM} und einem \ac{TCN}. MOMENT wird als unveränderter Merkmalsextraktor mit einem trainierbaren Regressionskopf eingesetzt. Als Datengrundlage dient der mit \ac{CMAPSS} erzeugte Datensatz der \ac{NASA}. Vorgesehen sind die Teilmengen FD001 und FD003. In die Testdaten werden fehlende Einzelwerte, Übertragungslücken, Sensorausfälle und Sensordrift eingebracht. Anschließend wird anhand von \ac{MAE}, \ac{RMSE} und \ac{NASA}-Score untersucht, wie sich die Prognosefehler im Vergleich zu den unveränderten Daten entwickeln. Messungen zu Latenz, Durchsatz, Ressourcenbedarf und Kosten ergänzen den Vergleich. Einzelheiten des Versuchsaufbaus werden anhand technischer Vorversuche festgelegt.
+
+Die Ergebnisse sollen zeigen, ob MOMENT-1-small bei fehlerhaften Sensordaten Vorteile bietet und welcher Aufwand damit verbunden ist. Die Aussagen gelten nur für die untersuchten Modelle und Versuchsbedingungen.
 
 \clearpage
-
