@@ -98,7 +98,7 @@
       \keyw{deep learning,fault diagnosis,machine health estimation,machine learning models,model-based RUL prediction,remaining useful life prediction}
     \endentry
     \entry{ansariChronosLearningLanguage}{article}{}{}
-      \name{author}{16}{}{%
+      \name{author}{18}{}{%
         {{un=0,uniquepart=base,hash=41c1df44b5f36b0d60799a18f13c8345}{%
            family={Ansari},
            familyi={A\bibinitperiod},
@@ -147,11 +147,11 @@
            given={Syama\bibnamedelima Sundar},
            giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=cbfe4eae76121b23e3d46ac8e89db292}{%
-           family={Arango},
-           familyi={A\bibinitperiod},
-           given={Sebastian\bibnamedelima Pineda},
-           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+        {{un=0,uniquepart=base,hash=67e3827314e9151bce7058b0c76f69a0}{%
+           family={Pineda\bibnamedelima Arango},
+           familyi={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=2af2a26e64fa346203a9fb016a9f04f9}{%
            family={Kapoor},
@@ -168,7 +168,7 @@
         {{un=0,uniquepart=base,hash=6851b298e705d87a9d644d809ab44cc2}{%
            family={Maddix},
            familyi={M\bibinitperiod},
-           given={Danielle\bibnamedelima C},
+           given={Danielle\bibnamedelima C.},
            giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=c8cf19241225247d6d07dbf8a516b8ed}{%
@@ -176,6 +176,12 @@
            familyi={W\bibinitperiod},
            given={Hao},
            giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6428c5852da0dfbdd50e39418c9571bf}{%
+           family={Mahoney},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=de356d9ce5a80fb1c54f81b13e4ab4b5}{%
            family={Torkkola},
@@ -195,26 +201,48 @@
            given={Michael},
            giveni={M\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9292a8838878275e725f037bc757f7e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yuyang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
       }
       \strng{namehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
-      \strng{fullhash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{fullhashraw}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{bibnamehash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{authorbibnamehash}{89ce3205ed49364187f747ee6e710e7a}
+      \strng{fullhash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{fullhashraw}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{bibnamehash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{authorbibnamehash}{38bbb2dedde67d31c6fd548ad3300061}
       \strng{authornamehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
-      \strng{authorfullhash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{authorfullhashraw}{89ce3205ed49364187f747ee6e710e7a}
+      \strng{authorfullhash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{authorfullhashraw}{38bbb2dedde67d31c6fd548ad3300061}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.}
+      \field{issn}{2835-8856}
+      \field{journaltitle}{Transactions on Machine Learning Research}
       \field{langid}{english}
+      \field{month}{10}
       \field{title}{Chronos: {{Learning}} the {{Language}} of {{Time Series}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/L3CVCNCN/Ansari et al. - Chronos Learning the Language of Time Series.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=gerNCVqqtR
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=gerNCVqqtR
       \endverb
     \endentry
     \entry{berghoutSystematicGuidePredicting2022}{article}{}{}
@@ -281,24 +309,12 @@
       \keyw{damage propagation,deep learning,degradation analysis,machine learning,prognosis and health management,remaining useful life}
     \endentry
     \entry{bergstraRandomSearchHyperParameter}{article}{}{}
-      \name{author}{4}{}{%
+      \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=0bc66fe902c838c216bd3175dfeb045b}{%
            family={Bergstra},
            familyi={B\bibinitperiod},
            given={James},
            giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=0bc66fe902c838c216bd3175dfeb045b}{%
-           family={Bergstra},
-           familyi={B\bibinitperiod},
-           given={James},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
            family={Bengio},
@@ -307,25 +323,43 @@
            giveni={Y\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3dd3e1572748cb73912ad4467b93c74b}
-      \strng{fullhash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{fullhashraw}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{bibnamehash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authorbibnamehash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authornamehash}{3dd3e1572748cb73912ad4467b93c74b}
-      \strng{authorfullhash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authorfullhashraw}{e57f9fdac950fe786f1e2e040d9383f9}
+      \strng{namehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{fullhash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{fullhashraw}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{bibnamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorbibnamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authornamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorfullhash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorfullhashraw}{a05cf9842110d2caa7fbdda862c52ff8}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Grid search and manual search are the most widely used strategies for hyper-parameter optimization. This paper shows empirically and theoretically that randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid. Empirical evidence comes from a comparison with a large previous study that used grid search and manual search to configure neural networks and deep belief networks. Compared with neural networks configured by a pure grid search, we find that random search over the same domain is able to find models that are as good or better within a small fraction of the computation time. Granting random search the same computational budget, random search finds better models by effectively searching a larger, less promising configuration space. Compared with deep belief networks configured by a thoughtful combination of manual search and grid search, purely random search over the same 32-dimensional configuration space found statistically equal performance on four of seven data sets, and superior performance on one of seven. A Gaussian process analysis of the function from hyper-parameters to validation set performance reveals that for most data sets only a few of the hyper-parameters really matter, but that different hyper-parameters are important on different data sets. This phenomenon makes grid search a poor choice for configuring algorithms for new data sets. Our analysis casts some light on why recent “High Throughput” methods achieve surprising success—they appear to search through a large number of hyper-parameters because most hyper-parameters do not matter much. We anticipate that growing interest in large hierarchical models will place an increasing burden on techniques for hyper-parameter optimization; this work shows that random search is a natural baseline against which to judge progress in the development of adaptive (sequential) hyper-parameter optimization algorithms.}
+      \field{journaltitle}{Journal of Machine Learning Research}
       \field{langid}{english}
+      \field{number}{10}
       \field{title}{Random {{Search}} for {{Hyper-Parameter Optimization}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{13}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{281\bibrangedash 305}
+      \range{pages}{25}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/5IR4YI5Z/Bergstra et al. - Random Search for Hyper-Parameter Optimization.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v13/bergstra12a.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v13/bergstra12a.html
       \endverb
     \endentry
     \entry{bouthillierAccountingVarianceMachine}{article}{}{}
@@ -443,15 +477,32 @@
       \strng{authorfullhashraw}{bd889663e21b5abc0829636ec2e41bc1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Strong empirical evidence that one machine-learning algorithm A outperforms another one B ideally calls for multiple trials optimizing the learning pipeline over sources of variation such as data sampling, augmentation, parameter initialization, and hyperparameters choices. This is prohibitively expensive, and corners are cut to reach conclusions. We model the whole benchmarking process, revealing that variance due to data sampling, parameter initialization and hyperparameter choice impact markedly the results. We analyze the predominant comparison methods used today in the light of this variance. We show a counter-intuitive result that adding more sources of variation to an imperfect estimator approaches better the ideal estimator at a 51× reduction in compute cost. Building on these results, we study the error rate of detecting improvements, on five different deep-learning tasks/architectures. This study leads us to propose recommendations for performance comparisons.}
+      \field{journaltitle}{Proceedings of Machine Learning and Systems}
       \field{langid}{english}
       \field{title}{Accounting for {{Variance}} in {{Machine Learning Benchmarks}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{3}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{747\bibrangedash 769}
+      \range{pages}{23}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/ZZP3STPC/Bouthillier et al. - Accounting for Variance in Machine Learning Benchmarks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html
       \endverb
     \endentry
     \entry{caoBRITSBidirectionalRecurrent}{article}{}{}
@@ -493,6 +544,9 @@
            giveni={Y\bibinitperiod},
            givenun=0}}%
       }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
       \strng{namehash}{c2ec325965ef3492a7737e21e4aa22c8}
       \strng{fullhash}{03d3640e3306abc054931404892523ca}
       \strng{fullhashraw}{03d3640e3306abc054931404892523ca}
@@ -503,15 +557,30 @@
       \strng{authorfullhashraw}{03d3640e3306abc054931404892523ca}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Time series are ubiquitous in many classification/regression applications. However, the time series data in real applications may contain many missing values. Hence, given multiple (possibly correlated) time series data, it is important to fill in missing values and at the same time to predict their class labels. Existing imputation methods often impose strong assumptions of the underlying data generating process, such as linear dynamics in the state space. In this paper, we propose a novel method, called BRITS, based on recurrent neural networks for missing value imputation in time series data. Our proposed method directly learns the missing values in a bidirectional recurrent dynamical system, without any specific assumption. The imputed values are treated as variables of RNN graph and can be effectively updated during backpropagation. BRITS has three advantages: (a) it can handle multiple correlated missing values in time series; (b) it generalizes to time series with nonlinear dynamics underlying; (c) it provides a data-driven imputation procedure and applies to general settings with missing data. We evaluate our model on three real-world datasets, including an air quality dataset, a healthcare dataset, and a localization dataset for human activity. Experiments show that our model outperforms the state-of-the-art methods in both imputation and classification/regression.}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
       \field{langid}{english}
       \field{title}{{{BRITS}}: {{Bidirectional Recurrent Imputation}} for {{Time Series}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{31}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/9EJPPBTF/Cao et al. - BRITS Bidirectional Recurrent Imputation for Time Series.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html
       \endverb
     \endentry
     \entry{cheRecurrentNeuralNetworks2018}{article}{}{}
@@ -738,11 +807,11 @@
            given={Amir},
            giveni={A\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=83133076a3106551a117f5f7f79ec79c}{%
-           family={Vita},
-           familyi={V\bibinitperiod},
-           given={Michele\bibnamedelima De},
-           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+        {{un=0,uniquepart=base,hash=8fdee05f57880c5d9cbe8614c7b60971}{%
+           family={De\bibnamedelima Vita},
+           familyi={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=50fd5b1be5c1ba2d23db54091fbde86b}{%
            family={Naumann},
@@ -758,13 +827,13 @@
            givenun=0}}%
       }
       \strng{namehash}{44060b0f897cdc2324bfe3a94872bd56}
-      \strng{fullhash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{fullhashraw}{2cbe4419c2580e764825f4489a76db28}
-      \strng{bibnamehash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{authorbibnamehash}{2cbe4419c2580e764825f4489a76db28}
+      \strng{fullhash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{fullhashraw}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{bibnamehash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{authorbibnamehash}{2fb884719498f8a9c9a2fd27b9fe6e08}
       \strng{authornamehash}{44060b0f897cdc2324bfe3a94872bd56}
-      \strng{authorfullhash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{authorfullhashraw}{2cbe4419c2580e764825f4489a76db28}
+      \strng{authorfullhash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{authorfullhashraw}{2fb884719498f8a9c9a2fd27b9fe6e08}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
@@ -934,15 +1003,33 @@
       \strng{authorfullhashraw}{11166f65d88f76d9e22d1b6f4a5125b9}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Accurate reporting of energy and carbon usage is essential for understanding the potential climate impacts of machine learning research. We introduce a framework that makes this easier by providing a simple interface for tracking realtime energy consumption and carbon emissions, as well as generating standardized online appendices. Utilizing this framework, we create a leaderboard for energy efficient reinforcement learning algorithms to incentivize responsible research in this area as an example for other areas of machine learning. Finally, based on case studies using our framework, we propose strategies for mitigation of carbon emissions and reduction of energy consumption. By making accounting easier, we hope to further the sustainable development of machine learning experiments and spur more research into energy efficient algorithms.}
+      \field{journaltitle}{Journal of Machine Learning Research}
       \field{langid}{english}
+      \field{number}{248}
       \field{title}{Towards the {{Systematic Reporting}} of the {{Energy}} and {{Carbon Footprints}} of {{Machine Learning}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 43}
+      \range{pages}{43}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/A7TFFI2T/Henderson et al. - Towards the Systematic Reporting of the Energy and Carbon Footprints of Machine Learning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v21/20-312.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v21/20-312.html
       \endverb
     \endentry
     \entry{huRemainingUsefulLife2019}{article}{}{}
@@ -1363,12 +1450,18 @@
       \endverb
     \endentry
     \entry{saxenaDamagePropagationModeling}{article}{}{}
-      \name{author}{3}{}{%
+      \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=477a5b32cf08fc019fe8db24615704fd}{%
            family={Saxena},
            familyi={S\bibinitperiod},
            given={Abhinav},
            giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0fc2c4bb5ec281edaa46cdf20808a650}{%
+           family={Goebel},
+           familyi={G\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=fa03fced46f536db3ede61916fcf8f6c}{%
            family={Simon},
@@ -1383,24 +1476,46 @@
            giveni={N\bibinitperiod},
            givenun=0}}%
       }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
       \strng{namehash}{cf406f6ed2f7840473649c154c9c9297}
-      \strng{fullhash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{fullhashraw}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{bibnamehash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{authorbibnamehash}{5ef7a102b52b22f7902d4310ab7474e2}
+      \strng{fullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{fullhashraw}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{bibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authorbibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
       \strng{authornamehash}{cf406f6ed2f7840473649c154c9c9297}
-      \strng{authorfullhash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{authorfullhashraw}{5ef7a102b52b22f7902d4310ab7474e2}
+      \strng{authorfullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authorfullhashraw}{82dc3e1a5c77e4a73fb4ec36691324b3}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{journaltitle}{2008 International Conference on Prognostics and Health Management}
       \field{langid}{english}
-      \field{title}{Damage {{Propagation Modeling}} for {{Aircraft Engine Prognostics}}}
+      \field{title}{Damage {{Propagation Modeling}} for {{Aircraft Engine Run-to-Failure Simulation}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/PHM.2008.4711414
+      \endverb
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/G62VU35Z/Saxena et al. - Damage Propagation Modeling for Aircraft Engine Prognostics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ntrs.nasa.gov/citations/20090029214
+      \endverb
+      \verb{url}
+      \verb https://ntrs.nasa.gov/citations/20090029214
       \endverb
     \endentry
     \entry{tangDeepLearningFramework2026}{article}{}{}
@@ -2042,7 +2157,7 @@
       \keyw{deep learning,fault diagnosis,machine health estimation,machine learning models,model-based RUL prediction,remaining useful life prediction}
     \endentry
     \entry{ansariChronosLearningLanguage}{article}{}{}
-      \name{author}{16}{}{%
+      \name{author}{18}{}{%
         {{un=0,uniquepart=base,hash=41c1df44b5f36b0d60799a18f13c8345}{%
            family={Ansari},
            familyi={A\bibinitperiod},
@@ -2091,11 +2206,11 @@
            given={Syama\bibnamedelima Sundar},
            giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=cbfe4eae76121b23e3d46ac8e89db292}{%
-           family={Arango},
-           familyi={A\bibinitperiod},
-           given={Sebastian\bibnamedelima Pineda},
-           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+        {{un=0,uniquepart=base,hash=67e3827314e9151bce7058b0c76f69a0}{%
+           family={Pineda\bibnamedelima Arango},
+           familyi={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=2af2a26e64fa346203a9fb016a9f04f9}{%
            family={Kapoor},
@@ -2112,7 +2227,7 @@
         {{un=0,uniquepart=base,hash=6851b298e705d87a9d644d809ab44cc2}{%
            family={Maddix},
            familyi={M\bibinitperiod},
-           given={Danielle\bibnamedelima C},
+           given={Danielle\bibnamedelima C.},
            giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=c8cf19241225247d6d07dbf8a516b8ed}{%
@@ -2120,6 +2235,12 @@
            familyi={W\bibinitperiod},
            given={Hao},
            giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6428c5852da0dfbdd50e39418c9571bf}{%
+           family={Mahoney},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=de356d9ce5a80fb1c54f81b13e4ab4b5}{%
            family={Torkkola},
@@ -2139,26 +2260,48 @@
            given={Michael},
            giveni={M\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9292a8838878275e725f037bc757f7e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yuyang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
       }
       \strng{namehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
-      \strng{fullhash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{fullhashraw}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{bibnamehash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{authorbibnamehash}{89ce3205ed49364187f747ee6e710e7a}
+      \strng{fullhash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{fullhashraw}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{bibnamehash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{authorbibnamehash}{38bbb2dedde67d31c6fd548ad3300061}
       \strng{authornamehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
-      \strng{authorfullhash}{89ce3205ed49364187f747ee6e710e7a}
-      \strng{authorfullhashraw}{89ce3205ed49364187f747ee6e710e7a}
+      \strng{authorfullhash}{38bbb2dedde67d31c6fd548ad3300061}
+      \strng{authorfullhashraw}{38bbb2dedde67d31c6fd548ad3300061}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.}
+      \field{issn}{2835-8856}
+      \field{journaltitle}{Transactions on Machine Learning Research}
       \field{langid}{english}
+      \field{month}{10}
       \field{title}{Chronos: {{Learning}} the {{Language}} of {{Time Series}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/L3CVCNCN/Ansari et al. - Chronos Learning the Language of Time Series.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=gerNCVqqtR
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=gerNCVqqtR
       \endverb
     \endentry
     \entry{berghoutSystematicGuidePredicting2022}{article}{}{}
@@ -2225,24 +2368,12 @@
       \keyw{damage propagation,deep learning,degradation analysis,machine learning,prognosis and health management,remaining useful life}
     \endentry
     \entry{bergstraRandomSearchHyperParameter}{article}{}{}
-      \name{author}{4}{}{%
+      \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=0bc66fe902c838c216bd3175dfeb045b}{%
            family={Bergstra},
            familyi={B\bibinitperiod},
            given={James},
            giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=0bc66fe902c838c216bd3175dfeb045b}{%
-           family={Bergstra},
-           familyi={B\bibinitperiod},
-           given={James},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
            family={Bengio},
@@ -2251,25 +2382,43 @@
            giveni={Y\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3dd3e1572748cb73912ad4467b93c74b}
-      \strng{fullhash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{fullhashraw}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{bibnamehash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authorbibnamehash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authornamehash}{3dd3e1572748cb73912ad4467b93c74b}
-      \strng{authorfullhash}{e57f9fdac950fe786f1e2e040d9383f9}
-      \strng{authorfullhashraw}{e57f9fdac950fe786f1e2e040d9383f9}
+      \strng{namehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{fullhash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{fullhashraw}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{bibnamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorbibnamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authornamehash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorfullhash}{a05cf9842110d2caa7fbdda862c52ff8}
+      \strng{authorfullhashraw}{a05cf9842110d2caa7fbdda862c52ff8}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Grid search and manual search are the most widely used strategies for hyper-parameter optimization. This paper shows empirically and theoretically that randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid. Empirical evidence comes from a comparison with a large previous study that used grid search and manual search to configure neural networks and deep belief networks. Compared with neural networks configured by a pure grid search, we find that random search over the same domain is able to find models that are as good or better within a small fraction of the computation time. Granting random search the same computational budget, random search finds better models by effectively searching a larger, less promising configuration space. Compared with deep belief networks configured by a thoughtful combination of manual search and grid search, purely random search over the same 32-dimensional configuration space found statistically equal performance on four of seven data sets, and superior performance on one of seven. A Gaussian process analysis of the function from hyper-parameters to validation set performance reveals that for most data sets only a few of the hyper-parameters really matter, but that different hyper-parameters are important on different data sets. This phenomenon makes grid search a poor choice for configuring algorithms for new data sets. Our analysis casts some light on why recent “High Throughput” methods achieve surprising success—they appear to search through a large number of hyper-parameters because most hyper-parameters do not matter much. We anticipate that growing interest in large hierarchical models will place an increasing burden on techniques for hyper-parameter optimization; this work shows that random search is a natural baseline against which to judge progress in the development of adaptive (sequential) hyper-parameter optimization algorithms.}
+      \field{journaltitle}{Journal of Machine Learning Research}
       \field{langid}{english}
+      \field{number}{10}
       \field{title}{Random {{Search}} for {{Hyper-Parameter Optimization}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{13}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{281\bibrangedash 305}
+      \range{pages}{25}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/5IR4YI5Z/Bergstra et al. - Random Search for Hyper-Parameter Optimization.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v13/bergstra12a.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v13/bergstra12a.html
       \endverb
     \endentry
     \entry{bouthillierAccountingVarianceMachine}{article}{}{}
@@ -2387,15 +2536,32 @@
       \strng{authorfullhashraw}{bd889663e21b5abc0829636ec2e41bc1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Strong empirical evidence that one machine-learning algorithm A outperforms another one B ideally calls for multiple trials optimizing the learning pipeline over sources of variation such as data sampling, augmentation, parameter initialization, and hyperparameters choices. This is prohibitively expensive, and corners are cut to reach conclusions. We model the whole benchmarking process, revealing that variance due to data sampling, parameter initialization and hyperparameter choice impact markedly the results. We analyze the predominant comparison methods used today in the light of this variance. We show a counter-intuitive result that adding more sources of variation to an imperfect estimator approaches better the ideal estimator at a 51× reduction in compute cost. Building on these results, we study the error rate of detecting improvements, on five different deep-learning tasks/architectures. This study leads us to propose recommendations for performance comparisons.}
+      \field{journaltitle}{Proceedings of Machine Learning and Systems}
       \field{langid}{english}
       \field{title}{Accounting for {{Variance}} in {{Machine Learning Benchmarks}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{3}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{747\bibrangedash 769}
+      \range{pages}{23}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/ZZP3STPC/Bouthillier et al. - Accounting for Variance in Machine Learning Benchmarks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html
       \endverb
     \endentry
     \entry{caoBRITSBidirectionalRecurrent}{article}{}{}
@@ -2437,6 +2603,9 @@
            giveni={Y\bibinitperiod},
            givenun=0}}%
       }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
       \strng{namehash}{c2ec325965ef3492a7737e21e4aa22c8}
       \strng{fullhash}{03d3640e3306abc054931404892523ca}
       \strng{fullhashraw}{03d3640e3306abc054931404892523ca}
@@ -2447,15 +2616,30 @@
       \strng{authorfullhashraw}{03d3640e3306abc054931404892523ca}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Time series are ubiquitous in many classification/regression applications. However, the time series data in real applications may contain many missing values. Hence, given multiple (possibly correlated) time series data, it is important to fill in missing values and at the same time to predict their class labels. Existing imputation methods often impose strong assumptions of the underlying data generating process, such as linear dynamics in the state space. In this paper, we propose a novel method, called BRITS, based on recurrent neural networks for missing value imputation in time series data. Our proposed method directly learns the missing values in a bidirectional recurrent dynamical system, without any specific assumption. The imputed values are treated as variables of RNN graph and can be effectively updated during backpropagation. BRITS has three advantages: (a) it can handle multiple correlated missing values in time series; (b) it generalizes to time series with nonlinear dynamics underlying; (c) it provides a data-driven imputation procedure and applies to general settings with missing data. We evaluate our model on three real-world datasets, including an air quality dataset, a healthcare dataset, and a localization dataset for human activity. Experiments show that our model outperforms the state-of-the-art methods in both imputation and classification/regression.}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
       \field{langid}{english}
       \field{title}{{{BRITS}}: {{Bidirectional Recurrent Imputation}} for {{Time Series}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{31}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/9EJPPBTF/Cao et al. - BRITS Bidirectional Recurrent Imputation for Time Series.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html
       \endverb
     \endentry
     \entry{cheRecurrentNeuralNetworks2018}{article}{}{}
@@ -2682,11 +2866,11 @@
            given={Amir},
            giveni={A\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=83133076a3106551a117f5f7f79ec79c}{%
-           family={Vita},
-           familyi={V\bibinitperiod},
-           given={Michele\bibnamedelima De},
-           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+        {{un=0,uniquepart=base,hash=8fdee05f57880c5d9cbe8614c7b60971}{%
+           family={De\bibnamedelima Vita},
+           familyi={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=50fd5b1be5c1ba2d23db54091fbde86b}{%
            family={Naumann},
@@ -2702,13 +2886,13 @@
            givenun=0}}%
       }
       \strng{namehash}{44060b0f897cdc2324bfe3a94872bd56}
-      \strng{fullhash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{fullhashraw}{2cbe4419c2580e764825f4489a76db28}
-      \strng{bibnamehash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{authorbibnamehash}{2cbe4419c2580e764825f4489a76db28}
+      \strng{fullhash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{fullhashraw}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{bibnamehash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{authorbibnamehash}{2fb884719498f8a9c9a2fd27b9fe6e08}
       \strng{authornamehash}{44060b0f897cdc2324bfe3a94872bd56}
-      \strng{authorfullhash}{2cbe4419c2580e764825f4489a76db28}
-      \strng{authorfullhashraw}{2cbe4419c2580e764825f4489a76db28}
+      \strng{authorfullhash}{2fb884719498f8a9c9a2fd27b9fe6e08}
+      \strng{authorfullhashraw}{2fb884719498f8a9c9a2fd27b9fe6e08}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
@@ -2878,15 +3062,33 @@
       \strng{authorfullhashraw}{11166f65d88f76d9e22d1b6f4a5125b9}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Accurate reporting of energy and carbon usage is essential for understanding the potential climate impacts of machine learning research. We introduce a framework that makes this easier by providing a simple interface for tracking realtime energy consumption and carbon emissions, as well as generating standardized online appendices. Utilizing this framework, we create a leaderboard for energy efficient reinforcement learning algorithms to incentivize responsible research in this area as an example for other areas of machine learning. Finally, based on case studies using our framework, we propose strategies for mitigation of carbon emissions and reduction of energy consumption. By making accounting easier, we hope to further the sustainable development of machine learning experiments and spur more research into energy efficient algorithms.}
+      \field{journaltitle}{Journal of Machine Learning Research}
       \field{langid}{english}
+      \field{number}{248}
       \field{title}{Towards the {{Systematic Reporting}} of the {{Energy}} and {{Carbon Footprints}} of {{Machine Learning}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 43}
+      \range{pages}{43}
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/A7TFFI2T/Henderson et al. - Towards the Systematic Reporting of the Energy and Carbon Footprints of Machine Learning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v21/20-312.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v21/20-312.html
       \endverb
     \endentry
     \entry{huRemainingUsefulLife2019}{article}{}{}
@@ -3307,12 +3509,18 @@
       \endverb
     \endentry
     \entry{saxenaDamagePropagationModeling}{article}{}{}
-      \name{author}{3}{}{%
+      \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=477a5b32cf08fc019fe8db24615704fd}{%
            family={Saxena},
            familyi={S\bibinitperiod},
            given={Abhinav},
            giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0fc2c4bb5ec281edaa46cdf20808a650}{%
+           family={Goebel},
+           familyi={G\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=fa03fced46f536db3ede61916fcf8f6c}{%
            family={Simon},
@@ -3327,24 +3535,46 @@
            giveni={N\bibinitperiod},
            givenun=0}}%
       }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
       \strng{namehash}{cf406f6ed2f7840473649c154c9c9297}
-      \strng{fullhash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{fullhashraw}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{bibnamehash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{authorbibnamehash}{5ef7a102b52b22f7902d4310ab7474e2}
+      \strng{fullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{fullhashraw}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{bibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authorbibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
       \strng{authornamehash}{cf406f6ed2f7840473649c154c9c9297}
-      \strng{authorfullhash}{5ef7a102b52b22f7902d4310ab7474e2}
-      \strng{authorfullhashraw}{5ef7a102b52b22f7902d4310ab7474e2}
+      \strng{authorfullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authorfullhashraw}{82dc3e1a5c77e4a73fb4ec36691324b3}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{journaltitle}{2008 International Conference on Prognostics and Health Management}
       \field{langid}{english}
-      \field{title}{Damage {{Propagation Modeling}} for {{Aircraft Engine Prognostics}}}
+      \field{title}{Damage {{Propagation Modeling}} for {{Aircraft Engine Run-to-Failure Simulation}}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/PHM.2008.4711414
+      \endverb
       \verb{file}
       \verb /Users/janmoritz/Zotero/storage/G62VU35Z/Saxena et al. - Damage Propagation Modeling for Aircraft Engine Prognostics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ntrs.nasa.gov/citations/20090029214
+      \endverb
+      \verb{url}
+      \verb https://ntrs.nasa.gov/citations/20090029214
       \endverb
     \endentry
     \entry{tangDeepLearningFramework2026}{article}{}{}

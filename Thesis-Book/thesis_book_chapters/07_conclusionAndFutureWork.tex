@@ -1,7 +1,13 @@
 
 
-\chapter{Erwarteter Beitrag und Ausblick}
+\chapter{Schlussfolgerungen und Ausblick}
 
-Die Arbeit soll eine Grundlage für die Auswahl eines \ac{RUL}-Modells schaffen, wenn im Betrieb mit unzuverlässigen Sensordaten zu rechnen ist. Dazu werden die Prognosequalität und der Aufwand der drei Modelle unter gemeinsamen Bedingungen verglichen. Vorausgesetzt wird nicht, dass MOMENT-1-small einen Vorteil hat. Sollte das Modell bei ähnlicher oder schlechterer Genauigkeit mehr Ressourcen benötigen, wäre auch dies ein wichtiges Ergebnis für die Entscheidung über seinen Einsatz.
+Die Arbeit untersucht die datenbasierte Prognose der verbleibenden Nutzungsdauer von Maschinen und ist damit im Bereich der cloudbasierten Predictive Maintenance angesiedelt.
 
-Weitere Untersuchungen könnten prüfen, ob sich die Ergebnisse mit realen Industriedaten oder anderen \ac{TSFM} bestätigen. Auch ein gezieltes Training mit fehlerhaften Daten und eine aufwendigere Rekonstruktion fehlender Werte wären mögliche Erweiterungen. Welche davon besonders sinnvoll sind, lässt sich nach den geplanten Versuchen genauer beurteilen.
+Fehlende oder veränderte Sensordaten können solche Prognosen beeinträchtigen, weshalb für die Modellwahl vergleichbare Erkenntnisse zur Robustheit und zum Aufwand des Cloud-Betriebs benötigt werden.
+
+Dazu werden MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} zunächst auf unveränderten und anschließend auf gleichartig beschädigten \ac{CMAPSS}-Testdaten ausgewertet. Messungen von Latenz, Ressourcenbedarf und Kosten ergänzen die Bewertung der Prognosefehler.
+
+Die Eignung eines Modells soll anhand seiner Genauigkeit, seiner Reaktion auf Datenfehler und seines Betriebsaufwands beurteilt werden. Die Ergebnisse sollen eine Auswahlgrundlage für die drei untersuchten Ansätze schaffen, auch wenn sich dabei kein Vorteil von MOMENT gegenüber den Vergleichsmodellen zeigt.
+
+Die nächsten Schritte umfassen die Umsetzung der Datenaufbereitung, das Training der Modelle und die anschließenden Fehlerexperimente sowie Messungen in der Cloud. Eine spätere Übertragung auf reale Anlagen oder andere \ac{TSFM} muss die Grenzen der hier verwendeten Daten und Cloud-Umgebung berücksichtigen.

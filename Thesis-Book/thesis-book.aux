@@ -9,6 +9,26 @@
 \@newglossary{main}{glg}{gls}{glo}
 \@newglossary{acronym}{alg}{acr}{acn}
 \providecommand\@glsxtr@savepreloctag[2]{}
+\newacro{BRITS}[BRITS]{Bidirectional Recurrent Imputation for Time Series}
+\newacro{CMAPSS}[C-MAPSS]{Commercial Modular Aero-Propulsion System Simulation}
+\newacro{CNN}[CNN]{Convolutional Neural Network}
+\newacroplural{CNN}[CNN]{Convolutional Neural Networks}
+\newacro{CPU}[CPU]{Central Processing Unit}
+\newacro{GPU}[GPU]{Graphics Processing Unit}
+\newacro{GRU}[GRU]{Gated Recurrent Unit}
+\newacroplural{GRU}[GRU]{Gated Recurrent Units}
+\newacro{GRUD}[GRU-D]{Gated Recurrent Unit with Decay}
+\newacro{LSTM}[LSTM]{Long Short-Term Memory}
+\newacro{MAE}[MAE]{Mean Absolute Error}
+\newacro{NASA}[NASA]{National Aeronautics and Space Administration}
+\newacro{RAM}[RAM]{Random Access Memory}
+\newacro{RMSE}[RMSE]{Root Mean Squared Error}
+\newacro{RUL}[RUL]{Remaining Useful Life}
+\newacro{TCN}[TCN]{Temporal Convolutional Network}
+\newacroplural{TCN}[TCN]{Temporal Convolutional Networks}
+\newacro{TimesFM}[TimesFM]{Time Series Foundation Model}
+\newacro{TSFM}[TSFM]{Time-Series Foundation Model}
+\newacroplural{TSFM}[TSFM]{Time-Series Foundation Models}
 \providecommand{\@glsxtr@prefixlabellist}[1]{}
 \@glsxtr@prefixlabellist{}
 \@writefile{toc}{\contentsline {chapter}{Kurzfassung}{}{chapter*.2}\protected@file@percent }
@@ -18,7 +38,6 @@
 \AC@undonewlabel{acro:TSFM}
 \newlabel{acro:TSFM}{{}{}{Kurzfassung}{chapter*.2}{}}
 \acronymused{TSFM}
-\acronymused{RUL}
 \AC@undonewlabel{acro:LSTM}
 \newlabel{acro:LSTM}{{}{}{Kurzfassung}{chapter*.2}{}}
 \acronymused{LSTM}
@@ -31,6 +50,7 @@
 \AC@undonewlabel{acro:NASA}
 \newlabel{acro:NASA}{{}{}{Kurzfassung}{chapter*.2}{}}
 \acronymused{NASA}
+\acronymused{RUL}
 \AC@undonewlabel{acro:MAE}
 \newlabel{acro:MAE}{{}{}{Kurzfassung}{chapter*.2}{}}
 \acronymused{MAE}
@@ -42,11 +62,15 @@
 \abx@aux@cite{0}{zontaPredictiveMaintenanceIndustry2020}
 \abx@aux@segm{0}{0}{zontaPredictiveMaintenanceIndustry2020}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
+\abx@aux@cite{0}{zontaPredictiveMaintenanceIndustry2020}
+\abx@aux@segm{0}{0}{zontaPredictiveMaintenanceIndustry2020}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{huRemainingUsefulLife2019}
 \abx@aux@segm{0}{0}{huRemainingUsefulLife2019}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{wuRemainingUsefulLife2024}
 \abx@aux@segm{0}{0}{wuRemainingUsefulLife2024}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{wangRemainingUsefulLife2020}
 \abx@aux@segm{0}{0}{wangRemainingUsefulLife2020}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
@@ -66,61 +90,76 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{cha:introduction}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Forschungsfeld}{}{section.1.1}\protected@file@percent }
 \abx@aux@page{1}{2}
-\AC@undonewlabel{acro:RUL}
-\newlabel{acro:RUL}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
-\acronymused{RUL}
-\acronymused{RUL}
 \abx@aux@page{2}{2}
+\AC@undonewlabel{acro:RUL}
+\newlabel{acro:RUL}{{1.1}{}{Forschungsfeld}{section.1.1}{}}
+\acronymused{RUL}
+\abx@aux@page{3}{2}
 \acronymused{RUL}
 \AC@undonewlabel{acro:LSTM}
-\newlabel{acro:LSTM}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:LSTM}{{1.1}{}{Forschungsfeld}{section.1.1}{}}
 \acronymused{LSTM}
 \AC@undonewlabel{acro:GRU}
-\newlabel{acro:GRU}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:GRU}{{1.1}{}{Forschungsfeld}{section.1.1}{}}
 \acronymused{GRU}
 \AC@undonewlabel{acro:CNN}
-\newlabel{acro:CNN}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:CNN}{{1.1}{}{Forschungsfeld}{section.1.1}{}}
 \acronymused{CNN}
 \AC@undonewlabel{acro:TCN}
-\newlabel{acro:TCN}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:TCN}{{1.1}{}{Forschungsfeld}{section.1.1}{}}
 \acronymused{TCN}
-\abx@aux@page{3}{2}
 \abx@aux@page{4}{2}
+\acronymused{LSTM}
+\acronymused{GRU}
+\abx@aux@page{5}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Problemstellung}{}{section.1.2}\protected@file@percent }
 \AC@undonewlabel{acro:CMAPSS}
-\newlabel{acro:CMAPSS}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:CMAPSS}{{1.2}{}{Problemstellung}{section.1.2}{}}
 \acronymused{CMAPSS}
 \AC@undonewlabel{acro:NASA}
-\newlabel{acro:NASA}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
+\newlabel{acro:NASA}{{1.2}{}{Problemstellung}{section.1.2}{}}
 \acronymused{NASA}
 \acronymused{RUL}
-\abx@aux@page{5}{2}
-\AC@undonewlabel{acro:TSFM}
-\newlabel{acro:TSFM}{{1}{}{Einleitung und Problemhintergrund}{chapter.1}{}}
-\acronymused{TSFM}
 \abx@aux@page{6}{2}
+\AC@undonewlabel{acro:TSFM}
+\newlabel{acro:TSFM}{{1.2}{}{Problemstellung}{section.1.2}{}}
+\acronymused{TSFM}
+\abx@aux@page{7}{2}
 \acronymused{RUL}
 \acronymused{CMAPSS}
-\abx@aux@page{7}{2}
-\abx@aux@page{8}{2}
+\abx@aux@page{8}{3}
+\acronymused{RUL}
+\abx@aux@page{9}{3}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Bedarf an einem vergleichbaren Versuch}{}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Ziel der Arbeit}{}{section.1.4}\protected@file@percent }
 \acronymused{LSTM}
 \acronymused{TCN}
 \acronymused{RUL}
-\acronymused{TSFM}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
+\abx@aux@cite{0}{zontaPredictiveMaintenanceIndustry2020}
+\abx@aux@segm{0}{0}{zontaPredictiveMaintenanceIndustry2020}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{voglReviewDiagnosticPrognostic2016}
 \abx@aux@segm{0}{0}{voglReviewDiagnosticPrognostic2016}
-\abx@aux@cite{0}{zontaPredictiveMaintenanceIndustry2020}
-\abx@aux@segm{0}{0}{zontaPredictiveMaintenanceIndustry2020}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{verbertTimelyConditionbasedMaintenance2017}
 \abx@aux@segm{0}{0}{verbertTimelyConditionbasedMaintenance2017}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{huRemainingUsefulLife2019}
 \abx@aux@segm{0}{0}{huRemainingUsefulLife2019}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{berghoutSystematicGuidePredicting2022}
 \abx@aux@segm{0}{0}{berghoutSystematicGuidePredicting2022}
+\abx@aux@cite{0}{berghoutSystematicGuidePredicting2022}
+\abx@aux@segm{0}{0}{berghoutSystematicGuidePredicting2022}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{wuRemainingUsefulLife2024}
 \abx@aux@segm{0}{0}{wuRemainingUsefulLife2024}
+\abx@aux@cite{0}{wuRemainingUsefulLife2024}
+\abx@aux@segm{0}{0}{wuRemainingUsefulLife2024}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{aminRemainingUsefulLife2026}
 \abx@aux@segm{0}{0}{aminRemainingUsefulLife2026}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
@@ -130,11 +169,11 @@
 \abx@aux@cite{0}{jiRemainingUsefulLife2020}
 \abx@aux@segm{0}{0}{jiRemainingUsefulLife2020}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
-\abx@aux@cite{0}{liRemainingUsefulLife2018}
-\abx@aux@segm{0}{0}{liRemainingUsefulLife2018}
-\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{listouellefsenRemainingUsefulLife2019}
 \abx@aux@segm{0}{0}{listouellefsenRemainingUsefulLife2019}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
+\abx@aux@cite{0}{liRemainingUsefulLife2018}
+\abx@aux@segm{0}{0}{liRemainingUsefulLife2018}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{wangRemainingUsefulLife2020}
 \abx@aux@segm{0}{0}{wangRemainingUsefulLife2020}
@@ -153,6 +192,39 @@
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{el-ghoussaniTimeSeriesFoundationModel2026}
 \abx@aux@segm{0}{0}{el-ghoussaniTimeSeriesFoundationModel2026}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Stand des Wissens / Stand der Technik}{}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cha:relatedWork}{{2}{}{Stand des Wissens / Stand der Technik}{chapter.2}{}}
+\acronymused{RUL}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Verfahren zur Prognose der Remaining Useful Life}{}{section.2.1}\protected@file@percent }
+\abx@aux@page{10}{4}
+\abx@aux@page{11}{4}
+\abx@aux@page{12}{4}
+\acronymused{RUL}
+\abx@aux@page{13}{4}
+\abx@aux@page{15}{4}
+\abx@aux@page{17}{4}
+\abx@aux@page{18}{4}
+\acronymused{CMAPSS}
+\abx@aux@page{19}{4}
+\acronymused{LSTM}
+\abx@aux@page{20}{4}
+\acronymused{RUL}
+\abx@aux@page{21}{4}
+\acronymused{CNN}
+\abx@aux@page{22}{4}
+\acronymused{TCN}
+\acronymused{CMAPSS}
+\abx@aux@page{23}{4}
+\acronymused{RUL}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Vortrainierte Zeitreihenmodelle}{}{section.2.2}\protected@file@percent }
+\acronymused{TSFM}
+\abx@aux@page{24}{4}
+\abx@aux@page{25}{4}
+\acronymused{RUL}
+\abx@aux@page{26}{4}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{cheRecurrentNeuralNetworks2018}
 \abx@aux@segm{0}{0}{cheRecurrentNeuralNetworks2018}
@@ -165,90 +237,62 @@
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{tangDeepLearningFramework2026}
 \abx@aux@segm{0}{0}{tangDeepLearningFramework2026}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Stand des Wissens}{}{chapter.2}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cha:relatedWork}{{2}{}{Stand des Wissens}{chapter.2}{}}
-\abx@aux@page{9}{3}
-\abx@aux@page{10}{3}
-\abx@aux@page{11}{3}
-\acronymused{RUL}
-\abx@aux@page{12}{3}
-\abx@aux@page{13}{3}
-\abx@aux@page{14}{3}
-\abx@aux@page{15}{3}
-\acronymused{CMAPSS}
-\acronymused{RUL}
-\abx@aux@page{16}{3}
-\acronymused{LSTM}
-\abx@aux@page{17}{3}
-\acronymused{CNN}
-\abx@aux@page{18}{3}
-\acronymused{RUL}
-\acronymused{RUL}
-\abx@aux@page{19}{3}
-\acronymused{TCN}
-\acronymused{CMAPSS}
-\abx@aux@page{20}{3}
-\acronymused{RUL}
-\acronymused{TSFM}
-\abx@aux@page{21}{3}
-\AC@undonewlabel{acro:TimesFM}
-\newlabel{acro:TimesFM}{{2}{}{Stand des Wissens}{chapter.2}{}}
-\acronymused{TimesFM}
-\abx@aux@page{22}{3}
-\acronymused{RUL}
-\abx@aux@page{23}{3}
-\acronymused{CMAPSS}
-\abx@aux@page{24}{3}
-\acronymused{LSTM}
-\acronymused{GRU}
-\acronymused{TCN}
-\abx@aux@page{25}{3}
-\acronymused{RUL}
-\AC@undonewlabel{acro:GRUD}
-\newlabel{acro:GRUD}{{2}{}{Stand des Wissens}{chapter.2}{}}
-\acronymused{GRUD}
-\abx@aux@page{26}{3}
-\AC@undonewlabel{acro:BRITS}
-\newlabel{acro:BRITS}{{2}{}{Stand des Wissens}{chapter.2}{}}
-\acronymused{BRITS}
-\abx@aux@page{27}{3}
-\acronymused{RUL}
-\acronymused{CMAPSS}
-\acronymused{RUL}
-\acronymused{CNN}
-\acronymused{LSTM}
-\abx@aux@page{28}{3}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{hendersonSystematicReportingEnergy}
 \abx@aux@segm{0}{0}{hendersonSystematicReportingEnergy}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{dintenUsingTimeSeries2025}
 \abx@aux@segm{0}{0}{dintenUsingTimeSeries2025}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{tangDeepLearningFramework2026}
 \abx@aux@segm{0}{0}{tangDeepLearningFramework2026}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{wenTimeSeriesFoundationModels2026}
 \abx@aux@segm{0}{0}{wenTimeSeriesFoundationModels2026}
 \acronymused{RUL}
+\acronymused{CMAPSS}
+\abx@aux@page{27}{5}
+\acronymused{LSTM}
+\acronymused{GRU}
+\acronymused{TCN}
+\abx@aux@page{28}{5}
+\acronymused{RUL}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Umgang mit fehlerhaften Sensordaten}{}{section.2.3}\protected@file@percent }
+\acronymused{RUL}
+\AC@undonewlabel{acro:GRUD}
+\newlabel{acro:GRUD}{{2.3}{}{Umgang mit fehlerhaften Sensordaten}{section.2.3}{}}
+\acronymused{GRUD}
+\abx@aux@page{29}{5}
+\AC@undonewlabel{acro:BRITS}
+\newlabel{acro:BRITS}{{2.3}{}{Umgang mit fehlerhaften Sensordaten}{section.2.3}{}}
+\acronymused{BRITS}
+\abx@aux@page{30}{5}
+\acronymused{RUL}
+\acronymused{CMAPSS}
+\acronymused{RUL}
+\acronymused{CNN}
+\acronymused{LSTM}
+\abx@aux@page{31}{5}
+\acronymused{RUL}
 \acronymused{TSFM}
-\abx@aux@page{29}{4}
-\abx@aux@page{30}{4}
+\abx@aux@page{32}{5}
 \acronymused{RUL}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Rechenaufwand und Cloud-Betrieb}{}{section.2.4}\protected@file@percent }
+\abx@aux@page{33}{5}
 \acronymused{RUL}
-\abx@aux@page{31}{4}
-\abx@aux@page{32}{4}
+\abx@aux@page{34}{5}
+\acronymused{RUL}
+\abx@aux@page{35}{5}
 \acronymused{TSFM}
 \acronymused{CMAPSS}
 \acronymused{TCN}
 \AC@undonewlabel{acro:GPU}
-\newlabel{acro:GPU}{{2}{}{Stand des Wissens}{chapter.2}{}}
+\newlabel{acro:GPU}{{2.4}{}{Rechenaufwand und Cloud-Betrieb}{section.2.4}{}}
 \acronymused{GPU}
 \acronymused{RUL}
 \acronymused{RUL}
-\abx@aux@page{33}{4}
+\abx@aux@page{36}{5}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Einordnung der geplanten Arbeit}{}{section.2.5}\protected@file@percent }
 \acronymused{RUL}
 \acronymused{TSFM}
 \acronymused{LSTM}
@@ -271,6 +315,20 @@
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{saxenaDamagePropagationModeling}
 \abx@aux@segm{0}{0}{saxenaDamagePropagationModeling}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Forschungsmethodik}{}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cha:methodologicalApproach}{{4}{}{Forschungsmethodik}{chapter.4}{}}
+\acronymused{LSTM}
+\acronymused{TCN}
+\acronymused{RUL}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Geplanter Versuchsablauf und Zuordnung zu den Teilfragen (eigene Darstellung).}}{}{figure.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:versuchsablauf}{{1}{}{Geplanter Versuchsablauf und Zuordnung zu den Teilfragen (eigene Darstellung)}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Datengrundlage und Aufbereitung}{}{section.4.1}\protected@file@percent }
+\acronymused{CMAPSS}
+\abx@aux@page{37}{7}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{kapoorLeakageReproducibilityCrisis2023}
 \abx@aux@segm{0}{0}{kapoorLeakageReproducibilityCrisis2023}
@@ -280,59 +338,55 @@
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{bergstraRandomSearchHyperParameter}
 \abx@aux@segm{0}{0}{bergstraRandomSearchHyperParameter}
-\abx@aux@refcontext{nty/apasortcite//global/global/global}
-\abx@aux@cite{0}{bouthillierAccountingVarianceMachine}
-\abx@aux@segm{0}{0}{bouthillierAccountingVarianceMachine}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Forschungsmethodik}{}{chapter.4}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cha:methodologicalApproach}{{4}{}{Forschungsmethodik}{chapter.4}{}}
-\acronymused{LSTM}
-\acronymused{TCN}
-\acronymused{RUL}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Datengrundlage und Aufbereitung}{}{section.4.1}\protected@file@percent }
 \acronymused{CMAPSS}
-\abx@aux@page{34}{6}
-\acronymused{CMAPSS}
-\abx@aux@page{35}{6}
+\abx@aux@page{38}{8}
 \acronymused{RUL}
 \acronymused{RUL}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Modelle und Training}{}{section.4.2}\protected@file@percent }
 \acronymused{RUL}
 \acronymused{RUL}
-\abx@aux@page{36}{6}
+\abx@aux@page{39}{8}
 \acronymused{LSTM}
 \acronymused{TCN}
 \acronymused{CMAPSS}
 \acronymused{RUL}
-\abx@aux@page{37}{6}
-\abx@aux@page{38}{6}
+\acronymused{LSTM}
+\acronymused{TCN}
+\abx@aux@page{40}{8}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
+\abx@aux@cite{0}{bouthillierAccountingVarianceMachine}
+\abx@aux@segm{0}{0}{bouthillierAccountingVarianceMachine}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{goswamiMOMENTFamilyOpen2024}
 \abx@aux@segm{0}{0}{goswamiMOMENTFamilyOpen2024}
-\abx@aux@refcontext{nty/apasortcite//global/global/global}
-\abx@aux@cite{0}{saxenaDamagePropagationModeling}
-\abx@aux@segm{0}{0}{saxenaDamagePropagationModeling}
+\AC@undonewlabel{acro:RMSE}
+\newlabel{acro:RMSE}{{4.2}{}{Modelle und Training}{section.4.2}{}}
+\acronymused{RMSE}
+\acronymused{LSTM}
+\acronymused{TCN}
+\abx@aux@page{41}{9}
 \acronymused{RUL}
-\abx@aux@page{39}{7}
+\abx@aux@page{42}{9}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Fehlerexperimente}{}{section.4.3}\protected@file@percent }
 \acronymused{RUL}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Auswertung der Prognosen}{}{section.4.4}\protected@file@percent }
-\AC@undonewlabel{acro:MAE}
-\newlabel{acro:MAE}{{4.4}{}{Auswertung der Prognosen}{section.4.4}{}}
-\acronymused{MAE}
-\AC@undonewlabel{acro:RMSE}
-\newlabel{acro:RMSE}{{4.4}{}{Auswertung der Prognosen}{section.4.4}{}}
-\acronymused{RMSE}
-\acronymused{NASA}
-\acronymused{NASA}
-\abx@aux@page{40}{7}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Messungen in der Cloud}{}{section.4.5}\protected@file@percent }
-\acronymused{GPU}
+\abx@aux@refcontext{nty/apasortcite//global/global/global}
+\abx@aux@cite{0}{saxenaDamagePropagationModeling}
+\abx@aux@segm{0}{0}{saxenaDamagePropagationModeling}
 \abx@aux@refcontext{nty/apasortcite//global/global/global}
 \abx@aux@cite{0}{leitnerPatternsChaosStudy2016}
 \abx@aux@segm{0}{0}{leitnerPatternsChaosStudy2016}
+\acronymused{RUL}
+\AC@undonewlabel{acro:MAE}
+\newlabel{acro:MAE}{{4.4}{}{Auswertung der Prognosen}{section.4.4}{}}
+\acronymused{MAE}
+\acronymused{RUL}
+\acronymused{RMSE}
+\acronymused{NASA}
+\abx@aux@page{43}{10}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Messungen in der Cloud}{}{section.4.5}\protected@file@percent }
+\acronymused{RUL}
+\acronymused{GPU}
 \AC@undonewlabel{acro:CPU}
 \newlabel{acro:CPU}{{4.5}{}{Messungen in der Cloud}{section.4.5}{}}
 \acronymused{CPU}
@@ -340,71 +394,54 @@
 \newlabel{acro:RAM}{{4.5}{}{Messungen in der Cloud}{section.4.5}{}}
 \acronymused{RAM}
 \acronymused{GPU}
-\abx@aux@page{41}{8}
+\abx@aux@page{44}{10}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Metriken für den Vergleich des Cloud-Betriebs.}}{}{table.caption.4}\protected@file@percent }
+\newlabel{tab:cloud-metriken}{{1}{}{Metriken für den Vergleich des Cloud-Betriebs}{table.caption.4}{}}
+\acronymused{CPU}
 \@writefile{toc}{\contentsline {section}{\numberline {4.6}Nachvollziehbarkeit und Grenzen}{}{section.4.6}\protected@file@percent }
 \acronymused{CMAPSS}
 \acronymused{TSFM}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Geplanter Aufbau der Masterarbeit}{}{section.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Erwartete Ergebnisdarstellung}{}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Ergebnisse}{}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Erwarteter Beitrag und Ausblick}{}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Schlussfolgerungen und Ausblick}{}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\acronymused{RUL}
+\acronymused{LSTM}
+\acronymused{TCN}
+\acronymused{CMAPSS}
 \acronymused{TSFM}
-\@writefile{toc}{\contentsline {chapter}{Abkürzungen}{}{section*.3}\protected@file@percent }
-\newacro{BRITS}[\AC@hyperlink{BRITS}{BRITS}]{Bidirectional Recurrent Imputation for Time Series}
-\newacro{CMAPSS}[\AC@hyperlink{CMAPSS}{C-MAPSS}]{Commercial Modular Aero-Propulsion System Simulation}
-\newacro{CNN}[\AC@hyperlink{CNN}{CNN}]{Convolutional Neural Network}
-\newacroplural{CNN}[\AC@hyperlink{CNN}{CNN}]{Convolutional Neural Networks}
-\newacro{CPU}[\AC@hyperlink{CPU}{CPU}]{Central Processing Unit}
-\newacro{GPU}[\AC@hyperlink{GPU}{GPU}]{Graphics Processing Unit}
-\newacro{GRU}[\AC@hyperlink{GRU}{GRU}]{Gated Recurrent Unit}
-\newacroplural{GRU}[\AC@hyperlink{GRU}{GRU}]{Gated Recurrent Units}
-\newacro{GRUD}[\AC@hyperlink{GRUD}{GRU-D}]{Gated Recurrent Unit with Decay}
-\newacro{LSTM}[\AC@hyperlink{LSTM}{LSTM}]{Long Short-Term Memory}
-\newacro{MAE}[\AC@hyperlink{MAE}{MAE}]{Mean Absolute Error}
-\newacro{NASA}[\AC@hyperlink{NASA}{NASA}]{National Aeronautics and Space Administration}
-\newacro{RAM}[\AC@hyperlink{RAM}{RAM}]{Random Access Memory}
-\newacro{RMSE}[\AC@hyperlink{RMSE}{RMSE}]{Root Mean Squared Error}
-\newacro{RUL}[\AC@hyperlink{RUL}{RUL}]{Remaining Useful Life}
-\newacro{TCN}[\AC@hyperlink{TCN}{TCN}]{Temporal Convolutional Network}
-\newacroplural{TCN}[\AC@hyperlink{TCN}{TCN}]{Temporal Convolutional Networks}
-\newacro{TimesFM}[\AC@hyperlink{TimesFM}{TimesFM}]{Time Series Foundation Model}
-\newacro{TSFM}[\AC@hyperlink{TSFM}{TSFM}]{Time-Series Foundation Model}
-\newacroplural{TSFM}[\AC@hyperlink{TSFM}{TSFM}]{Time-Series Foundation Models}
-\abx@aux@page{42}{10}
-\abx@aux@page{43}{10}
-\abx@aux@page{44}{10}
-\abx@aux@page{45}{10}
-\abx@aux@page{46}{10}
-\abx@aux@page{47}{10}
-\abx@aux@page{48}{10}
-\abx@aux@page{49}{10}
-\abx@aux@page{50}{10}
-\abx@aux@page{51}{10}
-\abx@aux@page{52}{10}
-\abx@aux@page{53}{10}
-\abx@aux@page{54}{10}
-\abx@aux@page{55}{10}
-\abx@aux@page{56}{10}
-\abx@aux@page{57}{11}
-\abx@aux@page{58}{11}
-\abx@aux@page{59}{11}
-\abx@aux@page{60}{11}
-\abx@aux@page{61}{11}
-\abx@aux@page{62}{11}
-\abx@aux@page{63}{11}
-\abx@aux@page{64}{11}
-\abx@aux@page{65}{11}
-\abx@aux@page{66}{11}
-\abx@aux@page{67}{11}
-\abx@aux@page{68}{11}
+\abx@aux@page{45}{13}
+\abx@aux@page{46}{13}
+\abx@aux@page{47}{13}
+\abx@aux@page{48}{13}
+\abx@aux@page{49}{13}
+\abx@aux@page{50}{13}
+\abx@aux@page{51}{13}
+\abx@aux@page{52}{13}
+\abx@aux@page{53}{13}
+\abx@aux@page{54}{14}
+\abx@aux@page{55}{14}
+\abx@aux@page{56}{14}
+\abx@aux@page{57}{14}
+\abx@aux@page{58}{14}
+\abx@aux@page{59}{14}
+\abx@aux@page{60}{14}
+\abx@aux@page{61}{14}
+\abx@aux@page{62}{14}
+\abx@aux@page{63}{14}
+\abx@aux@page{64}{14}
+\abx@aux@page{65}{14}
+\abx@aux@page{66}{14}
+\abx@aux@page{67}{14}
+\abx@aux@page{68}{14}
+\abx@aux@page{69}{15}
+\abx@aux@page{70}{15}
+\abx@aux@page{71}{15}
 \@glsxtr@mglslike{mgls,mglspl,mglsmainpl,Mgls,Mglspl,Mglsmainpl,MGls,MGlspl,MGlsmainpl,MGLS,MGLSpl,MGLSmainpl,mglsshort,mglslong,mglsfull,Mglsshort,Mglslong,Mglsfull,mglsname,Mglsname,MGlsname,mglssymbol,Mglssymbol,MGlssymbol,mglsusefield,Mglsusefield,MGlsusefield,mpgls,mpglspl,mpglsmainpl,Mpgls,Mpglspl,Mpglsmainpl,MPGls,MPGlspl,MPGlsmainpl,MPGLS,MPGLSpl,MPGLSmainpl}
-\abx@aux@read@bbl@mdfivesum{9E07C0A7B22435A7947E92A1A9449397}
+\abx@aux@read@bbl@mdfivesum{10094F0A6DDF4030A7978D9A34DD06C9}
 \abx@aux@defaultrefcontext{0}{aminRemainingUsefulLife2026}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{ansariChronosLearningLanguage}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{berghoutSystematicGuidePredicting2022}{nty/global//global/global/global}
@@ -432,4 +469,4 @@
 \abx@aux@defaultrefcontext{0}{wuRemainingUsefulLife2024}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zhangLSTMBasedMultiTaskMethod2023}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zontaPredictiveMaintenanceIndustry2020}{nty/global//global/global/global}
-\gdef \@abspage@last{11}
+\gdef \@abspage@last{15}

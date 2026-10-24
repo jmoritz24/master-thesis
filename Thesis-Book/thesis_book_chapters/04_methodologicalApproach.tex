@@ -1,47 +1,122 @@
 \chapter{Forschungsmethodik}\label{cha:methodologicalApproach}
 
-Zur Beantwortung der Forschungsfrage ist ein experimenteller Vergleich von MOMENT-1-small, \ac{LSTM} und \ac{TCN} vorgesehen. Zunächst wird untersucht, wie genau die Modelle die \ac{RUL} bei unveränderten Sensordaten vorhersagen. Anschließend werden Fehler in die Testdaten eingebracht, um deren Einfluss auf die Prognosen zu bestimmen. Ergänzende Messungen in der Cloud sollen zeigen, welcher Rechenaufwand mit dem Einsatz der Modelle verbunden ist. Dieses Thesis Book beschreibt den geplanten Ablauf. Die konkreten Modelleinstellungen und Messbedingungen werden bei der Umsetzung anhand von Vorversuchen festgelegt, bevor die eigentliche Auswertung der Testdaten beginnt.
+Die Arbeit vergleicht MOMENT-1-small, \ac{LSTM} und \ac{TCN} hinsichtlich ihrer \ac{RUL}-Prognosen und des Aufwands für ihren Betrieb in der Cloud. Dazu werden die Sensordaten aufbereitet, die Modelle trainiert und anschließend mit vollständigen sowie gezielt veränderten Testdaten ausgewertet. Alle Modelle erhalten innerhalb eines Vergleichs dieselben Daten und werden unter denselben Fehlerbedingungen untersucht, damit die Ergebnisse miteinander vergleichbar sind. Abb.~\ref{fig:versuchsablauf} zeigt die Reihenfolge der einzelnen Schritte und ihre Zuordnung zu den Teilfragen.
+
+Die Untersuchung besteht aus zwei Teilen, die unterschiedliche Aspekte der Modellwahl beantworten. Zunächst wird geprüft, wie stark die Prognosefehler bei zunehmenden Datenfehlern gegenüber den unveränderten Testdaten ansteigen. Danach werden die ausgewählten Modelle in die Cloud-Pipeline eingebunden, um Latenz, Durchsatz, Ressourcenbedarf und Betriebskosten unter gemeinsamen Bedingungen zu messen. Die Ergebnisse beider Teile werden abschließend zusammengeführt, um mögliche Genauigkeitsvorteile dem dafür erforderlichen Betriebsaufwand gegenüberzustellen.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        node distance=0.42cm,
+        schritt/.style={draw, rectangle, align=center, text width=13.1cm,
+            minimum height=1.02cm, inner sep=5pt, font=\small\normalfont},
+        verbindung/.style={-{Stealth[length=2mm]}, line width=0.5pt}
+    ]
+        \node[schritt] (daten) {1. Daten aufteilen und aufbereiten\\
+            Triebwerke in Training, Validierung und Test trennen und gemeinsame Eingaben festlegen};
+        \node[schritt, below=of daten] (training) {2. Modelle trainieren und auswählen\\
+            Ohne zusätzliche Fehler trainieren und Einstellungen anhand der Validierung festlegen};
+        \node[schritt, below=of training] (fehler) {3. Fehlerhafte Testdaten erzeugen\\
+            Sensorfehler einbringen, fehlende Werte ergänzen und Eingabefenster bilden};
+        \node[schritt, below=of fehler] (prognosen) {4. Prognosen vergleichen -- Teilfrage 1\\
+            MAE, RMSE und NASA-Score sowie deren Zunahme je Fehlerart und Fehlerstärke};
+        \node[schritt, below=of prognosen] (cloud) {5. Modelle in der Cloud vermessen -- Teilfrage 2\\
+            Latenz, Durchsatz und Ressourcen bei gleicher Hardware, gleichen Testeingaben und Lastprofilen};
+        \node[schritt, below=of cloud] (bewertung) {6. Ergebnisse zusammenführen -- Teilfrage 3\\
+            Prognosequalität und Robustheit den Kosten je 1.000 Prognosen gegenüberstellen};
+        \draw[verbindung] (daten) -- (training);
+        \draw[verbindung] (training) -- (fehler);
+        \draw[verbindung] (fehler) -- (prognosen);
+        \draw[verbindung] (prognosen) -- (cloud);
+        \draw[verbindung] (cloud) -- (bewertung);
+    \end{tikzpicture}
+    \caption{Geplanter Versuchsablauf und Zuordnung zu den Teilfragen (eigene Darstellung).}
+    \label{fig:versuchsablauf}
+\end{figure}
 
 \section{Datengrundlage und Aufbereitung}
 
-Als Datengrundlage dient \ac{CMAPSS}. Der Datensatz enthält simulierte Sensorverläufe von Turbofan-Triebwerken, deren Schädigung bis zu einer festgelegten Ausfallgrenze fortschreitet \parencite[1--2, 7]{saxenaDamagePropagationModeling}. Für die Hauptuntersuchung ist FD001 vorgesehen. FD003 soll ergänzend verwendet werden, um den Vergleich auf einen weiteren Teildatensatz auszudehnen. Eine Untersuchung aller Betriebsbedingungen von \ac{CMAPSS} ist nicht geplant.
+Als Datengrundlage dient \ac{CMAPSS}, das simulierte Sensorverläufe von Turbofan-Triebwerken enthält, deren Schädigung bis zu einer festgelegten Ausfallgrenze fortschreitet \parencite[1--2, 7]{saxenaDamagePropagationModeling}. Für die Hauptuntersuchung ist FD001 vorgesehen, während FD003 den Vergleich auf einen weiteren Teildatensatz ausdehnen soll. Eine Untersuchung aller Betriebsbedingungen von \ac{CMAPSS} ist nicht geplant.
 
-Die vorgegebene Aufteilung in Trainings- und Testtriebwerke bleibt erhalten. Ein Teil der Trainingstriebwerke wird zur Validierung verwendet. Erst danach werden die Zeitreihen in Eingabefenster zerlegt, damit Ausschnitte desselben Triebwerks nicht gleichzeitig im Trainings- und im Validierungsdatensatz vorkommen. Auch die Auswahl und Skalierung der Sensorwerte erfolgen ohne Informationen aus den Testdaten. Solche Trennungen sind wichtig, um eine Überschätzung der Modellleistung durch Data Leakage zu vermeiden \parencite[4--5]{kapoorLeakageReproducibilityCrisis2023}.
+Die vorgegebene Aufteilung in Trainings- und Testtriebwerke bleibt erhalten, wobei ein Teil der Trainingstriebwerke für die Validierung zurückgehalten wird. An den Trainingsdaten lernen die Modelle den Zusammenhang zwischen den Sensormessungen und der verbleibenden Nutzungsdauer. Die Validierungsdaten dienen zur Auswahl der Modelleinstellungen, während die Testdaten erst für die abschließende Bewertung der ausgewählten Modelle verwendet werden. Die Trennung erfolgt nach Triebwerken, damit ähnliche Ausschnitte derselben Maschine nicht zugleich beim Lernen und bei der Bewertung vorkommen. Dadurch soll Data Leakage vermieden werden, das die gemessene Modellleistung durch Informationen aus den späteren Auswertungsdaten überschätzen kann \parencite[4--5]{kapoorLeakageReproducibilityCrisis2023}.
 
-Alle Modelle sollen auf denselben Sensoren, Beobachtungszeiträumen und \ac{RUL}-Zielwerten aufbauen. Die Fensterlänge und eine mögliche Begrenzung der \ac{RUL} werden in den Vorversuchen festgelegt. Dabei muss die Zieldefinition für Training, Validierung und Auswertung zusammenpassen. Modellinterne Verarbeitungsschritte, etwa eine zusätzliche Normalisierung oder das Anpassen der Eingabelänge, werden getrennt berücksichtigt.
+Nach dieser Aufteilung werden die Zeitreihen in Eingabefenster zerlegt, die jeweils die Sensormessungen aus einer festgelegten Zahl aufeinanderfolgender Betriebszyklen enthalten. Für das Ende jedes Fensters wird aus dem Datensatz ein \ac{RUL}-Zielwert bestimmt, mit dem die Prognose beim Training und bei der Auswertung verglichen wird. Als Eingabe erhält das Modell nur die Sensormessungen und nicht den zugehörigen Zielwert. Alle Modelle verwenden dieselben Sensoren, dieselbe Fensterlänge und dieselbe Zieldefinition einschließlich einer möglichen Obergrenze für hohe \ac{RUL}-Werte. Diese Festlegungen werden vor dem Training getroffen und für die Auswertung beibehalten.
+
+Die Sensorwerte werden skaliert, um unterschiedliche Größenordnungen der Messwerte bei der Verarbeitung zu berücksichtigen. Die Auswahl der Sensoren und die Bestimmung der Skalierungsparameter erfolgen ausschließlich anhand der Trainingsdaten, anschließend werden dieselben Regeln auf Validierungs- und Testdaten angewendet. Modellinterne Schritte wie eine zusätzliche Normalisierung oder das Auffüllen auf die benötigte Eingabelänge werden getrennt dokumentiert, ohne zusätzliche vergangene oder zukünftige Messwerte einzubeziehen.
 
 \section{Modelle und Training}
 
-MOMENT-1-small soll als vortrainierter Merkmalsextraktor eingesetzt werden. Sein Encoder bleibt unverändert, während ein zusätzlicher Regressionskopf darauf trainiert wird, aus den erzeugten Merkmalen einen \ac{RUL}-Wert abzuleiten. Ein ähnlicher Ansatz wurde bereits für die \ac{RUL}-Prognose mit MOMENT untersucht \parencite[246]{dintenUsingTimeSeries2025}. Wie die einzelnen Sensorkanäle verarbeitet und ihre Merkmale zusammengeführt werden, wird zunächst in einem technischen Vorversuch geprüft. Als Vergleich dienen ein \ac{LSTM} und ein \ac{TCN}, die anhand der \ac{CMAPSS}-Trainingsdaten für die \ac{RUL}-Prognose trainiert werden.
+MOMENT-1-small wird als vortrainierter Merkmalsextraktor eingesetzt, dessen Encoder die Sensorverläufe in Merkmalsvektoren umwandelt. Ein solcher Vektor enthält Zahlen, die gelernte Eigenschaften des jeweiligen Verlaufs beschreiben und als Eingabe für die weitere Prognose dienen. Für jeden Sensorkanal wird ein Vektor erzeugt, anschließend werden die Vektoren in einer festen Sensorreihenfolge zu einem gemeinsamen Vektor verkettet. Der Regressionskopf lernt anhand dieses Vektors und der bekannten Zielwerte, eine \ac{RUL}-Schätzung auszugeben, während die bereits gelernten Parameter des Encoders unverändert bleiben. Die Verwendung von MOMENT-Merkmalen für eine nachgeschaltete \ac{RUL}-Schätzung wurde bereits untersucht \parencite[246]{dintenUsingTimeSeries2025}.
 
-Die Modelleinstellungen werden mit den Validierungsdaten ausgewählt. Dafür ist eine begrenzte Hyperparametersuche vorgesehen. Als Verfahren bietet sich Random Search an, das gegenüber einer vollständigen Rastersuche bei gleichem Suchaufwand Vorteile haben kann \parencite[281--283]{bergstraRandomSearchHyperParameter}. Trainingsläufe werden mit unterschiedlichen Zufallsinitialisierungen wiederholt, da die Initialisierung und die Wahl der Hyperparameter das Ergebnis beeinflussen können \parencite{bouthillierAccountingVarianceMachine}. Die Zahl der Wiederholungen richtet sich nach den Vorversuchen und dem verfügbaren Rechenbudget.
+Als Vergleich dienen ein \ac{LSTM} und ein \ac{TCN}, die ihre Modellparameter anhand der \ac{CMAPSS}-Trainingsdaten für die \ac{RUL}-Prognose lernen. Sie erhalten die aufbereiteten Sensorfenster direkt, statt sie zunächst durch den MOMENT-Encoder in Merkmalsvektoren umzuwandeln. Bei MOMENT wird somit nur der Regressionskopf für diese Aufgabe trainiert, bei \ac{LSTM} und \ac{TCN} dagegen das gesamte Prognosemodell.
+
+Die Modelleinstellungen, sogenannte Hyperparameter, werden mit einer begrenzten Suche ausgewählt, für die bei allen Modellen ein vergleichbares Suchbudget vorgesehen ist. Dazu gehören beispielsweise die Lernrate oder die Größe der trainierbaren Schichten, die vor einem Trainingslauf festgelegt werden. Random Search wählt zufällig Kombinationen dieser Einstellungen aus und kann bei gleichem Suchaufwand Vorteile gegenüber einer vollständigen Rastersuche bieten \parencite[281--283]{bergstraRandomSearchHyperParameter}. Die Auswahl der Modellkonfiguration richtet sich nach dem \ac{RMSE} auf den Validierungsdaten, ohne dafür die Testdaten zu verwenden.
+
+Trainingsläufe werden mit unterschiedlichen Zufallsinitialisierungen, also unterschiedlichen zufälligen Startwerten der trainierbaren Parameter, wiederholt, damit das Ergebnis nicht nur von einem einzelnen Lauf abhängt. Bei MOMENT betrifft dies den Regressionskopf, bei \ac{LSTM} und \ac{TCN} das gesamte Modell, da nur diese Parameter jeweils neu trainiert werden. Die Wiederholungen sollen zeigen, wie stark die Prognosequalität bei gleichbleibender Modellkonfiguration durch zufällige Einflüsse des Trainings schwankt \parencite{bouthillierAccountingVarianceMachine}. Die Zahl der Wiederholungen wird unter Berücksichtigung des Rechenbudgets vor dem Training für alle Modelle einheitlich festgelegt und zusammen mit den ausgewählten Einstellungen dokumentiert.
 
 Für das Training zur \ac{RUL}-Prognose werden keine zusätzlichen Sensorfehler erzeugt. Davon zu unterscheiden ist das bereits abgeschlossene Vortraining von MOMENT, bei dem unter anderem maskierte Zeitreihen zur Rekonstruktion verwendet wurden \parencite[3--4]{goswamiMOMENTFamilyOpen2024}. Eine erneute Anpassung der Modelle an die später untersuchten Testfehler ist nicht vorgesehen.
 
 \section{Fehlerexperimente}
 
-Untersucht werden sollen zufällig fehlende Einzelwerte, zusammenhängende Übertragungslücken, Ausfälle einzelner Sensoren und Sensordrift. Jede Fehlerart wird zunächst einzeln betrachtet und in mehreren Stärken erzeugt. Die konkreten Anteile fehlender Werte, Ausfalldauern und Driftstärken werden vor den Hauptversuchen festgelegt.
+Die Testdaten werden gezielt verändert, um vier Arten fehlerhafter Telemetrie nachzubilden. Dazu werden einzelne Messwerte, zusammenhängende Abschnitte oder die Werte eines ganzen Sensorkanals für eine bestimmte Dauer als fehlend markiert. Die ursprüngliche Abfolge der Betriebszyklen bleibt dabei erhalten, damit sich die zeitliche Zuordnung der Messwerte und Zielwerte nicht verändert. Zusätzlich wird Sensordrift erzeugt, bei der sich die Messwerte zunehmend von ihrem ursprünglichen Verlauf entfernen. Jede Fehlerart wird getrennt in mehreren Stärken untersucht, deren Anteile fehlender Werte, Ausfalldauern und Driftstärken vor der Auswertung festgelegt werden.
 
-Die Fehler werden in die Testverläufe eingebracht, bevor daraus die Eingabefenster entstehen. So bleibt ein Messwert auch in überlappenden Fenstern auf dieselbe Weise verändert. Alle Modelle erhalten jeweils dieselben fehlerhaften Daten. Die tatsächliche \ac{RUL} wird durch diese Änderungen der Messwerte nicht verändert.
+Die unveränderten Testverläufe bilden die Referenz für den Vergleich und werden für die verschiedenen Fehlerbedingungen kopiert. Die Fehler werden vor der Bildung der Eingabefenster eingebracht, damit derselbe Messwert auch in überlappenden Fenstern auf dieselbe Weise verändert bleibt. Alle Modelle erhalten innerhalb eines Vergleichs genau dieselben fehlerhaften Daten, während die tatsächliche \ac{RUL} als Zielwert unverändert bleibt. Verändert wird damit die Beobachtung des Maschinenzustands und nicht der Zeitpunkt, zu dem das simulierte Triebwerk ausfällt. Bei zufälligen Fehlern werden mehrere Fehlerrealisierungen, also unterschiedliche Muster der betroffenen Messwerte, erzeugt und die verwendeten Zufallsstartwerte dokumentiert.
 
-Damit die Modelle trotz fehlender Werte eine Prognose erzeugen können, ist eine einfache Ergänzung der Daten vorgesehen. Dafür kommt beispielsweise die Übernahme des letzten gültigen Sensorwerts infrage. Es dürfen keine Messwerte verwendet werden, die zum Prognosezeitpunkt noch nicht vorliegen. Der Schwerpunkt liegt auf dem Verhalten der Modelle nach einer einheitlichen Fehlerbehandlung und nicht auf der Entwicklung eines neuen Rekonstruktionsverfahrens.
+Damit alle Modelle trotz fehlender Werte eine Prognose erzeugen können, werden diese durch eine gemeinsame einfache Imputation ergänzt. Dafür ist die Übernahme des zuletzt bekannten Werts desselben Sensors vorgesehen, der bis zur nächsten gültigen Messung weiterverwendet wird. Liegt zu Beginn noch kein gültiger Wert vor, wird eine zuvor aus den Trainingsdaten bestimmte Ersatzregel angewendet. Die Imputation darf ausschließlich bereits verfügbare Messungen verwenden und wird im Offline-Vergleich sowie im Cloud-Dienst mit derselben Messhistorie umgesetzt. Verglichen wird damit die Reaktion der Prognosemodelle nach einer gemeinsamen Fehlerbehandlung und nicht die Leistungsfähigkeit verschiedener Imputationsverfahren.
 
 \section{Auswertung der Prognosen}
 
-Die Prognosegüte wird anhand von \ac{MAE}, \ac{RMSE} und \ac{NASA}-Score bewertet. Der \ac{NASA}-Score berücksichtigt, dass eine Überschätzung der verbleibenden Nutzungsdauer eine spätere Wartung nahelegen kann, und gewichtet diesen Fehler stärker als eine gleich große Unterschätzung \parencite[7--8]{saxenaDamagePropagationModeling}. Für den Hauptvergleich ist eine Auswertung am letzten verfügbaren Zeitpunkt jedes Testtriebwerks vorgesehen.
+Zur Beantwortung der ersten Teilfrage erzeugen die ausgewählten Modelle zunächst Prognosen für die unveränderten und danach für die beschädigten Testdaten. Im Hauptvergleich wird für jedes Testtriebwerk das letzte verfügbare Eingabefenster verwendet und die geschätzte \ac{RUL} mit dem zugehörigen bekannten Zielwert verglichen. Die Prognosegüte wird mit drei Metriken bewertet:
 
-Die Ergebnisse auf den fehlerhaften Daten werden mit denen der unveränderten Daten verglichen. Neben den absoluten Prognosefehlern wird ihre Zunahme betrachtet. Dadurch lässt sich unterscheiden, ob ein Modell unter einer Störung weiterhin brauchbare Prognosen liefert oder sich nur deshalb wenig verschlechtert, weil es bereits auf den unveränderten Daten ungenau ist. Wiederholte Versuche und Konfidenzintervalle sollen helfen, die Streuung der Ergebnisse einzuordnen. Bei der statistischen Auswertung werden mehrere Beobachtungen desselben Triebwerks nicht als voneinander unabhängige Maschinen behandelt.
+\begin{itemize}
+    \item Der \ac{MAE} beschreibt die mittlere absolute Abweichung zwischen vorhergesagter und tatsächlicher \ac{RUL} in Betriebszyklen.
+    \item Der \ac{RMSE} wird ebenfalls in Betriebszyklen angegeben. Durch die Quadrierung der Fehler fallen große Abweichungen stärker ins Gewicht.
+    \item Der \ac{NASA}-Score ist ein asymmetrisches Fehlermaß. Er gewichtet eine Überschätzung der verbleibenden Nutzungsdauer stärker als eine gleich große Unterschätzung, da eine zu hohe Prognose eine spätere Wartung nahelegen kann \parencite[7--8]{saxenaDamagePropagationModeling}.
+\end{itemize}
+
+Die Robustheit wird daran beurteilt, wie stark die Prognosefehler gegenüber den unveränderten Testdaten zunehmen. Eine geringe Zunahme spricht für eine geringere Empfindlichkeit gegenüber der jeweiligen Störung, muss aber gemeinsam mit dem absoluten Prognosefehler betrachtet werden. Ein bereits ungenaues Modell kann sich nur wenig verschlechtern und dennoch deutlich schlechtere Prognosen liefern als ein anderes Modell. Diagramme sollen deshalb für jede Fehlerart und Fehlerstärke sowohl die absoluten Fehler als auch ihre Zunahme zeigen.
+
+Die wiederholten Trainings- und Fehlerexperimente zeigen, wie stark die Ergebnisse zwischen einzelnen Versuchsläufen schwanken. Ergänzende Konfidenzintervalle sollen die Unsicherheit der aus den untersuchten Daten geschätzten Kennwerte und Modellunterschiede verdeutlichen. Jeder Vergleich bezieht sich auf dieselben Testtriebwerke und Fehlerrealisierungen, damit Unterschiede nicht durch abweichende Eingaben entstehen. Mehrere Beobachtungen desselben Triebwerks werden statistisch nicht wie voneinander unabhängige Maschinen behandelt, da sie aus demselben Degradationsverlauf stammen. Die Ergebnisse für FD001 und FD003 werden getrennt ausgewiesen.
 
 \section{Messungen in der Cloud}
 
-Die Modelle werden nacheinander über eine gemeinsame Schnittstelle in die Cloud-Pipeline eingebunden. Für den Hauptvergleich sollen sie unter denselben Hardware- und Lastbedingungen laufen. Welche Instanz dafür geeignet ist und ob eine \ac{GPU} verwendet wird, wird im technischen Vorversuch entschieden. Gemessen werden die Dauer einzelner Prognosen, der erreichbare Durchsatz sowie der Ressourcenbedarf für \ac{CPU}, \ac{RAM} und gegebenenfalls \ac{GPU}.
+Zur Beantwortung der zweiten Teilfrage werden die Modelle nacheinander über eine gemeinsame Schnittstelle in die Cloud-Pipeline eingebunden. Der Prognosedienst erhält jeweils ein Sensorfenster, bereitet die Eingabe für das jeweilige Modell auf und gibt dessen \ac{RUL}-Schätzung zurück. Alle Modelle laufen auf derselben Cloud-Instanz, deren Hardwarekonfiguration einschließlich einer gegebenenfalls verwendeten \ac{GPU} für die Messreihen beibehalten und dokumentiert wird. Bei mehreren festgelegten Laststufen werden unterschiedlich viele Anfragen pro Zeiteinheit mit denselben Testeingaben an den Dienst gesendet. Vor Messbeginn werden die Modelle geladen und mit einigen Anfragen ausgeführt, damit der laufende Betrieb und nicht der Startvorgang gemessen wird.
 
-Die reine Modellinferenz wird getrennt von der gesamten Verarbeitung im Prognosedienst gemessen. Diese umfasst auch die Datenaufbereitung und die Merkmalserzeugung. Die genauen Messpunkte und Lastprofile werden vor den Messreihen festgelegt. Mehrere Durchläufe sollen Schwankungen der Cloud-Umgebung berücksichtigen, die auch bei gleicher Instanzkonfiguration auftreten können \parencite{leitnerPatternsChaosStudy2016}.
+Die Messgrößen für den Cloud-Vergleich sind in Tab.~\ref{tab:cloud-metriken} definiert und umfassen neben Latenz und Durchsatz auch \ac{CPU}-Auslastung und \ac{RAM}-Bedarf. Bei einer \ac{GPU}-Instanz kommen deren Auslastung und belegter Speicher hinzu. Für die Latenz werden der Median und das 95. Perzentil angegeben. Letzteres bezeichnet die Zeit, die von 95\,\% der gemessenen Anfragen nicht überschritten wird. Mehrere Durchläufe sollen Schwankungen der Cloud-Umgebung berücksichtigen, die auch bei gleicher Instanzkonfiguration auftreten können \parencite{leitnerPatternsChaosStudy2016}.
 
-Die Kosten werden aus den verwendeten Cloud-Komponenten und der gemessenen Ressourcennutzung beziehungsweise Laufzeit abgeleitet. Für den Modellvergleich sollen sie auf die Zahl der erzeugten Prognosen bei einer angegebenen Last bezogen werden. Kosten des laufenden Betriebs werden von denen für Training und Modellauswahl getrennt. Das ursprüngliche Vortraining von MOMENT wird nicht als eigener Aufwand berechnet. Bei den Inferenzmessungen wird der Encoder jedoch berücksichtigt.
+\begin{table}[htbp]
+    \caption{Metriken für den Vergleich des Cloud-Betriebs.}
+    \label{tab:cloud-metriken}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}X@{}}
+        \toprule
+        Metrik & Einheit & Messung \\
+        \midrule
+        Modelllatenz & ms & Zeit für den vollständigen Modellaufruf mit aufbereiteten Eingaben, bei MOMENT einschließlich Encoder und Regressionskopf. \\
+        Dienstlatenz & ms & Zeit vom Eingang eines vollständigen Messfensters im Prognosedienst bis zur fertigen Antwort, einschließlich Aufbereitung und Modellaufruf. \\
+        Durchsatz & Prognosen/s & Zahl erfolgreich abgeschlossener Prognosen pro Sekunde bei der jeweiligen Anfragelast. \\
+        CPU-Auslastung & Prozent & Mittlere Auslastung des Prognosedienstes während der Messung, bezogen auf die zugewiesenen CPU-Kerne. \\
+        RAM-Bedarf & GiB & Mittlerer und maximaler belegter Arbeitsspeicher des Prognosedienstes während der Messung. \\
+        GPU-Auslastung & Prozent & Mittlere Auslastung der GPU während der Messung, falls eine GPU verwendet wird. \\
+        GPU-Speicher & GiB & Maximal belegter Gerätespeicher während der Messung, falls eine GPU verwendet wird. \\
+        Betriebskosten & Euro/1.000 Prognosen & Kosten der berücksichtigten Cloud-Komponenten je 1.000 abgeschlossenen Prognosen bei dokumentierter Last. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{samepage}
+Die Modelllatenz misst die Zeit für die eigentliche Modellberechnung und umfasst bei MOMENT sowohl den Encoder als auch den Regressionskopf. Die Dienstlatenz erfasst zusätzlich die Aufbereitung und Verarbeitung innerhalb des Prognosedienstes, beginnt aber erst beim Eingang eines vollständigen Messfensters. Übertragungszeiten vom simulierten Triebwerk bis zu diesem Eingang sind deshalb nicht enthalten. Messpunkte und Lastprofile werden vor den Messreihen festgelegt und für alle Modelle gleich verwendet.
+\par
+\end{samepage}
+
+Für die dritte Teilfrage werden die Betriebskosten aus der Bereitstellungszeit, dem zugehörigen Tarif und weiteren tatsächlich verwendeten Cloud-Komponenten berechnet. Eine fest gebuchte Instanz verursacht zunächst dieselben Stundenkosten, auch wenn eines der Modelle ihre \ac{CPU} weniger stark auslastet. Entscheidend ist deshalb auch, wie viele Prognosen unter der jeweiligen Anfragelast in dieser Zeit abgeschlossen werden. Die Kosten des Messzeitraums werden durch die Zahl der abgeschlossenen Prognosen geteilt und auf 1.000 Prognosen umgerechnet.
+
+Diese Kosten werden den Prognosefehlern und ihrer Zunahme unter den untersuchten Störungen gegenübergestellt, um Genauigkeitsvorteile und Betriebsaufwand gemeinsam beurteilen zu können. Kosten für das Training und die Modellauswahl werden getrennt vom laufenden Betrieb ausgewiesen. Das ursprüngliche Vortraining von MOMENT wird nicht als eigener Aufwand berechnet, der vollständige Encoder bleibt jedoch Bestandteil aller Betriebsmessungen.
 
 \section{Nachvollziehbarkeit und Grenzen}
 
 Datenaufteilungen, erzeugte Sensorfehler, Modelleinstellungen, Softwareversionen und Cloud-Konfiguration werden dokumentiert, damit die Versuche nachvollziehbar sind. Mögliche Überschneidungen zwischen \ac{CMAPSS} und den Vortrainingsdaten von MOMENT werden geprüft und bei der Einordnung der Ergebnisse berücksichtigt.
 
-Die Untersuchung verwendet simulierte Triebwerksdaten und künstlich erzeugte Störungen. Sie bildet daher nicht alle Bedingungen realer Anlagen oder Kommunikationsnetze ab. Auch die Ergebnisse zu Aufwand und Kosten gelten zunächst nur für die gewählte Cloud-Umgebung. Aus dem Vergleich von MOMENT-1-small mit zwei für diese Aufgabe trainierten Modellen lassen sich keine allgemeinen Aussagen über alle \ac{TSFM} ableiten.
+Die Untersuchung verwendet simulierte Triebwerksdaten und künstlich erzeugte Störungen, weshalb sie nicht alle Bedingungen realer Anlagen oder Kommunikationsnetze abbildet. Auch die Ergebnisse zu Aufwand und Kosten gelten zunächst nur für die gewählte Cloud-Umgebung. Die verglichenen Modellansätze unterscheiden sich sowohl in ihrer Architektur als auch in ihrer Trainingsgeschichte, sodass mögliche Leistungsunterschiede nicht allein dem Vortraining zugeschrieben werden können. Aus dem Vergleich von MOMENT-1-small mit zwei für diese Aufgabe trainierten Modellen lassen sich außerdem keine allgemeinen Aussagen über alle \ac{TSFM} ableiten.

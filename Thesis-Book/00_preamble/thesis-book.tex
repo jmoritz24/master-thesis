@@ -1,5 +1,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[font=small,labelfont=normalfont,labelsep=colon]{caption}
 \usepackage{lipsum}
 \usepackage[noindentafter]{titlesec}
 \usepackage{sectsty,textcase}
@@ -14,6 +17,8 @@
 \usepackage{amsmath}
 \usepackage{csquotes}
 \emergencystretch=2em
+\clubpenalty=10000
+\widowpenalty=10000
 \renewcommand\tabularxcolumn[1]{m{#1}}
 
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,]{geometry}
@@ -46,4 +51,7 @@
 {\par\noindent{KURZFASSUNG: }\ \ignorespaces}
 {\par\medskip}
 
-\renewcommand{\figurename}{Abbildung}
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}

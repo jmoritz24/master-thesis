@@ -19,7 +19,12 @@
 
 @article{ansariChronosLearningLanguage,
   title = {Chronos: {{Learning}} the {{Language}} of {{Time Series}}},
-  author = {Ansari, Abdul Fatir and Stella, Lorenzo and Turkmen, Caner and Zhang, Xiyuan and Mercado, Pedro and Shen, Huibin and Shchur, Oleksandr and Rangapuram, Syama Sundar and Arango, Sebastian Pineda and Kapoor, Shubham and Zschiegner, Jasper and Maddix, Danielle C and Wang, Hao and Torkkola, Kari and Wilson, Andrew Gordon and Bohlke-Schneider, Michael},
+  author = {Ansari, Abdul Fatir and Stella, Lorenzo and Turkmen, Caner and Zhang, Xiyuan and Mercado, Pedro and Shen, Huibin and Shchur, Oleksandr and Rangapuram, Syama Sundar and Pineda Arango, Sebastian and Kapoor, Shubham and Zschiegner, Jasper and Maddix, Danielle C. and Wang, Hao and Mahoney, Michael W. and Torkkola, Kari and Wilson, Andrew Gordon and Bohlke-Schneider, Michael and Wang, Yuyang},
+  date = {2024-10},
+  journaltitle = {Transactions on Machine Learning Research},
+  issn = {2835-8856},
+  url = {https://openreview.net/forum?id=gerNCVqqtR},
+  urldate = {2026-10-18},
   abstract = {We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/L3CVCNCN/Ansari et al. - Chronos Learning the Language of Time Series.pdf}
@@ -46,23 +51,42 @@
 
 @article{bergstraRandomSearchHyperParameter,
   title = {Random {{Search}} for {{Hyper-Parameter Optimization}}},
-  author = {Bergstra, James and Bergstra, James and Bengio, Yoshua and Bengio, Yoshua},
+  author = {Bergstra, James and Bengio, Yoshua},
+  date = {2012},
+  journaltitle = {Journal of Machine Learning Research},
+  volume = {13},
+  number = {10},
+  pages = {281--305},
+  url = {https://jmlr.org/papers/v13/bergstra12a.html},
+  urldate = {2026-10-18},
   abstract = {Grid search and manual search are the most widely used strategies for hyper-parameter optimization. This paper shows empirically and theoretically that randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid. Empirical evidence comes from a comparison with a large previous study that used grid search and manual search to configure neural networks and deep belief networks. Compared with neural networks configured by a pure grid search, we find that random search over the same domain is able to find models that are as good or better within a small fraction of the computation time. Granting random search the same computational budget, random search finds better models by effectively searching a larger, less promising configuration space. Compared with deep belief networks configured by a thoughtful combination of manual search and grid search, purely random search over the same 32-dimensional configuration space found statistically equal performance on four of seven data sets, and superior performance on one of seven. A Gaussian process analysis of the function from hyper-parameters to validation set performance reveals that for most data sets only a few of the hyper-parameters really matter, but that different hyper-parameters are important on different data sets. This phenomenon makes grid search a poor choice for configuring algorithms for new data sets. Our analysis casts some light on why recent “High Throughput” methods achieve surprising success—they appear to search through a large number of hyper-parameters because most hyper-parameters do not matter much. We anticipate that growing interest in large hierarchical models will place an increasing burden on techniques for hyper-parameter optimization; this work shows that random search is a natural baseline against which to judge progress in the development of adaptive (sequential) hyper-parameter optimization algorithms.},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/5IR4YI5Z/Bergstra et al. - Random Search for Hyper-Parameter Optimization.pdf}
 }
 
-@article{bouthillierAccountingVarianceMachine,
+@inproceedings{bouthillierAccountingVarianceMachine,
   title = {Accounting for {{Variance}} in {{Machine Learning Benchmarks}}},
   author = {Bouthillier, Xavier and Delaunay, Pierre and Bronzi, Mirko and Trofimov, Assya and Nichyporuk, Brennan and Szeto, Justin and Sepah, Naz and Raff, Edward and Madan, Kanika and Voleti, Vikram and Kahou, Samira Ebrahimi and Michalski, Vincent and Serdyuk, Dmitriy and Arbel, Tal and Pal, Chris and Varoquaux, Gaël and Vincent, Pascal},
+  date = {2021},
+  booktitle = {Proceedings of Machine Learning and Systems},
+  volume = {3},
+  pages = {747--769},
+  url = {https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html},
+  urldate = {2026-10-18},
   abstract = {Strong empirical evidence that one machine-learning algorithm A outperforms another one B ideally calls for multiple trials optimizing the learning pipeline over sources of variation such as data sampling, augmentation, parameter initialization, and hyperparameters choices. This is prohibitively expensive, and corners are cut to reach conclusions. We model the whole benchmarking process, revealing that variance due to data sampling, parameter initialization and hyperparameter choice impact markedly the results. We analyze the predominant comparison methods used today in the light of this variance. We show a counter-intuitive result that adding more sources of variation to an imperfect estimator approaches better the ideal estimator at a 51× reduction in compute cost. Building on these results, we study the error rate of detecting improvements, on five different deep-learning tasks/architectures. This study leads us to propose recommendations for performance comparisons.},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/ZZP3STPC/Bouthillier et al. - Accounting for Variance in Machine Learning Benchmarks.pdf}
 }
 
-@article{caoBRITSBidirectionalRecurrent,
+@inproceedings{caoBRITSBidirectionalRecurrent,
   title = {{{BRITS}}: {{Bidirectional Recurrent Imputation}} for {{Time Series}}},
   author = {Cao, Wei and Wang, Dong and Li, Jian and Zhou, Hao and Li, Lei and Li, Yitan},
+  date = {2018},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume = {31},
+  publisher = {Curran Associates, Inc.},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html},
+  urldate = {2026-10-18},
   abstract = {Time series are ubiquitous in many classification/regression applications. However, the time series data in real applications may contain many missing values. Hence, given multiple (possibly correlated) time series data, it is important to fill in missing values and at the same time to predict their class labels. Existing imputation methods often impose strong assumptions of the underlying data generating process, such as linear dynamics in the state space. In this paper, we propose a novel method, called BRITS, based on recurrent neural networks for missing value imputation in time series data. Our proposed method directly learns the missing values in a bidirectional recurrent dynamical system, without any specific assumption. The imputed values are treated as variables of RNN graph and can be effectively updated during backpropagation. BRITS has three advantages: (a) it can handle multiple correlated missing values in time series; (b) it generalizes to time series with nonlinear dynamics underlying; (c) it provides a data-driven imputation procedure and applies to general settings with missing data. We evaluate our model on three real-world datasets, including an air quality dataset, a healthcare dataset, and a localization dataset for human activity. Experiments show that our model outperforms the state-of-the-art methods in both imputation and classification/regression.},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/9EJPPBTF/Cao et al. - BRITS Bidirectional Recurrent Imputation for Time Series.pdf}
@@ -125,7 +149,7 @@
 
 @online{el-ghoussaniTimeSeriesFoundationModel2026,
   title = {Time-{{Series Foundation Model Embeddings}} for {{Remaining Useful Life Estimation}}},
-  author = {El-Ghoussani, Amir and Vita, Michele De and Naumann, Ronald and Belagiannis, Vasileios},
+  author = {El-Ghoussani, Amir and De Vita, Michele and Naumann, Ronald and Belagiannis, Vasileios},
   date = {2026-08-11},
   eprint = {2606.11990},
   eprinttype = {arXiv},
@@ -159,6 +183,13 @@
 @article{hendersonSystematicReportingEnergy,
   title = {Towards the {{Systematic Reporting}} of the {{Energy}} and {{Carbon Footprints}} of {{Machine Learning}}},
   author = {Henderson, Peter and Hu, Jieru and Romoff, Joshua and Brunskill, Emma and Jurafsky, Dan and Pineau, Joelle},
+  date = {2020},
+  journaltitle = {Journal of Machine Learning Research},
+  volume = {21},
+  number = {248},
+  pages = {1--43},
+  url = {https://jmlr.org/papers/v21/20-312.html},
+  urldate = {2026-10-18},
   abstract = {Accurate reporting of energy and carbon usage is essential for understanding the potential climate impacts of machine learning research. We introduce a framework that makes this easier by providing a simple interface for tracking realtime energy consumption and carbon emissions, as well as generating standardized online appendices. Utilizing this framework, we create a leaderboard for energy efficient reinforcement learning algorithms to incentivize responsible research in this area as an example for other areas of machine learning. Finally, based on case studies using our framework, we propose strategies for mitigation of carbon emissions and reduction of energy consumption. By making accounting easier, we hope to further the sustainable development of machine learning experiments and spur more research into energy efficient algorithms.},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/A7TFFI2T/Henderson et al. - Towards the Systematic Reporting of the Energy and Carbon Footprints of Machine Learning.pdf}
@@ -271,9 +302,16 @@
   file = {/Users/janmoritz/Zotero/storage/FVMH39PQ/Listou Ellefsen et al. - 2019 - Remaining useful life predictions for turbofan engine degradation using semi-supervised deep archite.pdf}
 }
 
-@article{saxenaDamagePropagationModeling,
-  title = {Damage {{Propagation Modeling}} for {{Aircraft Engine Prognostics}}},
-  author = {Saxena, Abhinav and Simon, Don and Eklund, Neil},
+@inproceedings{saxenaDamagePropagationModeling,
+  title = {Damage {{Propagation Modeling}} for {{Aircraft Engine Run-to-Failure Simulation}}},
+  author = {Saxena, Abhinav and Goebel, Kai and Simon, Don and Eklund, Neil},
+  date = {2008},
+  booktitle = {2008 International Conference on Prognostics and Health Management},
+  pages = {1--9},
+  publisher = {IEEE},
+  doi = {10.1109/PHM.2008.4711414},
+  url = {https://ntrs.nasa.gov/citations/20090029214},
+  urldate = {2026-10-18},
   langid = {english},
   file = {/Users/janmoritz/Zotero/storage/G62VU35Z/Saxena et al. - Damage Propagation Modeling for Aircraft Engine Prognostics.pdf}
 }
