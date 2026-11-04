@@ -2,18 +2,20 @@
 
 \chapter{Wissenschaftliche Fragestellung}\label{cha:researchQuestion}
 
-Diese Arbeit untersucht, wie gut sich MOMENT-1-small für eine cloudbasierte \ac{RUL}-Prognose mit fehlerhaften Sensordaten eignet und welcher Betriebsaufwand damit verbunden ist. Als Vergleich dienen ein \ac{LSTM} und ein \ac{TCN}, die speziell für diese Aufgabe trainiert und unter denselben Testbedingungen bewertet werden. Daraus ergibt sich folgende Forschungsfrage:
+Aus dem in Kapitel~\ref{cha:relatedWork} beschriebenen Untersuchungsbedarf ergibt sich der Vergleich von MOMENT-1-small, einem \ac{LSTM} und einem \ac{TCN} bei ausbleibenden Sensormessungen. Im Mittelpunkt steht, wie sich ihre \ac{RUL}-Prognosefehler verändern und ob sich die auf vollständigen Daten beobachtete Rangfolge unter Datenlücken verschiebt. Ergänzend wird betrachtet, unter welchen Ausfallbedingungen die Modelle zuvor festgelegte Qualitätsanforderungen noch erfüllen und welcher Aufwand für ihren Betrieb entsteht. Daraus ergibt sich folgende Forschungsfrage:
 
 \begin{quote}
-	Wie unterscheiden sich MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} bei der \ac{RUL}-Prognose mit fehlerhaften \ac{CMAPSS}-Sensordaten hinsichtlich Prognosequalität, Robustheit, Inferenzlatenz, Ressourcenbedarf und Cloud-Kosten?
+	Wie beeinflussen Art, Dauer und Umfang von Sensorausfällen die Prognosequalität und Robustheit von MOMENT-1-small im Vergleich zu \ac{LSTM} und \ac{TCN} bei der \ac{RUL}-Prognose, und in welchem Verhältnis stehen diese Ergebnisse zum Ressourcenbedarf und zu den Cloud-Betriebskosten?
 \end{quote}
 
 \noindent Zur Beantwortung der Forschungsfrage werden folgende Teilfragen untersucht:
 
 \begin{enumerate}
-	\item Wie verändern sich die Prognosefehler der Modelle bei unterschiedlichen Arten und Stärken von Sensorfehlern?
-	\item Welche Unterschiede zeigen sich bei Inferenzlatenz, Durchsatz und Ressourcenbedarf unter vergleichbaren Betriebsbedingungen?
-	\item In welchem Verhältnis stehen die Kosten des Cloud-Betriebs zur erreichten Prognosequalität und Robustheit?
+	\item Wie verändern sich die Prognosefehler bei einzelnen fehlenden Messungen, zusammenhängenden Datenlücken und dem Ausfall eines oder mehrerer Sensorkanäle?
+	\item Unter welchen untersuchten Ausfallbedingungen erfüllen die Modelle vorab festgelegte Anforderungen an die Prognosequalität noch, und wie unterscheidet sich diese Grenze zwischen den Modellen?
+	\item Welche Unterschiede zeigen sich bei Inferenzlatenz, Durchsatz, Ressourcenbedarf und Kosten unter vergleichbaren Cloud-Bedingungen, und wie stehen diese zur erreichten Prognosequalität und Robustheit?
 \end{enumerate}
 
-Die Hauptuntersuchung ist mit \ac{CMAPSS} FD001 vorgesehen, während FD003 den Vergleich um einen weiteren Teildatensatz ergänzen soll. Das Training für die \ac{RUL}-Prognose erfolgt ohne zusätzlich erzeugte Sensorfehler, die erst in die Testdaten eingebracht werden, um eine nachlassende Datenqualität im Betrieb nachzubilden. Eine nachträgliche Anpassung der Modelle an diese Testfehler ist nicht vorgesehen.
+Die Hauptuntersuchung ist mit \ac{CMAPSS} FD001 vorgesehen, während FD003 den Vergleich um einen weiteren Teildatensatz ergänzt. Die Modelle werden für die \ac{RUL}-Prognose ohne zusätzliche Ausfälle trainiert und nicht nachträglich an die untersuchten Testszenarien angepasst. Sensordrift und die Verfälschung vorhandener Werte sind nicht Teil der Untersuchung.
+
+Ein wiederverwendbares Framework führt die Versuche aus und stellt die Messwerte für einen interaktiven Vergleich nach gewählten Anforderungen bereit. Es entsteht als technisches Nebenartefakt, während der empirische Modellvergleich den wissenschaftlichen Kern bildet. Die Untersuchung von Qualitätsgrenzen dient dabei keiner automatischen Unterscheidung zwischen Sensor- und Triebwerksschäden.

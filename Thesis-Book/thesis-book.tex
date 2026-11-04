@@ -18,7 +18,8 @@
     urlcolor=blue,            % quite common
     pdfstartview={Fit},       % "Fit" fits the page to the window
     pdfpagemode=UseOutlines,  % open bookmarks in Acrobat
-    plainpages=false          % avoids duplicate page number problem
+    plainpages=false,         % avoids duplicate page number problem
+    hypertexnames=false       % eindeutige Seitenanker trotz unterdrückter Seitenzahlen
 }
 
 \pagestyle{empty}
@@ -60,6 +61,7 @@
 \input{thesis_book_chapters/01_introduction}
 \newpage
 \input{thesis_book_chapters/02_relatedWork}
+\newpage
 \input{thesis_book_chapters/03_researchQuestion}
 \newpage
 \input{thesis_book_chapters/04_methodologicalApproach}

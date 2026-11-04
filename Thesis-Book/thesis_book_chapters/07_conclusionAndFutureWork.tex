@@ -2,12 +2,12 @@
 
 \chapter{Schlussfolgerungen und Ausblick}
 
-Die Arbeit untersucht die datenbasierte Prognose der verbleibenden Nutzungsdauer von Maschinen und ist damit im Bereich der cloudbasierten Predictive Maintenance angesiedelt.
+Die Arbeit untersucht die datenbasierte \ac{RUL}-Prognose von Maschinen und verbindet einen kontrollierten Modellvergleich mit einem cloudfähig aufgebauten Vergleichsframework.
 
-Fehlende oder veränderte Sensordaten können solche Prognosen beeinträchtigen, weshalb für die Modellwahl vergleichbare Erkenntnisse zur Robustheit und zum Aufwand des Cloud-Betriebs benötigt werden.
+Im Mittelpunkt stehen ausbleibende Sensormessungen, da ein Modell auch mit unvollständigen Daten noch Zahlenwerte ausgeben kann, ohne damit die geforderte Prognosequalität zu erreichen. Für die Modellwahl werden deshalb sowohl vergleichbare Fehlermaße als auch eine Einordnung der untersuchten Ausfallgrenzen und des Betriebsaufwands benötigt.
 
-Dazu werden MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} zunächst auf unveränderten und anschließend auf gleichartig beschädigten \ac{CMAPSS}-Testdaten ausgewertet. Messungen von Latenz, Ressourcenbedarf und Kosten ergänzen die Bewertung der Prognosefehler.
+Dazu werden MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} zunächst auf vollständigen und anschließend auf denselben gezielt unvollständigen \ac{CMAPSS}-Testdaten ausgewertet. Messungen von Latenz, Ressourcenbedarf und Cloud-Kosten ergänzen die Bewertung. Die Qualitätsanforderungen und die ausgewählten Ausfallszenarien werden vor der abschließenden Testauswertung festgelegt.
 
-Die Eignung eines Modells soll anhand seiner Genauigkeit, seiner Reaktion auf Datenfehler und seines Betriebsaufwands beurteilt werden. Die Ergebnisse sollen eine Auswahlgrundlage für die drei untersuchten Ansätze schaffen, auch wenn sich dabei kein Vorteil von MOMENT gegenüber den Vergleichsmodellen zeigt.
+Das Framework soll die Wiederholung der Versuche und eine Erweiterung über dokumentierte Modelladapter ermöglichen. Eine interaktive Oberfläche stellt die Ergebnisse nach gewählten Anforderungen gegenüber, bei Bedarf ergänzt um eine schematische 3D-Auswahl der Sensorkanäle. Der wissenschaftliche Kern bleibt der Modellvergleich, auch wenn sich dabei kein Vorteil von MOMENT zeigt. Eine Diagnose von Sensor- oder Triebwerksschäden wird nicht beansprucht.
 
-Die nächsten Schritte umfassen die Umsetzung der Datenaufbereitung, das Training der Modelle und die anschließenden Fehlerexperimente sowie Messungen in der Cloud. Eine spätere Übertragung auf reale Anlagen oder andere \ac{TSFM} muss die Grenzen der hier verwendeten Daten und Cloud-Umgebung berücksichtigen.
+Die nächsten Schritte umfassen die Auswahl wiederverwendbarer Pipeline-Komponenten, die Umsetzung der Modelladapter, das Training und die Ausfallexperimente sowie die Messungen in der Cloud. Eine spätere Erweiterung auf andere Modelle oder reale Anlagen muss die Grenzen der verwendeten Daten, Ausfallszenarien und Infrastruktur berücksichtigen. Die Cloud bleibt dabei eine mögliche Ausführungsumgebung und keine Voraussetzung für die grundsätzliche Funktionsweise des Frameworks.

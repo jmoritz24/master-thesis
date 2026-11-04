@@ -1449,6 +1449,137 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0951832018307506
       \endverb
     \endentry
+    \entry{maBenchmarkingTimeSeries2026}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=1ce6ba33b0f9f5403087e7bcf2c25d5f}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Sizhe},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=feb3a72fe0424f3782917999613b1c24}{%
+           family={Flanigan},
+           familyi={F\bibinitperiod},
+           given={Katherine\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93f1a1b39c722a603916c128c7ac8612}{%
+           family={Bergés},
+           familyi={B\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{101e64b45aa30b3ce70ef9463c100a39}
+      \strng{fullhash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{fullhashraw}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{bibnamehash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authorbibnamehash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authornamehash}{101e64b45aa30b3ce70ef9463c100a39}
+      \strng{authorfullhash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authorfullhashraw}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{eid}{1937868}
+      \field{journaltitle}{Frontiers in Aerospace Engineering}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{title}{Benchmarking Time-Series Foundation Models for Multitask Predictive Maintenance in Digital Twins}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{5}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fpace.2026.1937868
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+    \endentry
+    \entry{pengMacroAnchoredPhysicsInformed2026}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=c7fabc713a001088b52ea8a3df22ff23}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Yongkang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=354c58556dbbc757e615ab80be77d404}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jianxun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d0f2d6e6e359930ad146fd4d06ec79f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhengxin},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bfc45da190cb661143c8a28c64fe9af3}{%
+           family={Si},
+           familyi={S\bibinitperiod},
+           given={Xiaosheng},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96243149f73992eae4c7c4e02a4c5287}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Dangbo},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c7fe4be77d9d5e93a48642e977cffa29}
+      \strng{fullhash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{fullhashraw}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{bibnamehash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authorbibnamehash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authornamehash}{c7fe4be77d9d5e93a48642e977cffa29}
+      \strng{authorfullhash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authorfullhashraw}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{24}
+      \field{eid}{6051}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{19}
+      \field{title}{A Macro-Anchored Physics-Informed {GAN} for {RUL} Prediction Under Continuous Block Missing Data}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{26}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3390/s26196051
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/26/19/6051
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/26/19/6051
+      \endverb
+    \endentry
     \entry{saxenaDamagePropagationModeling}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=477a5b32cf08fc019fe8db24615704fd}{%
@@ -1576,6 +1707,73 @@
       \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0347312
       \endverb
       \keyw{Damage mechanics,Deep learning,Engines,Forecasting,Machine learning,Neural networks,Sensory perception,Statistical data}
+    \endentry
+    \entry{theilerTowardsUnifiedDataEfficient2026}{online}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=fd2e969962e5715c08fe4ee788212ed3}{%
+           family={Theiler},
+           familyi={T\bibinitperiod},
+           given={Raffael},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a52c98ff4e99028f636e266e363e8219}{%
+           family={Telyatnikov},
+           familyi={T\bibinitperiod},
+           given={Lev},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08c2a8f6f7544ff1d1d336c6d38ec49a}{%
+           family={Von\bibnamedelima Krannichfeldt},
+           familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Leandro},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a50e056a5c0e39c00ca554c5674b65f}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Olga},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0c3ed53bb5fc346eb57c9dead644af93}
+      \strng{fullhash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{fullhashraw}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{bibnamehash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authorbibnamehash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authornamehash}{0c3ed53bb5fc346eb57c9dead644af93}
+      \strng{authorfullhash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authorfullhashraw}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Towards Unified and Data-Efficient Prognostics and Health Management with Tabular Foundation Models}
+      \field{urlday}{30}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2606.05481
+      \endverb
+      \verb{eprint}
+      \verb 2606.05481
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2606.05481
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2606.05481
+      \endverb
     \endentry
     \entry{verbertTimelyConditionbasedMaintenance2017}{article}{}{}
       \name{author}{3}{}{%
@@ -1843,6 +2041,85 @@
       \verb http://arxiv.org/abs/2608.22968
       \endverb
       \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{windmannBenchmarkingSensorFault2026}{online}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=b00e778cf607e47085d28055dd03045e}{%
+           family={Windmann},
+           familyi={W\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7300ec3606180426f207e42f7f8ffe34}{%
+           family={Wittenberg},
+           familyi={W\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8df506172af230b8dfeda0dc61425ea}{%
+           family={Manca},
+           familyi={M\bibinitperiod},
+           given={Gianluca},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a49e8ccd3abeeda7db27c95b14540eb6}{%
+           family={Dix},
+           familyi={D\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b677c39e9ab6172f21fad494e745fafc}{%
+           family={Brandt},
+           familyi={B\bibinitperiod},
+           given={Jens\bibnamedelima U.},
+           giveni={J\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=536b2cc4b2f07c970730ad03ba7d8711}{%
+           family={Niggemann},
+           familyi={N\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{13246c06a676f8fb2b3374b710ecd0da}
+      \strng{fullhash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{fullhashraw}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{bibnamehash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authorbibnamehash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authornamehash}{13246c06a676f8fb2b3374b710ecd0da}
+      \strng{authorfullhash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authorfullhashraw}{c2a0977663fafb562e2f8ebe5b391d16}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Benchmarking Sensor-Fault Robustness in Forecasting}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2605.10822
+      \endverb
+      \verb{eprint}
+      \verb 2605.10822
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2605.10822
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2605.10822
+      \endverb
     \endentry
     \entry{wuRemainingUsefulLife2024}{article}{}{}
       \name{author}{4}{}{%
@@ -3508,6 +3785,137 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0951832018307506
       \endverb
     \endentry
+    \entry{maBenchmarkingTimeSeries2026}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=1ce6ba33b0f9f5403087e7bcf2c25d5f}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Sizhe},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=feb3a72fe0424f3782917999613b1c24}{%
+           family={Flanigan},
+           familyi={F\bibinitperiod},
+           given={Katherine\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93f1a1b39c722a603916c128c7ac8612}{%
+           family={Bergés},
+           familyi={B\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{101e64b45aa30b3ce70ef9463c100a39}
+      \strng{fullhash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{fullhashraw}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{bibnamehash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authorbibnamehash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authornamehash}{101e64b45aa30b3ce70ef9463c100a39}
+      \strng{authorfullhash}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \strng{authorfullhashraw}{8e82d15c9742aa4ff503847e4c3dee8b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{eid}{1937868}
+      \field{journaltitle}{Frontiers in Aerospace Engineering}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{title}{Benchmarking Time-Series Foundation Models for Multitask Predictive Maintenance in Digital Twins}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{5}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fpace.2026.1937868
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+    \endentry
+    \entry{pengMacroAnchoredPhysicsInformed2026}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=c7fabc713a001088b52ea8a3df22ff23}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Yongkang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=354c58556dbbc757e615ab80be77d404}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jianxun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d0f2d6e6e359930ad146fd4d06ec79f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhengxin},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bfc45da190cb661143c8a28c64fe9af3}{%
+           family={Si},
+           familyi={S\bibinitperiod},
+           given={Xiaosheng},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96243149f73992eae4c7c4e02a4c5287}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Dangbo},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c7fe4be77d9d5e93a48642e977cffa29}
+      \strng{fullhash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{fullhashraw}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{bibnamehash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authorbibnamehash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authornamehash}{c7fe4be77d9d5e93a48642e977cffa29}
+      \strng{authorfullhash}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \strng{authorfullhashraw}{a7d7714e62d1f3501e2b7e1c8e70d071}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{24}
+      \field{eid}{6051}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{19}
+      \field{title}{A Macro-Anchored Physics-Informed {GAN} for {RUL} Prediction Under Continuous Block Missing Data}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{26}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3390/s26196051
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/26/19/6051
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/26/19/6051
+      \endverb
+    \endentry
     \entry{saxenaDamagePropagationModeling}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=477a5b32cf08fc019fe8db24615704fd}{%
@@ -3635,6 +4043,73 @@
       \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0347312
       \endverb
       \keyw{Damage mechanics,Deep learning,Engines,Forecasting,Machine learning,Neural networks,Sensory perception,Statistical data}
+    \endentry
+    \entry{theilerTowardsUnifiedDataEfficient2026}{online}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=fd2e969962e5715c08fe4ee788212ed3}{%
+           family={Theiler},
+           familyi={T\bibinitperiod},
+           given={Raffael},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a52c98ff4e99028f636e266e363e8219}{%
+           family={Telyatnikov},
+           familyi={T\bibinitperiod},
+           given={Lev},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08c2a8f6f7544ff1d1d336c6d38ec49a}{%
+           family={Von\bibnamedelima Krannichfeldt},
+           familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Leandro},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a50e056a5c0e39c00ca554c5674b65f}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Olga},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0c3ed53bb5fc346eb57c9dead644af93}
+      \strng{fullhash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{fullhashraw}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{bibnamehash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authorbibnamehash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authornamehash}{0c3ed53bb5fc346eb57c9dead644af93}
+      \strng{authorfullhash}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \strng{authorfullhashraw}{9be2e829f3f38cae0b88ffa8615a84e5}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Towards Unified and Data-Efficient Prognostics and Health Management with Tabular Foundation Models}
+      \field{urlday}{30}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2606.05481
+      \endverb
+      \verb{eprint}
+      \verb 2606.05481
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2606.05481
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2606.05481
+      \endverb
     \endentry
     \entry{verbertTimelyConditionbasedMaintenance2017}{article}{}{}
       \name{author}{3}{}{%
@@ -3902,6 +4377,85 @@
       \verb http://arxiv.org/abs/2608.22968
       \endverb
       \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{windmannBenchmarkingSensorFault2026}{online}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=b00e778cf607e47085d28055dd03045e}{%
+           family={Windmann},
+           familyi={W\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7300ec3606180426f207e42f7f8ffe34}{%
+           family={Wittenberg},
+           familyi={W\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8df506172af230b8dfeda0dc61425ea}{%
+           family={Manca},
+           familyi={M\bibinitperiod},
+           given={Gianluca},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a49e8ccd3abeeda7db27c95b14540eb6}{%
+           family={Dix},
+           familyi={D\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b677c39e9ab6172f21fad494e745fafc}{%
+           family={Brandt},
+           familyi={B\bibinitperiod},
+           given={Jens\bibnamedelima U.},
+           giveni={J\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=536b2cc4b2f07c970730ad03ba7d8711}{%
+           family={Niggemann},
+           familyi={N\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{13246c06a676f8fb2b3374b710ecd0da}
+      \strng{fullhash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{fullhashraw}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{bibnamehash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authorbibnamehash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authornamehash}{13246c06a676f8fb2b3374b710ecd0da}
+      \strng{authorfullhash}{c2a0977663fafb562e2f8ebe5b391d16}
+      \strng{authorfullhashraw}{c2a0977663fafb562e2f8ebe5b391d16}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Benchmarking Sensor-Fault Robustness in Forecasting}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2605.10822
+      \endverb
+      \verb{eprint}
+      \verb 2605.10822
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2605.10822
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2605.10822
+      \endverb
     \endentry
     \entry{wuRemainingUsefulLife2024}{article}{}{}
       \name{author}{4}{}{%
