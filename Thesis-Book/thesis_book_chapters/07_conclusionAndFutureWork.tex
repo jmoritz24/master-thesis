@@ -1,13 +1,13 @@
 
-
+\newpage
 \chapter{Schlussfolgerungen und Ausblick}
 
 Die Arbeit untersucht die datenbasierte \ac{RUL}-Prognose von Maschinen und verbindet einen kontrollierten Modellvergleich mit einem cloudfähig aufgebauten Vergleichsframework.
 
 Im Mittelpunkt stehen ausbleibende Sensormessungen, da ein Modell auch mit unvollständigen Daten noch Zahlenwerte ausgeben kann, ohne damit die geforderte Prognosequalität zu erreichen. Für die Modellwahl werden deshalb sowohl vergleichbare Fehlermaße als auch eine Einordnung der untersuchten Ausfallgrenzen und des Betriebsaufwands benötigt.
 
-Dazu werden MOMENT-1-small, ein \ac{LSTM} und ein \ac{TCN} zunächst auf vollständigen und anschließend auf denselben gezielt unvollständigen \ac{CMAPSS}-Testdaten ausgewertet. Messungen von Latenz, Ressourcenbedarf und Cloud-Kosten ergänzen die Bewertung. Die Qualitätsanforderungen und die ausgewählten Ausfallszenarien werden vor der abschließenden Testauswertung festgelegt.
+Für den Vergleich werden MOMENT-1-small, ein \ac{LSTM}, ein \ac{TCN} und ein Mamba-basiertes Modell zunächst mit vollständigen und anschließend mit denselben gezielt lückenhaften \ac{CMAPSS}-Testdaten geprüft. Die Bewertung berücksichtigt die vorab festgelegten Qualitätsanforderungen sowie die gemessene Latenz, den Ressourcenbedarf und die Cloud-Kosten.
 
-Das Framework soll die Wiederholung der Versuche und eine Erweiterung über dokumentierte Modelladapter ermöglichen. Eine interaktive Oberfläche stellt die Ergebnisse nach gewählten Anforderungen gegenüber, bei Bedarf ergänzt um eine schematische 3D-Auswahl der Sensorkanäle. Der wissenschaftliche Kern bleibt der Modellvergleich, auch wenn sich dabei kein Vorteil von MOMENT zeigt. Eine Diagnose von Sensor- oder Triebwerksschäden wird nicht beansprucht.
+Die Auswertung soll zeigen, welche Modelle bei den jeweiligen Sensorausfällen die geforderte Prognosequalität erreichen und welcher Betriebsaufwand damit verbunden ist. Die interaktive Oberfläche stellt die Ergebnisse für die gewählten Anforderungen gegenüber, während sich die Versuche mit dem Framework wiederholen und auf weitere Modelle ausweiten lassen.
 
-Die nächsten Schritte umfassen die Auswahl wiederverwendbarer Pipeline-Komponenten, die Umsetzung der Modelladapter, das Training und die Ausfallexperimente sowie die Messungen in der Cloud. Eine spätere Erweiterung auf andere Modelle oder reale Anlagen muss die Grenzen der verwendeten Daten, Ausfallszenarien und Infrastruktur berücksichtigen. Die Cloud bleibt dabei eine mögliche Ausführungsumgebung und keine Voraussetzung für die grundsätzliche Funktionsweise des Frameworks.
+Die nächsten Schritte sind die Aufbereitung der Daten, das Training der Modelle und der Aufbau der Cloud-Pipeline für die anschließenden Ausfallversuche. Weitere Untersuchungen können prüfen, inwieweit sich die Ergebnisse auf andere Modelle oder reale Anlagen übertragen lassen.

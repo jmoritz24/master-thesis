@@ -2,9 +2,9 @@
 
 \chapter{Einleitung und Problemhintergrund}\label{cha:introduction}
 
-\section{Forschungsfeld}
-
 Industrie 4.0 bezeichnet die zunehmende digitale Vernetzung von Maschinen, Produktionsanlagen und den zugehörigen Informationssystemen \parencite[1--2]{zontaPredictiveMaintenanceIndustry2020}. Um den Zustand einer Anlage während des Betriebs beurteilen zu können, erfassen Sensoren beispielsweise Temperatur oder Schwingungen in regelmäßigen Abständen. Die entstehenden Messreihen ermöglichen es, Veränderungen im Maschinenzustand über die Zeit zu verfolgen und Hinweise auf eine fortschreitende Schädigung zu erkennen \parencite[1, 4]{berghoutSystematicGuidePredicting2022}. Cloud-Infrastrukturen ermöglichen es, die Messwerte verschiedener Anlagen gemeinsam zu speichern und zu verarbeiten \parencite[1--2]{zontaPredictiveMaintenanceIndustry2020}.
+
+\section{Forschungsfeld}
 
 Für die automatisierte Auswertung dieser umfangreichen Messreihen werden unter anderem \ac{ML}-Verfahren eingesetzt. Sie lernen aus historischen Daten Muster und Zusammenhänge, mit denen sich neue Messungen einordnen und zukünftige Entwicklungen abschätzen lassen. Die Ergebnisse unterstützen die Bewertung des Maschinenzustands und darauf aufbauende Entscheidungen, etwa zur Planung einer Wartung \parencite[1, 4]{berghoutSystematicGuidePredicting2022}.
 
@@ -16,6 +16,8 @@ Für die datenbasierte \ac{RUL}-Prognose werden unter anderem \ac{LSTM}, \acp{GR
 
 \section{Problemstellung}
 
+Die verfügbaren Modelle können bei gleichen Sensordaten unterschiedliche Prognosefehler erreichen \parencite[Abschn.~5]{dintenUsingTimeSeries2025}. Ein auf vollständigen Daten genaueres Modell muss bei fehlenden Messungen nicht weiterhin die besseren Ergebnisse liefern. Für den praktischen Einsatz muss deshalb ein Modell ausgewählt werden, das die geforderte Prognosequalität auch unter den zu erwartenden Datenlücken erreicht.
+
 Ein verbreiteter Benchmark ist der mit \ac{CMAPSS} erzeugte Datensatz der \ac{NASA}, der simulierte Sensordaten von Turbofan-Triebwerken mit Trainingsverläufen bis zum Ausfall enthält. Während in diesen Messreihen keine Sensorwerte fehlen, können in realen Anwendungen Sensor- und Kommunikationsfehler einzelne Messwerte oder ganze Sensorkanäle ausfallen lassen. Solche Störungen können die \ac{RUL}-Prognose verschlechtern und werden daher bereits durch gezielte Veränderungen der Benchmarkdaten untersucht \parencite[7--10]{tangDeepLearningFramework2026}. Im Mittelpunkt dieser Arbeit stehen ausbleibende Messungen, nicht die Verfälschung vorhandener Sensorwerte.
 
 Neben den etablierten Modellen werden inzwischen \acp{TSFM} wie MOMENT untersucht, die auf umfangreichen Zeitreihensammlungen aus unterschiedlichen Anwendungsbereichen vortrainiert werden. Die dabei erlernten Merkmale beschreiben Eigenschaften der Zeitreihen und können anschließend für weitere Aufgaben verwendet werden \parencite[1--4]{goswamiMOMENTFamilyOpen2024}. Dintén und Zorrilla nutzen diese Merkmale bereits für die \ac{RUL}-Prognose auf \ac{CMAPSS}, untersuchen jedoch keine beschädigten Testdaten \parencite[246, 252--255]{dintenUsingTimeSeries2025}. El-Ghoussani et al. kombinieren Chronos-2 mit einem kleinen Regressionskopf zur Ableitung eines \ac{RUL}-Werts und nennen die Robustheit bei fehlenden Sensoren als offene Forschungsfrage \parencite[2--4]{el-ghoussaniTimeSeriesFoundationModel2026}.
@@ -24,12 +26,12 @@ Neuere Vergleiche untersuchen auch die Rekonstruktion fehlender Messwerte und di
 
 \section{Bedarf an einem vergleichbaren Versuch}
 
-Für die Auswahl eines Modells reicht die Prognosegüte auf vollständigen Daten allein nicht aus, wenn im späteren Betrieb mit fehlenden Messwerten zu rechnen ist. Benötigt wird auch eine Einschätzung, wie sich die Prognosen bei längeren Ausfällen oder mehreren fehlenden Sensorkanälen verändern und bis zu welchen untersuchten Ausfallbedingungen festgelegte Qualitätsanforderungen noch erfüllt werden. Alle Modelle müssen dafür dieselben Testdaten erhalten. Zusätzlich ist relevant, wie viel Rechenleistung die Prognosen benötigen und welche Kosten dabei entstehen, da ein Genauigkeitsvorteil mit höherem Betriebsaufwand verbunden sein kann.
+Für einen aussagekräftigen Vergleich müssen alle Modelle dieselben vollständigen und gezielt lückenhaften Testdaten erhalten. Ergänzend werden Ressourcenbedarf und Betriebskosten gemeinsam mit der Prognosegüte betrachtet, da ein Genauigkeitsvorteil mit höherem Aufwand verbunden sein kann.
 
 Ein wiederverwendbares Vergleichsframework soll die Datenaufbereitung, Ausfallszenarien, Modellausführung und Auswertung verbinden. Die Cloud ist dafür eine Ausführungsumgebung, in der Versuchsaufträge unter dokumentierten Ressourcen ausgeführt und ihre Ergebnisse gemeinsam gespeichert werden können. Sie ist keine Voraussetzung für die \ac{RUL}-Prognose, weshalb die Komponenten auch einen lokalen oder On-Premises-Betrieb ermöglichen sollen. Ein eigener Leistungsvergleich zwischen Cloud und On-Premises ist nicht vorgesehen.
 
 \section{Ziel der Arbeit}
 
-Die geplante Arbeit vergleicht deshalb MOMENT-1-small mit einem \ac{LSTM} und einem \ac{TCN} unter kontrollierten Sensorausfällen. Bei MOMENT bleibt der vortrainierte Encoder unverändert, während ein zusätzlicher Regressionskopf darauf trainiert wird, aus seinen Merkmalen einen \ac{RUL}-Wert abzuleiten. Neben der Prognosegüte werden Latenz, Ressourcenbedarf und Kosten des Cloud-Betriebs untersucht. Der wissenschaftliche Beitrag liegt in diesem empirischen Vergleich, das Framework entsteht als technisches Nebenartefakt für die Wiederholung und Erweiterung der Versuche.
+Die geplante Arbeit vergleicht deshalb MOMENT-1-small mit einem \ac{LSTM}, einem \ac{TCN} und einem Mamba-basierten Modell unter kontrollierten Sensorausfällen. Bei MOMENT bleibt der vortrainierte Encoder unverändert, während ein zusätzlicher Regressionskopf darauf trainiert wird, aus seinen Merkmalen einen \ac{RUL}-Wert abzuleiten. Die Vergleichsmodelle werden für diese Aufgabe auf \ac{CMAPSS} trainiert. Neben der Prognosegüte werden Latenz, Ressourcenbedarf und Kosten des Cloud-Betriebs untersucht. Der wissenschaftliche Beitrag liegt in diesem empirischen Vergleich, das Framework entsteht als technisches Nebenartefakt für die Wiederholung und Erweiterung der Versuche.
 
 Eine interaktive Oberfläche soll die Ergebnisse anhand ausgewählter Ausfallszenarien und Anforderungen gegenüberstellen. Ein schematisches 3D-Triebwerk kann die Auswahl betroffener Sensorkanäle ergänzen, ist aber keine Voraussetzung für die Auswertung. Die Oberfläche soll zeigen, unter welchen untersuchten Bedingungen ein Modell noch geeignet erscheint, ohne aus fehlenden Messungen auf einen bestimmten Sensor- oder Triebwerksdefekt zu schließen.

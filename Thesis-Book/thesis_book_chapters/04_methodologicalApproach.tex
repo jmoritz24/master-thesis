@@ -1,111 +1,198 @@
 \chapter{Forschungsmethodik}\label{cha:methodologicalApproach}
 
-Die Arbeit verbindet einen experimentellen Modellvergleich mit der Entwicklung eines wiederverwendbaren Vergleichsframeworks. Der wissenschaftliche Schwerpunkt liegt auf der Frage, wie sich die \ac{RUL}-Prognosen von MOMENT-1-small, \ac{LSTM} und \ac{TCN} bei ausbleibenden Sensormessungen verändern und welcher Betriebsaufwand entsteht. Das Framework übernimmt die gemeinsamen Arbeitsschritte, damit alle Modelle mit denselben Daten und Ausfallszenarien bewertet werden. Abb.~\ref{fig:versuchsablauf} zeigt den geplanten Ablauf.
-
-Zunächst werden die Modelle trainiert und mit vollständigen sowie gezielt unvollständigen Testdaten ausgewertet. Dabei wird untersucht, wie stark die Prognosefehler ansteigen und unter welchen Ausfallbedingungen zuvor festgelegte Qualitätsanforderungen noch erfüllt werden. Ergänzende Messungen in der Cloud erfassen Latenz, Durchsatz, Ressourcenbedarf und Betriebskosten. Eine interaktive Oberfläche führt diese Ergebnisse für die Modellwahl zusammen, während die wissenschaftliche Auswertung die einzelnen Messgrößen getrennt beurteilt.
+Die Methodik verbindet die Entwicklung eines cloudbasierten Vergleichsframeworks mit einem experimentellen Vergleich von MOMENT-1-small, \ac{LSTM}, \ac{TCN} und Mamba. Zunächst werden die Daten aufbereitet, die Modelle auf den Trainingsdaten trainiert und ihre Einstellungen anhand der Validierungsdaten ausgewählt. Danach werden die Cloud-Pipeline und ihre Ressourcen bereitgestellt, bevor Datenlücken und Anforderungen an die Prognosequalität festgelegt werden. Anschließend werden die Modelle in das Framework eingebunden und erzeugen darin \ac{RUL}-Prognosen auf vollständigen und gezielt lückenhaften Testdaten. Aus den Prognosen und Betriebsmessungen werden Kennwerte ermittelt, die anschließend gegenübergestellt und zur Beantwortung der Forschungsfrage herangezogen werden. Abb.~\ref{fig:versuchsablauf} zeigt diese acht Schritte, an denen sich die folgenden Unterkapitel orientieren.
 
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[
-        node distance=0.42cm,
+        node distance=0.30cm,
         schritt/.style={draw, rectangle, align=center, text width=13.1cm,
             minimum height=1.02cm, inner sep=5pt, font=\small\normalfont},
         verbindung/.style={-{Stealth[length=2mm]}, line width=1pt}
     ]
-        \node[schritt] (daten) {1. Daten aufteilen und aufbereiten\\
-            Triebwerke in Training, Validierung und Test trennen und gemeinsame Eingaben festlegen};
-        \node[schritt, below=of daten] (training) {2. Modelle trainieren und auswählen\\
-            Ohne zusätzliche Fehler trainieren und Einstellungen anhand der Validierung festlegen};
-        \node[schritt, below=of training] (fehler) {3. Ausfallszenarien erzeugen\\
-            Messwerte als fehlend markieren, einheitlich ergänzen und Eingabefenster bilden};
-        \node[schritt, below=of fehler] (prognosen) {4. Prognosen und Qualitätsgrenzen vergleichen -- Teilfragen 1 und 2\\
-            Fehlermaße, Verschlechterung und Erfüllung festgelegter Anforderungen auswerten};
-        \node[schritt, below=of prognosen] (cloud) {5. Modelle in der Cloud vermessen -- Teilfrage 3\\
-            Latenz, Durchsatz, Ressourcen und Kosten unter gemeinsamen Bedingungen erfassen};
-        \node[schritt, below=of cloud] (bewertung) {6. Ergebnisse speichern und gegenüberstellen\\
-            Wissenschaftliche Auswertung und interaktiven Modellvergleich bereitstellen};
+        \node[schritt] (daten) {1. Datengrundlage und Aufbereitung\\
+            Triebwerke in Training, Validierung und Test aufteilen und Fensterlänge festlegen};
+        \node[schritt, below=of daten] (training) {2. Training und Auswahl der Modelle\\
+            Modelle trainieren und Einstellungen anhand der Validierungsdaten auswählen};
+        \node[schritt, below=of training] (framework) {3. Aufbau der Cloud-Pipeline\\
+            Rechenressourcen, Speicher, Netzwerk und Monitoring bereitstellen};
+        \node[schritt, below=of framework] (fehler) {4. Datenlücken und Qualitätsanforderungen\\
+            Datenlücken erzeugen, Testfenster bilden und Qualitätsanforderungen festlegen};
+        \node[schritt, below=of fehler] (prognosen) {5. Modellintegration und Durchführung der RUL-Prognosen\\
+            Modelle einbinden und auf vollständigen und lückenhaften Testdaten ausführen};
+        \node[schritt, below=of prognosen] (messung) {6. Ermittlung der Prognosegüte und des Cloud-Betriebsaufwands\\
+            MAE, RMSE, NASA-Score sowie Latenz, Ressourcenbedarf und Kosten ermitteln};
+        \node[schritt, below=of messung] (vergleich) {7. Gegenüberstellung und Vergleich der Ergebnisse\\
+            Prognosefehler, Robustheit, Qualitätsgrenzen und Betriebsaufwand vergleichen};
+        \node[schritt, below=of vergleich] (fazit) {8. Fazit und Beantwortung der Forschungsfrage\\
+            Ergebnisse einordnen, Grenzen benennen und Schlussfolgerungen für die Modellwahl ziehen};
         \draw[verbindung] (daten) -- (training);
-        \draw[verbindung] (training) -- (fehler);
+        \draw[verbindung] (training) -- (framework);
+        \draw[verbindung] (framework) -- (fehler);
         \draw[verbindung] (fehler) -- (prognosen);
-        \draw[verbindung] (prognosen) -- (cloud);
-        \draw[verbindung] (cloud) -- (bewertung);
+        \draw[verbindung] (prognosen) -- (messung);
+        \draw[verbindung] (messung) -- (vergleich);
+        \draw[verbindung] (vergleich) -- (fazit);
     \end{tikzpicture}
-    \caption{Geplanter Versuchsablauf innerhalb des Vergleichsframeworks (eigene Darstellung).}
+    \caption{Geplanter Ablauf der Untersuchung in acht Schritten (eigene Darstellung).}
     \label{fig:versuchsablauf}
 \end{figure}
 
-\section{Aufbau des Vergleichsframeworks}
+\newpage
+\section{Datengrundlage und Aufbereitung}
 
-Das Framework soll die Datenbereitstellung, Aufbereitung, Erzeugung der Ausfallszenarien, Modellausführung und Auswertung als getrennte Komponenten verbinden. Eine Versuchskonfiguration legt fest, welcher Datensatz, welche Modelle und welche Ausfälle untersucht werden. Die Versuchsausführung verarbeitet diese Konfiguration und speichert Prognosen, Kennwerte und Betriebsdaten gemeinsam mit den verwendeten Daten-, Modell- und Softwareversionen. Vorhandene Komponenten der bisherigen Cloud-Pipeline und geeignete Bibliotheken sollen dabei weiterverwendet werden.
+Als Datengrundlage dient der von der \ac{NASA} veröffentlichte \ac{CMAPSS}-Datensatz mit simulierten Betriebsverläufen von Turbofan-Triebwerken. Jeder Verlauf gehört zu einem Triebwerk und enthält pro Betriebszyklus eine Momentaufnahme mehrerer Messgrößen. Die Triebwerke starten mit unterschiedlichem Abnutzungsgrad und entwickeln im Laufe des Betriebs eine fortschreitende Schädigung, die sich unter anderem durch Veränderungen des Wirkungsgrads und des Durchflusses in den Triebwerkskomponenten zeigt. Die Sensordaten enthalten simuliertes Messrauschen \parencites[5--6]{saxenaDamagePropagationModeling}{nasaCmapssJetEngineData2022}.
 
-Die Einbindung der Modelle erfolgt über dokumentierte Modelladapter. Jeder Adapter lädt ein trainiertes Modell, bringt ein gemeinsames Sensorfenster in die benötigte Eingabeform und gibt einen \ac{RUL}-Wert zurück. Modellspezifische Umformungen bleiben zulässig, dürfen aber keine zusätzlichen Messwerte einbeziehen. Ein weiteres Modell kann später über einen entsprechenden Adapter ergänzt werden, sofern es dieselbe Aufgabe der \ac{RUL}-Regression aus Sensorfenstern unterstützt. Eine universelle Unterstützung beliebiger ML-Aufgaben ist nicht vorgesehen.
+\subsection{Aufbau des Datensatzes und Sensorkanäle}
 
-Die Komponenten werden möglichst unabhängig vom Bereitstellungsort aufgebaut und können beispielsweise in Containern ausgeführt werden. Die Cloud dient als Umgebung für dokumentierte Versuchsaufträge und Betriebsmessungen, die grundlegenden Daten- und Modellkomponenten sollen aber auch lokal oder On-Premises ausführbar bleiben. Das aufgabenspezifische Training darf ebenfalls in der Cloud stattfinden und wird getrennt vom späteren Inferenzbetrieb erfasst. Ein Leistungsvergleich zwischen den Bereitstellungsorten ist nicht Teil der Forschungsfrage.
+Der Datensatz umfasst die vier Teildatensätze FD001 bis FD004, die sich in der Anzahl der Betriebsbedingungen und den simulierten Schadensarten unterscheiden. Für die Hauptuntersuchung wird FD001 verwendet, das eine Betriebsbedingung und eine Degradation des Hochdruckverdichters abbildet. FD003 besitzt ebenfalls eine Betriebsbedingung und ergänzt die Degradation des Lüfters als zweite Schadensart. Beide Datensätze enthalten jeweils 100 Trainings- und 100 Testtriebwerke. FD002 und FD004 umfassen jeweils sechs Betriebsbedingungen \parencite{nasaCmapssJetEngineData2022}.
 
-Abb.~\ref{fig:framework-architektur} zeigt die geplante Architektur und die Datenflüsse zwischen den Komponenten. Der Trainingspfad stellt die ausgewählten Modelle bereit, während im Testpfad Sensorausfälle erzeugt und die Prognosen unter gemeinsamen Bedingungen bewertet werden. Versuchssteuerung und Ergebnisspeicher verbinden diese Abläufe mit dem interaktiven Vergleich.
+Jede Zeile der Trainings- und Testdateien besteht aus 26 Spalten. Die ersten beiden geben die Triebwerksnummer und den Betriebszyklus an, darauf folgen drei Betriebseinstellungen und die 21 Sensorkanäle. Die Betriebseinstellungen beschreiben Flughöhe, Machzahl und Drosselhebelstellung. Die Sensorkanäle enthalten neben Temperaturen, Drücken und Drehzahlen auch abgeleitete Größen und Sollwerte. Tab.~\ref{tab:cmapss-sensorkanaele} führt die Kanäle in der Reihenfolge der Datenspalten auf \parencites[S.~3, Tab.~2 und S.~6--7]{saxenaDamagePropagationModeling}{nasaCmapssJetEngineData2022}.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{@{}r l >{\raggedright\arraybackslash}X l@{}}
+        \toprule
+        Nr. & Kürzel & Mess- oder Ausgabegröße & Einheit \\
+        \midrule
+        1 & T2 & Gesamttemperatur am Eintritt des Fans & $^\circ$R \\
+        2 & T24 & Gesamttemperatur am Austritt des Niederdruckverdichters & $^\circ$R \\
+        3 & T30 & Gesamttemperatur am Austritt des Hochdruckverdichters & $^\circ$R \\
+        4 & T50 & Gesamttemperatur am Austritt der Niederdruckturbine & $^\circ$R \\
+        5 & P2 & Druck am Eintritt des Fans & psia \\
+        6 & P15 & Gesamtdruck im Nebenstromkanal & psia \\
+        7 & P30 & Gesamtdruck am Austritt des Hochdruckverdichters & psia \\
+        8 & Nf & Fandrehzahl & rpm \\
+        9 & Nc & Drehzahl der Kernwelle & rpm \\
+        10 & epr & Triebwerksdruckverhältnis $P50/P2$ & -- \\
+        11 & Ps30 & Statischer Druck am Austritt des Hochdruckverdichters & psia \\
+        12 & phi & Verhältnis von Kraftstoffmassenstrom zu statischem Druck Ps30 & pps/psi \\
+        13 & NRf & Korrigierte Fandrehzahl & rpm \\
+        14 & NRc & Korrigierte Drehzahl der Kernwelle & rpm \\
+        15 & BPR & Nebenstromverhältnis & -- \\
+        16 & farB & Kraftstoff-Luft-Verhältnis in der Brennkammer & -- \\
+        17 & htBleed & Enthalpie der Zapfluft & -- \\
+        18 & Nf\_dmd & Sollwert der Fandrehzahl & rpm \\
+        19 & PCNfR\_dmd & Sollwert der korrigierten Fandrehzahl & rpm \\
+        20 & W31 & Zapfluftmassenstrom zur Kühlung der Hochdruckturbine & lbm/s \\
+        21 & W32 & Zapfluftmassenstrom zur Kühlung der Niederdruckturbine & lbm/s \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Die 21 Sensorkanäle von C-MAPSS nach \textcite[S.~3, Tab.~2]{saxenaDamagePropagationModeling}. Die Einheiten entsprechen der Quelltabelle, in der ein Strich für eine fehlende Einheitenangabe steht.}
+    \label{tab:cmapss-sensorkanaele}
+\end{table}
+
+\subsection{Simulierter Ausfall und RUL-Referenzwerte}
+
+Die Simulation bestimmt das Ende eines Triebwerksverlaufs anhand eines Health Index. Dazu werden die Reserven zu mehreren betrieblichen Grenzwerten betrachtet. Aus der Temperatur am Austritt der Hochdruckturbine, T48 beziehungsweise EGT, wird die Reserve zur Temperaturgrenze bestimmt. Die Größen SmFan, SmLPC und SmHPC beschreiben die Reserven des Lüfters sowie des Nieder- und Hochdruckverdichters zu ihren jeweiligen Strömungsabrissgrenzen. Die Simulation normiert diese Reserven und verwendet ihren kleinsten Wert als Health Index. Sobald eine der normierten Reserven null erreicht, ist das simulierte Ausfallkriterium erfüllt \parencite[3, 6--7]{saxenaDamagePropagationModeling}.
+
+Die \ac{RUL} entspricht der Anzahl der noch verbleibenden Betriebszyklen bis zu diesem Ausfall. Bei den Trainingsverläufen ist der Ausfallzyklus der letzte Zyklus der Zeitreihe. Der Referenzwert für einen Zyklus $t$ ergibt sich daher aus der Differenz $t_{\mathrm{Ausfall}}-t$. Die veröffentlichten Testverläufe enden vor dem Ausfall. Für jedes Testtriebwerk enthält die zugehörige Datei \texttt{RUL\_FD00x.txt} den Referenzwert am letzten beobachteten Zyklus \parencites[7]{saxenaDamagePropagationModeling}{nasaCmapssJetEngineData2022}. Für frühere Zyklen wird die Zahl der Zyklen bis zum Ende der Beobachtung zu diesem Referenzwert addiert. Die vier Größen zur Berechnung des Health Index dienen der Simulation. Die Modelle erhalten die veröffentlichten Sensorkanäle als Eingaben. Der \ac{RUL}-Referenzwert dient als Zielwert für das Training und als Vergleichswert bei der Auswertung.
+
+\subsection{Datenaufteilung und Rolling Window}
+
+Die im C-MAPSS-Datensatz vorgegebene Aufteilung in Trainings- und Testtriebwerke bleibt erhalten, wobei ein Teil der Trainingstriebwerke für die Validierung verwendet wird. Erst nach dieser Aufteilung werden aus den Sensorverläufen die Eingabefenster gebildet. Dadurch bleiben auch überlappende Fenster desselben Triebwerks im selben Teildatensatz und dieselben Messungen können nicht sowohl im Training als auch in der Validierung vorkommen \parencite[4--5]{kapoorLeakageReproducibilityCrisis2023}.
+
+Die Sensorwerte werden skaliert, um die unterschiedlichen Größenordnungen der Messwerte bei der Verarbeitung zu berücksichtigen. Die Auswahl der verwendeten Sensorkanäle und die Bestimmung der Skalierungsparameter erfolgen anhand der Trainingsdaten. Anschließend werden dieselben Regeln auf Validierungs- und Testdaten angewendet. Modellinterne Schritte wie eine zusätzliche Normalisierung oder das Auffüllen auf die benötigte Eingabelänge werden dokumentiert und auf dieselbe verfügbare Messhistorie begrenzt.
+
+Die Modelle erhalten für jede Prognose die Messwerte der ausgewählten Sensoren aus einer festgelegten Zahl aufeinanderfolgender Betriebszyklen. Dieser Ausschnitt wird als Rolling Window bezeichnet. Wird das Fenster um einen Zyklus verschoben, fällt der älteste Zyklus aus dem Fenster und der nächste kommt hinzu. Der Zielwert ist die \ac{RUL} am letzten Zyklus des Fensters.
+
+Abb.~\ref{fig:rolling-window} zeigt einen beispielhaften Testverlauf, dessen Beobachtung bei Zyklus~100 endet. Die RUL-Datei weist für diesen Zyklus eine RUL von 45 Zyklen aus, sodass der simulierte Ausfall bei Zyklus~145 liegt. Bei einer Fensterlänge von drei Zyklen umfasst das letzte Fenster die Zyklen~98 bis~100 und hat den Zielwert~45. Das vorherige Fenster endet bei Zyklus~99 und hat den Zielwert~46, weil von dort bis zum simulierten Ausfall noch ein Zyklus mehr verbleibt.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[x=1.16cm,y=0.78cm,font=\small\normalfont]
+        \node at (0.60,0) {Fenster};
+        \node at (4.45,0) {Beobachtete Betriebszyklen};
+        \node at (8.65,0) {RUL am Fensterende};
+        \foreach \i/\zyklus in {0/96,1/97,2/98,3/99,4/100} {
+            \node at ({2.45+\i},-0.64) {\zyklus};
+        }
+        \foreach \i in {0,...,5} {
+            \draw[black!16] ({1.95+\i},-0.95) -- ({1.95+\i},-3.85);
+        }
+        \foreach \reihe/\anfang/\rul in {1/0/47,2/1/46,3/2/45} {
+            \pgfmathsetmacro{\hoehe}{-0.65-0.92*\reihe}
+            \node at (0.60,\hoehe) {\reihe};
+            \fill[blue!16] ({1.95+\anfang},{\hoehe-0.28})
+                rectangle ({4.95+\anfang},{\hoehe+0.28});
+            \fill[blue!55!black] ({3.95+\anfang},{\hoehe-0.28})
+                rectangle ({4.95+\anfang},{\hoehe+0.28});
+            \node at (8.65,\hoehe) {\rul~Zyklen};
+        }
+        \fill[blue!55!black] (1.95,-4.55) rectangle (2.19,-4.31);
+        \node[anchor=west] at (2.30,-4.43) {Letzter Zyklus des Fensters};
+    \end{tikzpicture}
+    \caption{Rolling Window mit drei Eingabefenstern und ihren RUL-Zielwerten (eigene Darstellung).}
+    \label{fig:rolling-window}
+\end{figure}
+
+\begin{samepage}
+Für das Training und die Validierung werden die Fenster aus den jeweiligen aufbereiteten Verläufen gebildet. Bei den lückenhaften Testdaten werden zunächst die Datenlücken in die zusammenhängenden Verläufe eingebracht und die fehlenden Werte ergänzt. Danach werden die Testfenster nach derselben Regel wie bei vollständigen Daten gebildet. Die Modelle verwenden dieselben Sensorkanäle, dieselbe vor dem Training festgelegte Fensterlänge und dieselbe Zieldefinition. Dazu gehört auch eine gegebenenfalls festgelegte Obergrenze für hohe \ac{RUL}-Werte. FD001 und FD003 werden getrennt aufbereitet und zum Training eigener Modellvarianten verwendet.
+\par
+\end{samepage}
+
+\section{Training und Auswahl der Modelle}
+
+Für die \ac{RUL}-Prognose werden vier Modelle verglichen. MOMENT-1-small wird als vortrainiertes \ac{TSFM} eingesetzt. Als Vergleich dienen ein \ac{LSTM}, ein \ac{TCN} und ein Mamba-basiertes Modell, die vollständig auf den C-MAPSS-Trainingsdaten trainiert werden.
+
+Bei MOMENT-1-small erzeugt der vortrainierte Encoder aus dem Verlauf jedes Sensors einen Merkmalsvektor. Die Vektoren werden zusammengeführt und dienen als Eingabe für einen Regressionskopf, der die \ac{RUL} schätzt. Für diese Aufgabe wird nur der Regressionskopf trainiert, während die Parameter des Encoders unverändert bleiben. Ein vergleichbarer Ansatz wurde bereits für die \ac{RUL}-Prognose untersucht \parencite[246]{dintenUsingTimeSeries2025}. Das Vortraining von MOMENT umfasste unter anderem die Rekonstruktion maskierter Zeitreihen \parencite[3--4]{goswamiMOMENTFamilyOpen2024}.
+
+Das \ac{LSTM} verarbeitet die Messwerte eines Sensorfensters Zyklus für Zyklus und gibt Informationen aus früheren Zyklen über einen internen Zustand weiter \parencite[5]{zhangLSTMBasedMultiTaskMethod2023}. Für die \ac{RUL}-Schätzung wird der Zustand am Fensterende verwendet. Das \ac{TCN} verwendet zeitliche Faltungen, um Muster in aufeinanderfolgenden Sensormessungen zu erkennen \parencite[3--4]{wangRemainingUsefulLife2020}. Aus den so ermittelten Merkmalen des Sensorfensters wird ein \ac{RUL}-Wert abgeleitet.
+
+Das Mamba-basierte Modell verwendet ein selektives \ac{SSM}, das Informationen aus den bisherigen Zyklen in einem internen Zustand zusammenfasst und diesen abhängig von der aktuellen Eingabe aktualisiert \parencite[Abschn.~3]{guMambaLinearTimeSequence2024}. Der Zustand wird für jedes Fenster neu initialisiert, sodass die Prognose auf derselben Messhistorie wie bei den anderen Modellen beruht.
+
+Für das Training zur \ac{RUL}-Prognose werden vollständige Sensorfenster verwendet. Die Hyperparameter, etwa die Lernrate, werden mit Random Search und einem vergleichbaren Suchbudget je Modell ermittelt \parencite[281--283]{bergstraRandomSearchHyperParameter}. Die Auswahl der Modelleinstellungen richtet sich nach dem \ac{RMSE} auf den Validierungsdaten.
+
+Die Trainingsläufe werden mit unterschiedlichen Zufallsstartwerten wiederholt, um Schwankungen durch die Initialisierung zu erfassen \parencite{bouthillierAccountingVarianceMachine}. Die Anzahl der Wiederholungen wird vorab für alle Modelle einheitlich festgelegt. Die ausgewählten Einstellungen bleiben während der Tests mit vollständigen und lückenhaften Sensordaten unverändert.
+
+\section{Aufbau der Cloud-Pipeline}
+
+Die Cloud-Pipeline wird in Amazon Web Services (AWS) aufgebaut und knüpft an die in der Semesterarbeit entwickelte Infrastruktur an \parencite[4--5]{moritzNaehrerCloudPredictiveMaintenance2026}. Die vorhandene Terraform-Konfiguration dient als Grundlage für die Bereitstellung von AWS IoT Core, einer Amazon-EC2-Instanz und einem Amazon-S3-Bucket. Jedes simulierte Triebwerk läuft in einem Docker-Container, der einen C-MAPSS-Verlauf wiedergibt und in regelmäßigen Abständen die Sensordaten eines Betriebszyklus über MQTT mit TLS-Verschlüsselung an AWS IoT Core sendet.
+
+Die EC2-Instanz stellt die gemeinsame Rechenumgebung für den Empfang der Telemetrie, den Prognosedienst und die Auswertung bereit. Sie empfängt die Sensordaten über ein direktes MQTT-Abonnement bei AWS IoT Core. Optional kann eine IoT-Regel dieselben Nachrichten zusätzlich an Amazon Data Firehose weiterleiten, das sie gebündelt als Rohtelemetrie in S3 archiviert. Die Archivierung ist damit vom Prognosedienst getrennt.
+
+Im S3-Bucket werden der unveränderte Datensatz, die trainierten Modellstände und die Versuchsdaten in getrennten Bereichen abgelegt. Für jeden Versuch speichert das Framework die Konfiguration, die Eingabedaten vor der Imputation sowie die erzeugten Prognosen und Messgrößen. Gespeicherte Versuchseingaben und Modellstände können für weitere Vergleichsläufe auf die EC2-Instanz geladen werden. Die RUL-Referenzwerte werden erst bei der Auswertung mit den Prognosen verknüpft.
+
+Beim Aufbau werden die Netzwerkverbindungen und Zugriffsrechte eingerichtet. Für die späteren Betriebsmessungen wird das Monitoring der \ac{CPU}-Auslastung und des \ac{RAM}-Bedarfs vorbereitet. Bei Verwendung einer \ac{GPU} wird auch deren Auslastung erfasst. Die AWS-Region, die Hardwarekonfiguration und die verwendeten Softwareversionen werden dokumentiert. Datenaufbereitung und Modelladapter sollen auch lokal ausführbar bleiben. Das Training kann lokal oder auf einer separaten Cloud-Ressource erfolgen. Abb.~\ref{fig:framework-architektur} zeigt die AWS-Ressourcen und die vorgesehenen Verbindungen für den Empfang, die Auswertung und die Speicherung der Daten.
 
 \begin{sidewaysfigure}[p]
     \centering
-    \includegraphics[width=\textheight]{02_figures/architektur_rul_vergleichsframework.png}
-    \caption{Geplante Architektur des \ac{RUL}-Vergleichsframeworks in einer Cloud-Referenzumgebung (eigene Darstellung, erstellt mit Eraser.io).}
+    \includegraphics[width=\textheight]{02_figures/architektur_rul_vergleichsframework_aws.pdf}
+    \caption{AWS-Architektur des RUL-Vergleichsframeworks mit direktem MQTT-Empfang und optionaler Archivierung (eigene Darstellung).}
     \label{fig:framework-architektur}
 \end{sidewaysfigure}
 
-\section{Datengrundlage und Aufbereitung}
+\section{Datenlücken und Qualitätsanforderungen}
 
-Als Datengrundlage dient \ac{CMAPSS}, das simulierte Sensorverläufe von Turbofan-Triebwerken enthält, deren Schädigung bis zu einer festgelegten Ausfallgrenze fortschreitet \parencite[1--2, 7]{saxenaDamagePropagationModeling}. Für die Hauptuntersuchung ist FD001 vorgesehen, während FD003 den Vergleich auf einen weiteren Teildatensatz ausdehnen soll. Eine Untersuchung aller Betriebsbedingungen von \ac{CMAPSS} ist nicht geplant.
+Aus den vollständigen Testverläufen werden Varianten mit fehlenden Einzelmessungen, zusammenhängenden Lücken und dem Ausfall einzelner oder mehrerer Sensorkanäle erzeugt. Vor der Auswertung werden die betroffenen Kanäle, die Dauer und die Stärke der Ausfälle festgelegt. Lücken können an verschiedenen Stellen des Testverlaufs beginnen. Die Dauer einer zusammenhängenden Lücke wird in aufeinanderfolgenden Zyklen ohne Messwerte des betroffenen Sensors angegeben. Für den Vergleich verschiedener Lückendauern werden je Triebwerk derselbe Startzyklus und dieselben Sensorkanäle gewählt. Eine Maske kennzeichnet die fehlenden Werte. Bei zufälligen Lücken werden mehrere Muster erzeugt und die verwendeten Zufallsstartwerte gespeichert.
 
-Die vorgegebene Aufteilung in Trainings- und Testtriebwerke bleibt erhalten, wobei ein Teil der Trainingstriebwerke für die Validierung zurückgehalten wird. An den Trainingsdaten lernen die Modelle den Zusammenhang zwischen den Sensormessungen und der \ac{RUL}. Die Validierungsdaten dienen zur Auswahl der Modelleinstellungen, während die Testdaten erst für die abschließende Bewertung der ausgewählten Modelle verwendet werden. Die Trennung erfolgt nach Triebwerken, damit ähnliche Ausschnitte derselben Maschine nicht zugleich beim Lernen und bei der Bewertung vorkommen. Dadurch soll Data Leakage vermieden werden, das die gemessene Modellleistung durch Informationen aus den späteren Auswertungsdaten überschätzen kann \parencite[4--5]{kapoorLeakageReproducibilityCrisis2023}.
+Die Lücken werden vor der Fensterbildung erzeugt. Für alle Varianten gelten dieselben \ac{RUL}-Referenzwerte. Bei fehlenden Werten wird der letzte bis dahin verfügbare Messwert desselben Sensors übernommen. Fehlt ein solcher Wert, greift eine Ersatzregel aus den Trainingsdaten. Nach Imputation und Skalierung werden die Testfenster gebildet.
 
-Nach dieser Aufteilung werden aus den aufbereiteten Zeitreihen Eingabefenster gebildet, die jeweils die Sensormessungen aus einer festgelegten Zahl aufeinanderfolgender Betriebszyklen enthalten. Im späteren Ausfallversuch werden die Messwerte vor der Aufbereitung und Fensterbildung als fehlend markiert. Für das Ende jedes Fensters wird aus dem Datensatz ein \ac{RUL}-Zielwert bestimmt, mit dem die Prognose beim Training und bei der Auswertung verglichen wird. Als Eingabe erhält das Modell nur die Sensormessungen und nicht den zugehörigen Zielwert. Alle Modelle verwenden dieselben Sensoren, dieselbe Fensterlänge und dieselbe Zieldefinition einschließlich einer möglichen Obergrenze für hohe \ac{RUL}-Werte. Diese Festlegungen werden vor dem Training getroffen und für die Auswertung beibehalten. FD001 und FD003 werden dabei jeweils getrennt aufbereitet und zum Training eigener Modellvarianten verwendet.
+Vor der Testauswertung werden anhand des Anwendungsszenarios und der Validierungsdaten Anforderungen an die Prognosegüte festgelegt. Dafür kommen eine Obergrenze für den \ac{RMSE} und eine maximal tolerierte Verschlechterung gegenüber vollständigen Daten infrage. Die Fehlermaße werden in Abschnitt~\ref{sec:messgroessen} erläutert. Werden die Anforderungen in einem Ausfallszenario verfehlt, kennzeichnet das Framework die Prognosen als eingeschränkt verwertbar. Die Kennzeichnung stützt sich auf die im Test bekannten Referenzwerte und weist auf Prüfbedarf hin. Ob die Ursache bei der Sensorik, der Übertragung oder dem Triebwerk liegt, muss separat untersucht werden.
 
-Die Sensorwerte werden skaliert, um unterschiedliche Größenordnungen der Messwerte bei der Verarbeitung zu berücksichtigen. Die Auswahl der Sensoren und die Bestimmung der Skalierungsparameter erfolgen ausschließlich anhand der Trainingsdaten, anschließend werden dieselben Regeln auf Validierungs- und Testdaten angewendet. Modellinterne Schritte wie eine zusätzliche Normalisierung oder das Auffüllen auf die benötigte Eingabelänge werden getrennt dokumentiert, ohne zusätzliche vergangene oder zukünftige Messwerte einzubeziehen.
+\section{Modellintegration und Durchführung der RUL-Prognosen}
 
-\section{Modelle und Training}
+Eine Versuchskonfiguration legt den Teildatensatz, die Modelle und das Ausfallszenario fest. Die Modelle werden über Adapter eingebunden. Jeder Adapter lädt einen trainierten Modellstand, bringt das gemeinsame Sensorfenster in die passende Eingabeform und gibt einen \ac{RUL}-Wert zurück. Weitere Modelle können über dieselbe Schnittstelle ergänzt werden, sofern sie aus einem Sensorfenster einen \ac{RUL}-Wert schätzen.
 
-MOMENT-1-small wird als vortrainierter Merkmalsextraktor eingesetzt, dessen Encoder die Sensorverläufe in Merkmalsvektoren umwandelt. Ein solcher Vektor enthält Zahlen, die gelernte Eigenschaften des jeweiligen Verlaufs beschreiben und als Eingabe für die weitere Prognose dienen. Für jeden Sensorkanal wird ein Vektor erzeugt, anschließend werden die Vektoren in einer festen Sensorreihenfolge zu einem gemeinsamen Vektor verkettet. Der Regressionskopf lernt anhand dieses Vektors und der bekannten Zielwerte, eine \ac{RUL}-Schätzung auszugeben, während die bereits gelernten Parameter des Encoders unverändert bleiben. Die Verwendung von MOMENT-Merkmalen für eine nachgeschaltete \ac{RUL}-Schätzung wurde bereits untersucht \parencite[246]{dintenUsingTimeSeries2025}.
+Die Modelle werden zuerst auf den vollständigen und danach auf den lückenhaften Testdaten ausgeführt. Für den Offline-Vergleich und den Cloud-Dienst gilt dieselbe Aufbereitung. Sobald ein Sensorfenster gebildet werden kann, liefert das Modell pro Betriebszyklus eine \ac{RUL}-Prognose. In die Auswertung gehen alle Prognosen des Testverlaufs ein. Für FD001 und FD003 werden die jeweils zugehörigen trainierten Modellstände verwendet. Für jedes Fehlermuster werden die gespeicherten Eingaben bei allen Modellen und Trainingswiederholungen verwendet. Jede Prognose wird dem Testtriebwerk, dem Zyklus und dem Modellstand zugeordnet. Die Konfiguration, die verwendeten Software- und Datenversionen und die Betriebsmessungen werden je Versuchslauf gespeichert.
 
-Als Vergleich dienen ein \ac{LSTM} und ein \ac{TCN}, die ihre Modellparameter anhand der \ac{CMAPSS}-Trainingsdaten für die \ac{RUL}-Prognose lernen. Sie erhalten die aufbereiteten Sensorfenster direkt, statt sie zunächst durch den MOMENT-Encoder in Merkmalsvektoren umzuwandeln. Bei MOMENT wird somit nur der Regressionskopf für diese Aufgabe trainiert, bei \ac{LSTM} und \ac{TCN} dagegen das gesamte Prognosemodell.
+\section{Ermittlung der Prognosegüte und des Cloud-Betriebsaufwands}\label{sec:messgroessen}
 
-Die Modelleinstellungen, sogenannte Hyperparameter, werden mit einer begrenzten Suche ausgewählt, für die bei allen Modellen ein vergleichbares Suchbudget vorgesehen ist. Dazu gehören beispielsweise die Lernrate oder die Größe der trainierbaren Schichten, die vor einem Trainingslauf festgelegt werden. Random Search wählt zufällig Kombinationen dieser Einstellungen aus und kann bei gleichem Suchaufwand Vorteile gegenüber einer vollständigen Rastersuche bieten \parencite[281--283]{bergstraRandomSearchHyperParameter}. Die Auswahl der Modellkonfiguration richtet sich nach dem \ac{RMSE} auf den Validierungsdaten, ohne dafür die Testdaten zu verwenden.
-
-Trainingsläufe werden mit unterschiedlichen Zufallsinitialisierungen, also unterschiedlichen zufälligen Startwerten der trainierbaren Parameter, wiederholt, damit das Ergebnis nicht nur von einem einzelnen Lauf abhängt. Bei MOMENT betrifft dies den Regressionskopf, bei \ac{LSTM} und \ac{TCN} das gesamte Modell, da nur diese Parameter jeweils neu trainiert werden. Die Wiederholungen sollen zeigen, wie stark die Prognosequalität bei gleichbleibender Modellkonfiguration durch zufällige Einflüsse des Trainings schwankt \parencite{bouthillierAccountingVarianceMachine}. Die Zahl der Wiederholungen wird unter Berücksichtigung des Rechenbudgets vor dem Training für alle Modelle einheitlich festgelegt und zusammen mit den ausgewählten Einstellungen dokumentiert.
-
-Für das Training zur \ac{RUL}-Prognose werden keine zusätzlichen Sensorfehler erzeugt. Davon zu unterscheiden ist das bereits abgeschlossene Vortraining von MOMENT, bei dem unter anderem maskierte Zeitreihen zur Rekonstruktion verwendet wurden \parencite[3--4]{goswamiMOMENTFamilyOpen2024}. Eine erneute Anpassung der Modelle an die später untersuchten Testfehler ist nicht vorgesehen.
-
-\section{Fehlerexperimente}
-
-Die Testdaten werden gezielt verändert, um ausbleibende Messungen nachzubilden. Dazu werden einzelne Werte, zusammenhängende Abschnitte oder ein beziehungsweise mehrere Sensorkanäle für eine festgelegte Dauer als fehlend markiert. Fehlende Werte werden durch eine Maske gekennzeichnet und nicht als reale Nullmessungen behandelt. Die Abfolge der Betriebszyklen und die zeitliche Zuordnung der Zielwerte bleiben erhalten. Sensordrift und künstlich verfälschte, aber vorhandene Messwerte werden nicht untersucht.
-
-Die Szenarien unterscheiden sich nach betroffenen Kanälen, Ausfalldauer und Anzahl gleichzeitig fehlender Sensoren. Eine begrenzte Auswahl einzelner Kanäle und Kanalkombinationen sowie mehrere Ausfallstufen werden vor der Testauswertung festgelegt, statt alle möglichen Kombinationen vollständig zu prüfen. Für den Hauptvergleich müssen die Ausfälle das jeweils ausgewertete letzte Sensorfenster betreffen. Ein als fehlend markierter Kanal bildet dabei eine eingeschränkte Datenverfügbarkeit ab, ohne eine bestimmte technische Ursache des Ausfalls festzulegen.
-
-Die unveränderten Testverläufe bilden die Referenz für den Vergleich und werden für die verschiedenen Fehlerbedingungen kopiert. Die Fehler werden vor der Bildung der Eingabefenster eingebracht, damit derselbe Messwert auch in überlappenden Fenstern auf dieselbe Weise verändert bleibt. Alle Modelle erhalten innerhalb eines Vergleichs genau dieselben fehlerhaften Daten, während die tatsächliche \ac{RUL} als Zielwert unverändert bleibt. Verändert wird damit die Beobachtung des Maschinenzustands und nicht der Zeitpunkt, zu dem das simulierte Triebwerk ausfällt. Bei zufälligen Fehlern werden mehrere Fehlerrealisierungen, also unterschiedliche Muster der betroffenen Messwerte, erzeugt und die verwendeten Zufallsstartwerte dokumentiert.
-
-Damit alle Modelle trotz fehlender Werte eine Prognose erzeugen können, werden diese durch eine gemeinsame einfache Imputation ergänzt. Dafür ist die Übernahme des zuletzt bekannten Werts desselben Sensors vorgesehen, der bis zur nächsten gültigen Messung weiterverwendet wird. Liegt zu Beginn noch kein gültiger Wert vor, wird eine zuvor aus den Trainingsdaten bestimmte Ersatzregel angewendet. Die Imputation darf ausschließlich bereits verfügbare Messungen verwenden und wird im Offline-Vergleich sowie im Cloud-Dienst mit derselben Messhistorie umgesetzt. Verglichen wird damit die Reaktion der Prognosemodelle nach einer gemeinsamen Fehlerbehandlung und nicht die Leistungsfähigkeit verschiedener Imputationsverfahren.
-
-\section{Auswertung der Prognosen}
-
-Zur Beantwortung der ersten Teilfrage erzeugen die ausgewählten Modelle zunächst Prognosen für die unveränderten und danach für die beschädigten Testdaten. Im Hauptvergleich wird für jedes Testtriebwerk das letzte verfügbare Eingabefenster verwendet und die geschätzte \ac{RUL} mit dem zugehörigen bekannten Zielwert verglichen. Die Prognosegüte wird mit drei Metriken bewertet:
+Jede \ac{RUL}-Schätzung wird mit dem Referenzwert am Ende ihres Sensorfensters verglichen. Die folgenden Fehlermaße werden für die vollständigen Daten und für jedes Ausfallszenario getrennt berechnet.
 
 \begin{itemize}
-    \item Der \ac{MAE} beschreibt die mittlere absolute Abweichung zwischen vorhergesagter und tatsächlicher \ac{RUL} in Betriebszyklen.
-    \item Der \ac{RMSE} wird ebenfalls in Betriebszyklen angegeben. Durch die Quadrierung der Fehler fallen große Abweichungen stärker ins Gewicht.
-    \item Der \ac{NASA}-Score ist ein asymmetrisches Fehlermaß. Er gewichtet eine Überschätzung der \ac{RUL} stärker als eine gleich große Unterschätzung, da eine zu hohe Prognose eine spätere Wartung nahelegen kann \parencite[7--8]{saxenaDamagePropagationModeling}.
+    \item Der \ac{MAE} gibt die durchschnittliche absolute Abweichung in Betriebszyklen an.
+    \item Der \ac{RMSE} wird ebenfalls in Betriebszyklen angegeben und gewichtet große Abweichungen stärker.
+    \item Der \ac{NASA}-Score bestraft eine Überschätzung der \ac{RUL} stärker als eine gleich große Unterschätzung \parencite[7--8]{saxenaDamagePropagationModeling}.
 \end{itemize}
 
-Die Robustheit wird daran beurteilt, wie stark die Prognosefehler gegenüber den unveränderten Testdaten zunehmen. Eine geringe Zunahme spricht für eine geringere Empfindlichkeit gegenüber dem jeweiligen Ausfall, muss aber gemeinsam mit dem absoluten Prognosefehler betrachtet werden. Ein bereits ungenaues Modell kann sich nur wenig verschlechtern und dennoch deutlich schlechtere Prognosen liefern als ein anderes Modell. Diagramme sollen deshalb sowohl die absoluten Fehler als auch ihre Zunahme in Abhängigkeit von Ausfalldauer und betroffenen Kanälen zeigen. Für jede Metrik wird außerdem geprüft, ob sich die Rangfolge der Modelle gegenüber vollständigen Daten verändert, wobei die Unsicherheit der Unterschiede berücksichtigt wird.
+Für die Messung des Prognosebetriebs werden die trainierten Modelle nacheinander auf derselben EC2-Instanz ausgeführt. Bei jeder Laststufe erhält der Prognosedienst für alle Modelle dieselben Eingaben und dieselbe Anzahl an Anfragen pro Zeiteinheit.
 
-Die wiederholten Trainings- und Fehlerexperimente zeigen, wie stark die Ergebnisse zwischen einzelnen Versuchsläufen schwanken. Ergänzende Konfidenzintervalle sollen die Unsicherheit der aus den untersuchten Daten geschätzten Kennwerte und Modellunterschiede verdeutlichen. Jeder Vergleich bezieht sich auf dieselben Testtriebwerke und Fehlerrealisierungen, damit Unterschiede nicht durch abweichende Eingaben entstehen. Mehrere Beobachtungen desselben Triebwerks werden statistisch nicht wie voneinander unabhängige Maschinen behandelt, da sie aus demselben Degradationsverlauf stammen. Die Ergebnisse für FD001 und FD003 werden getrennt ausgewiesen.
-
-Zur zweiten Teilfrage werden vor der abschließenden Testauswertung Anforderungen festgelegt, anhand derer die Modelle als noch geeignet eingeordnet werden. Dafür kommen eine begründete Obergrenze des \ac{RMSE} und eine maximal tolerierte Verschlechterung gegenüber vollständigen Daten infrage. Die Auswahl wird anhand des Anwendungsszenarios und der Validierungsdaten begründet, nicht nachträglich an die Testergebnisse angepasst. Für jede untersuchte Ausfallstufe wird ausgewiesen, ob ein Modell die Anforderungen erfüllt und wie unsicher diese Einordnung ist. Daraus ergibt sich eine empirische Grenze innerhalb der geprüften Szenarien, keine allgemeine Sicherheitsfreigabe für reale Triebwerke.
-
-Dass ein Modell weiterhin einen Zahlenwert ausgibt, reicht für diese Einordnung nicht aus. Umgekehrt beschreibt ein Fehlermaß über mehrere Triebwerke nicht die Sicherheit einer einzelnen Prognose. Da im realen Betrieb die tatsächliche \ac{RUL} nicht unmittelbar bekannt ist, kann dort auch kein aktueller \ac{RMSE} zur automatischen Überprüfung berechnet werden. Eine Warnung kann sich deshalb auf fehlende Daten und bereits ausgewertete Ausfallszenarien stützen, erlaubt aber keine sichere Unterscheidung zwischen einem Sensordefekt, einer Übertragungsstörung und einem Triebwerksschaden.
-
-\section{Messungen in der Cloud}
-
-Zur Beantwortung der dritten Teilfrage werden die Modelle nacheinander über ihre Adapter in einen gemeinsamen Prognosedienst eingebunden. Der Dienst erhält jeweils ein Sensorfenster mit den für die Aufbereitung erforderlichen Angaben und gibt eine \ac{RUL}-Schätzung zurück. Alle Modelle laufen auf derselben Cloud-Instanz, deren Hardwarekonfiguration einschließlich einer gegebenenfalls verwendeten \ac{GPU} für die Messreihen beibehalten und dokumentiert wird. Bei mehreren festgelegten Laststufen werden unterschiedlich viele Anfragen pro Zeiteinheit mit denselben Testeingaben an den Dienst gesendet. Vor Messbeginn werden die Modelle geladen und mit einigen Anfragen ausgeführt, damit der laufende Betrieb und nicht der Startvorgang gemessen wird. Die interaktive Oberfläche bleibt außerhalb dieser Messgrenzen.
-
-Die Messgrößen für den Cloud-Vergleich sind in Tab.~\ref{tab:cloud-metriken} definiert und umfassen neben Latenz und Durchsatz auch \ac{CPU}-Auslastung und \ac{RAM}-Bedarf. Bei einer \ac{GPU}-Instanz kommen deren Auslastung und belegter Speicher hinzu. Für die Latenz werden der Median und das 95. Perzentil angegeben. Letzteres bezeichnet die Zeit, die von 95\,\% der gemessenen Anfragen nicht überschritten wird. Mehrere Durchläufe sollen Schwankungen der Cloud-Umgebung berücksichtigen, die auch bei gleicher Instanzkonfiguration auftreten können \parencite{leitnerPatternsChaosStudy2016}.
+\begin{samepage}
+Vor Messbeginn werden die Modelle geladen und einige Testanfragen gestellt. Die Messungen werden wiederholt, um Schwankungen der Cloud-Umgebung zu berücksichtigen \parencite{leitnerPatternsChaosStudy2016}. Tab.~\ref{tab:cloud-metriken} zeigt die erfassten Größen. Für die Latenzen werden der Median und das 95. Perzentil angegeben.
+\par
+\end{samepage}
 
 \begin{table}[htbp]
     \centering
@@ -115,41 +202,33 @@ Die Messgrößen für den Cloud-Vergleich sind in Tab.~\ref{tab:cloud-metriken} 
         \toprule
         Metrik & Einheit & Messung \\
         \midrule
-        Modelllatenz & ms & Zeit für den vollständigen Modellaufruf mit aufbereiteten Eingaben, bei MOMENT einschließlich Encoder und Regressionskopf. \\
-        Dienstlatenz & ms & Zeit vom Eingang eines vollständigen Messfensters im Prognosedienst bis zur fertigen Antwort, einschließlich Aufbereitung und Modellaufruf. \\
-        Durchsatz & Prognosen/s & Zahl erfolgreich abgeschlossener Prognosen pro Sekunde bei der jeweiligen Anfragelast. \\
-        CPU-Auslastung & Prozent & Mittlere Auslastung des Prognosedienstes während der Messung, bezogen auf die zugewiesenen CPU-Kerne. \\
-        RAM-Bedarf & GiB & Mittlerer und maximaler belegter Arbeitsspeicher des Prognosedienstes während der Messung. \\
-        GPU-Auslastung & Prozent & Mittlere Auslastung der GPU während der Messung, falls eine GPU verwendet wird. \\
-        GPU-Speicher & GiB & Maximal belegter Gerätespeicher während der Messung, falls eine GPU verwendet wird. \\
-        Betriebskosten & Euro/1.000 Prognosen & Kosten der berücksichtigten Cloud-Komponenten je 1.000 abgeschlossenen Prognosen bei dokumentierter Last. \\
+        Modelllatenz & ms & Dauer des Modellaufrufs mit aufbereiteten Eingaben. Bei MOMENT umfasst sie Encoder und Regressionskopf. \\
+        Dienstlatenz & ms & Zeit vom Eingang des Sensorfensters im Prognosedienst bis zur Antwort, einschließlich Aufbereitung und Modellaufruf. \\
+        Durchsatz & Prognosen/s & Erfolgreich abgeschlossene Prognosen pro Sekunde. \\
+        CPU-Auslastung & Prozent & Mittlere Auslastung bezogen auf die zugewiesenen CPU-Kerne. \\
+        RAM-Bedarf & GiB & Mittlerer und maximaler belegter Arbeitsspeicher. \\
+        GPU-Auslastung & Prozent & Mittlere Auslastung bei Verwendung einer GPU. \\
+        GPU-Speicher & GiB & Maximal belegter Gerätespeicher bei Verwendung einer GPU. \\
+        Betriebskosten & Euro/1.000 Prognosen & Kosten je 1.000 abgeschlossenen Prognosen bei der jeweiligen Laststufe. \\
         \bottomrule
     \end{tabularx}
     \caption{Metriken für den Vergleich des Cloud-Betriebs.}
     \label{tab:cloud-metriken}
 \end{table}
 
-\begin{samepage}
-Die Modelllatenz misst die Zeit für die eigentliche Modellberechnung und umfasst bei MOMENT sowohl den Encoder als auch den Regressionskopf. Die Dienstlatenz erfasst zusätzlich die Aufbereitung und Verarbeitung innerhalb des Prognosedienstes, beginnt aber erst beim Eingang eines vollständigen Messfensters. Übertragungszeiten vom simulierten Triebwerk bis zu diesem Eingang sind deshalb nicht enthalten. Messpunkte und Lastprofile werden vor den Messreihen festgelegt und für alle Modelle gleich verwendet.
-\par
-\end{samepage}
+Die Cloud-Kosten des Prognosebetriebs werden aus der Nutzung der Ressourcen im Messzeitraum und den zugehörigen Tarifen berechnet. Gemeinsame Kosten des Frameworks und modellbezogene Inferenzkosten werden getrennt betrachtet.
 
-Die Betriebskosten werden aus der Bereitstellungszeit, dem zugehörigen Tarif und weiteren tatsächlich verwendeten Cloud-Komponenten berechnet. Eine fest gebuchte Instanz verursacht zunächst dieselben Stundenkosten, auch wenn eines der Modelle ihre \ac{CPU} weniger stark auslastet. Entscheidend ist deshalb auch, wie viele Prognosen unter der jeweiligen Anfragelast in dieser Zeit abgeschlossen werden. Die Kosten des Messzeitraums werden durch die Zahl der abgeschlossenen Prognosen geteilt und auf 1.000 Prognosen umgerechnet. Gemeinsame Kosten des Frameworks und modellbezogene Inferenzkosten werden nachvollziehbar abgegrenzt, damit beispielsweise die Oberfläche nicht einem einzelnen Modell zugerechnet wird.
+\section{Gegenüberstellung und Vergleich der Ergebnisse}
 
-Diese Kosten werden den Prognosefehlern und ihrer Zunahme unter den untersuchten Störungen gegenübergestellt, um Genauigkeitsvorteile und Betriebsaufwand gemeinsam beurteilen zu können. Kosten für das Training und die Modellauswahl werden getrennt vom laufenden Betrieb ausgewiesen. Das ursprüngliche Vortraining von MOMENT wird nicht als eigener Aufwand berechnet, der vollständige Encoder bleibt jedoch Bestandteil aller Betriebsmessungen.
+Die Prognosefehler auf vollständigen und lückenhaften Daten werden für dieselben Zyklen verglichen. Diagramme zeigen, wie sich die Fehler mit der Dauer einer Lücke verändern. Die Fehler werden über den gesamten Testverlauf und gesondert während des Ausfalls ausgewertet. Bei zeitlich begrenzten Ausfällen wird auch die Zeit nach der Rückkehr der Messwerte betrachtet. Für jede Ausfallstufe wird anhand der von der Lücke betroffenen Fenster geprüft, welche Modelle die Qualitätsanforderungen erfüllen. Diese Einordnung gilt für das jeweilige Szenario über die untersuchten Triebwerke hinweg.
 
-\section{Interaktive Gegenüberstellung und Prüfung des Frameworks}
+Die Ergebnisse für FD001 und FD003 werden getrennt dargestellt. Die Streuung zwischen wiederholten Läufen und Konfidenzintervalle helfen, Unterschiede zwischen den Modellen einzuordnen. Verglichen werden jeweils dieselben Testtriebwerke und Fehlermuster. Mehrere Beobachtungen eines Triebwerks werden bei der Auswertung als zusammengehörig behandelt.
 
-Die Oberfläche soll zwei Modelle für ein gewähltes Ausfallszenario gegenüberstellen. Nutzer wählen betroffene Sensorkanäle und eine Ausfalldauer und sehen dazu Prognosefehler, Veränderungen gegenüber vollständigen Daten sowie den gemessenen Betriebsaufwand. Zunächst sollen gespeicherte Versuchsergebnisse angezeigt werden. Die Ausführung eines neuen Szenarios kann über dieselbe Versuchsschnittstelle ergänzt werden, ohne dafür ein erneutes Training der Modelle auszulösen. Für noch nicht untersuchte Kombinationen wird keine scheinbar gemessene Empfehlung ausgegeben.
+Der Vergleich stellt die Prognosegüte dem Cloud-Betriebsaufwand gegenüber. Über eine interaktive Oberfläche können zwei Modelle für ein gewähltes Ausfallszenario verglichen werden. Die Oberfläche zeigt gespeicherte Ergebnisse und kennzeichnet, welche Modelle die gewählten Mindestanforderungen erfüllen. Weitere Szenarien können mit den vorhandenen Modellständen ausgeführt werden. Die Sensoren lassen sich über eine Liste und gegebenenfalls über ein schematisches 3D-Triebwerk auswählen, dessen Zuordnung zu den Sensorkanälen dokumentiert wird.
 
-Eine Auswahlhilfe berücksichtigt Mindestanforderungen und gewählte Prioritäten, etwa eine hohe Robustheit oder geringe Betriebskosten. Die einzelnen Kennwerte bleiben sichtbar, damit nachvollziehbar ist, warum ein Modell unter den gewählten Anforderungen günstiger eingeordnet wird. Modelle, die eine Mindestanforderung nicht erfüllen, werden entsprechend gekennzeichnet. Falls Gewichtungen zu einer Rangfolge zusammengeführt werden, werden auch die Normalisierung und Berechnung offengelegt. Eine solche anforderungsabhängige Einordnung ersetzt weder die getrennte wissenschaftliche Auswertung noch eine technische Sicherheitsbewertung.
+\newpage
+\section{Fazit und Beantwortung der Forschungsfrage}
 
-Ein schematisches 3D-Triebwerk kann die Auswahl der Kanäle anschaulicher machen und wird durch eine Sensorliste ergänzt. Die Zuordnung der dargestellten Kanäle zum Datensatz wird dokumentiert, ohne exakte Einbaupositionen oder einen validierten digitalen Zwilling zu behaupten. Eine aufwendige geometrische Nachbildung ist nicht erforderlich. Der bereits vorhandene Bedienprototyp verwendet illustrative Demowerte, die nicht als Versuchsergebnisse in die wissenschaftliche Auswertung übernommen werden.
+Das Fazit beantwortet die Forschungsfrage und ihre Teilfragen anhand der Prognosegüte, der Robustheit gegenüber Datenlücken und des Cloud-Betriebsaufwands. Daraus werden Schlussfolgerungen für die Modellwahl unter den untersuchten Bedingungen abgeleitet. Das Framework dient als technisches Nebenartefakt, mit dem sich die Vergleiche wiederholen und um weitere Modelle erweitern lassen.
 
-Das Framework wird mit automatisierten Funktionstests und wiederholten Versuchskonfigurationen geprüft. Dabei wird kontrolliert, ob dieselben Ausfallmasken verwendet werden, gespeicherte Ergebnisse zur jeweiligen Konfiguration passen und Prognosen zwischen direktem Modellaufruf und Framework innerhalb begründeter numerischer Toleranzen übereinstimmen. Die drei Modelladapter dienen zur Prüfung der gemeinsamen Schnittstelle, deren Anforderungen für spätere Erweiterungen dokumentiert werden. Eine eigenständige Nutzerstudie oder ein Nachweis der Unterstützung beliebiger Modelle ist nicht vorgesehen.
-
-\section{Nachvollziehbarkeit und Grenzen}
-
-Datenaufteilungen, Ausfallmasken, Zufallsstartwerte, Modelleinstellungen, Softwareversionen und Cloud-Konfiguration werden mit den Ergebnissen gespeichert, damit die Versuche nachvollziehbar sind. Mögliche Überschneidungen zwischen \ac{CMAPSS} und den Vortrainingsdaten von MOMENT werden geprüft und bei der Einordnung der Ergebnisse berücksichtigt. Die prognostische Bewertung gilt jeweils für die Kombination aus gemeinsamer Imputation und Modell, nicht für ein Modell ohne vorgeschaltete Fehlerbehandlung.
-
-Die Untersuchung verwendet simulierte Triebwerksdaten und künstlich erzeugte Ausfälle, weshalb sie nicht alle Bedingungen realer Anlagen oder Kommunikationsnetze abbildet. Qualitätsgrenzen und die anforderungsabhängige Modellwahl gelten nur für die tatsächlich geprüften Szenarien. Auch die Ergebnisse zu Aufwand und Kosten beziehen sich zunächst auf die gewählte Cloud-Umgebung. Die Modellansätze unterscheiden sich sowohl in ihrer Architektur als auch in ihrer Trainingsgeschichte, sodass mögliche Leistungsunterschiede nicht allein dem Vortraining zugeschrieben werden können. Aus dem Vergleich von MOMENT-1-small mit zwei für diese Aufgabe trainierten Modellen lassen sich außerdem keine allgemeinen Aussagen über alle \ac{TSFM} ableiten.
+Die Ergebnisse beziehen sich auf simulierte Triebwerksdaten, die geprüften Ausfallszenarien, die gemeinsame Imputation und die gewählte Cloud-Umgebung. Bei MOMENT werden mögliche Überschneidungen von \ac{CMAPSS} mit den Vortrainingsdaten geprüft und bei der Interpretation berücksichtigt. Unterschiede zwischen den Modellen werden im Zusammenhang mit ihrer Architektur und ihrem Training eingeordnet.

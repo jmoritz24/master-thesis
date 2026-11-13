@@ -954,6 +954,52 @@
       \verb https://proceedings.mlr.press/v235/goswami24a.html
       \endverb
     \endentry
+    \entry{guMambaLinearTimeSequence2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aa9ec56190423bb01ead50d96b94ba93}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ede2395a7f566a456448fcb5f8222c99}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={Tri},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{babde771e7de935487275312d2f755a5}
+      \strng{fullhash}{babde771e7de935487275312d2f755a5}
+      \strng{fullhashraw}{babde771e7de935487275312d2f755a5}
+      \strng{bibnamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authorbibnamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authornamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authorfullhash}{babde771e7de935487275312d2f755a5}
+      \strng{authorfullhashraw}{babde771e7de935487275312d2f755a5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{First Conference on Language Modeling}
+      \field{langid}{english}
+      \field{title}{{Mamba}: Linear-Time Sequence Modeling with Selective State Spaces}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=tEYskw1VY2
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=tEYskw1VY2
+      \endverb
+    \endentry
     \entry{hendersonSystematicReportingEnergy}{article}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=50374f86d34cc54b8a5788ccbcce4cfe}{%
@@ -1506,6 +1552,80 @@
       \endverb
       \verb{url}
       \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+    \endentry
+    \entry{moritzNaehrerCloudPredictiveMaintenance2026}{unpublished}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8828e9ac30284d1426b151689fac9e31}{%
+           family={Moritz},
+           familyi={M\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32828191041e923a01e5671bc8a703ff}{%
+           family={Nährer},
+           familyi={N\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{de585058c9677285d0765375d55a9008}
+      \strng{fullhash}{de585058c9677285d0765375d55a9008}
+      \strng{fullhashraw}{de585058c9677285d0765375d55a9008}
+      \strng{bibnamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authorbibnamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authornamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authorfullhash}{de585058c9677285d0765375d55a9008}
+      \strng{authorfullhashraw}{de585058c9677285d0765375d55a9008}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{note}{Unveröffentlichte Semesterarbeit}
+      \field{title}{Cloud-basierte {Predictive Maintenance}: Aufbau einer skalierbaren {Internet of Things}-Datenpipeline in {Amazon Web Services}}
+      \field{year}{2026}
+      \field{dateera}{ce}
+    \endentry
+    \entry{nasaCmapssJetEngineData2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72f826272be1a819ed284b8ed8310d76}{%
+           family={{National Aeronautics and Space Administration}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{fullhash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{fullhashraw}{72f826272be1a819ed284b8ed8310d76}
+      \strng{bibnamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorbibnamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authornamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorfullhash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorfullhashraw}{72f826272be1a819ed284b8ed8310d76}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{title}{{CMAPSS} Jet Engine Simulated Data}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
+      \endverb
+      \verb{url}
+      \verb https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
       \endverb
     \endentry
     \entry{pengMacroAnchoredPhysicsInformed2026}{article}{}{}
@@ -2259,6 +2379,92 @@
       \verb https://www.mdpi.com/2075-1702/11/3/341
       \endverb
       \keyw{corrupted sensor data,LSTM,multi-task learning,remaining useful life,RUL prediction}
+    \endentry
+    \entry{zhuangPhysicallyConstrainedMambaSDE2026}{online}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=b2c83425c84c60a91adcd1cb8573dd39}{%
+           family={Zhuang},
+           familyi={Z\bibinitperiod},
+           given={Deyu},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8aa11b754d11ff8e1cff21996065f17f}{%
+           family={Gong},
+           familyi={G\bibinitperiod},
+           given={Peiliang},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ca57a0e38d4cfdfee7529c38f1b614f}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc7635081efbc212b8e499819d4f61c9}{%
+           family={Shu},
+           familyi={S\bibinitperiod},
+           given={Liyuan},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=027b941cdce4130ade82e3b37b72d401}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=852cf7810e768fd04fb98c724c4500dc}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiaoli},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83e7a80de304bbfeb42ffacec292a009}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Daoqiang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3e077e44e9ea7736f8acae85b1b4447}
+      \strng{fullhash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{fullhashraw}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{bibnamehash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authorbibnamehash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authornamehash}{b3e077e44e9ea7736f8acae85b1b4447}
+      \strng{authorfullhash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authorfullhashraw}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Autorenfassung, Version 1}
+      \field{day}{1}
+      \field{eprintclass}{cs.AI}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Physically-Constrained {Mamba-SDE} for Remaining Useful Life Prediction under Irregular Observations}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2606.01894
+      \endverb
+      \verb{eprint}
+      \verb 2606.01894
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2606.01894v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2606.01894v1
+      \endverb
     \endentry
     \entry{zontaPredictiveMaintenanceIndustry2020}{article}{}{}
       \name{author}{6}{}{%
@@ -3290,6 +3496,52 @@
       \verb https://proceedings.mlr.press/v235/goswami24a.html
       \endverb
     \endentry
+    \entry{guMambaLinearTimeSequence2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aa9ec56190423bb01ead50d96b94ba93}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ede2395a7f566a456448fcb5f8222c99}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={Tri},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{babde771e7de935487275312d2f755a5}
+      \strng{fullhash}{babde771e7de935487275312d2f755a5}
+      \strng{fullhashraw}{babde771e7de935487275312d2f755a5}
+      \strng{bibnamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authorbibnamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authornamehash}{babde771e7de935487275312d2f755a5}
+      \strng{authorfullhash}{babde771e7de935487275312d2f755a5}
+      \strng{authorfullhashraw}{babde771e7de935487275312d2f755a5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{First Conference on Language Modeling}
+      \field{langid}{english}
+      \field{title}{{Mamba}: Linear-Time Sequence Modeling with Selective State Spaces}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=tEYskw1VY2
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=tEYskw1VY2
+      \endverb
+    \endentry
     \entry{hendersonSystematicReportingEnergy}{article}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=50374f86d34cc54b8a5788ccbcce4cfe}{%
@@ -3842,6 +4094,80 @@
       \endverb
       \verb{url}
       \verb https://www.frontiersin.org/journals/aerospace-engineering/articles/10.3389/fpace.2026.1937868/full
+      \endverb
+    \endentry
+    \entry{moritzNaehrerCloudPredictiveMaintenance2026}{unpublished}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8828e9ac30284d1426b151689fac9e31}{%
+           family={Moritz},
+           familyi={M\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32828191041e923a01e5671bc8a703ff}{%
+           family={Nährer},
+           familyi={N\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{de585058c9677285d0765375d55a9008}
+      \strng{fullhash}{de585058c9677285d0765375d55a9008}
+      \strng{fullhashraw}{de585058c9677285d0765375d55a9008}
+      \strng{bibnamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authorbibnamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authornamehash}{de585058c9677285d0765375d55a9008}
+      \strng{authorfullhash}{de585058c9677285d0765375d55a9008}
+      \strng{authorfullhashraw}{de585058c9677285d0765375d55a9008}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{note}{Unveröffentlichte Semesterarbeit}
+      \field{title}{Cloud-basierte {Predictive Maintenance}: Aufbau einer skalierbaren {Internet of Things}-Datenpipeline in {Amazon Web Services}}
+      \field{year}{2026}
+      \field{dateera}{ce}
+    \endentry
+    \entry{nasaCmapssJetEngineData2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72f826272be1a819ed284b8ed8310d76}{%
+           family={{National Aeronautics and Space Administration}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{fullhash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{fullhashraw}{72f826272be1a819ed284b8ed8310d76}
+      \strng{bibnamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorbibnamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authornamehash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorfullhash}{72f826272be1a819ed284b8ed8310d76}
+      \strng{authorfullhashraw}{72f826272be1a819ed284b8ed8310d76}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{title}{{CMAPSS} Jet Engine Simulated Data}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
+      \endverb
+      \verb{url}
+      \verb https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
       \endverb
     \endentry
     \entry{pengMacroAnchoredPhysicsInformed2026}{article}{}{}
@@ -4595,6 +4921,92 @@
       \verb https://www.mdpi.com/2075-1702/11/3/341
       \endverb
       \keyw{corrupted sensor data,LSTM,multi-task learning,remaining useful life,RUL prediction}
+    \endentry
+    \entry{zhuangPhysicallyConstrainedMambaSDE2026}{online}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=b2c83425c84c60a91adcd1cb8573dd39}{%
+           family={Zhuang},
+           familyi={Z\bibinitperiod},
+           given={Deyu},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8aa11b754d11ff8e1cff21996065f17f}{%
+           family={Gong},
+           familyi={G\bibinitperiod},
+           given={Peiliang},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ca57a0e38d4cfdfee7529c38f1b614f}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc7635081efbc212b8e499819d4f61c9}{%
+           family={Shu},
+           familyi={S\bibinitperiod},
+           given={Liyuan},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=027b941cdce4130ade82e3b37b72d401}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=852cf7810e768fd04fb98c724c4500dc}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiaoli},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83e7a80de304bbfeb42ffacec292a009}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Daoqiang},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3e077e44e9ea7736f8acae85b1b4447}
+      \strng{fullhash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{fullhashraw}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{bibnamehash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authorbibnamehash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authornamehash}{b3e077e44e9ea7736f8acae85b1b4447}
+      \strng{authorfullhash}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \strng{authorfullhashraw}{06e16b36874324c2235e1cdf1cc6c5ba}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Autorenfassung, Version 1}
+      \field{day}{1}
+      \field{eprintclass}{cs.AI}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Physically-Constrained {Mamba-SDE} for Remaining Useful Life Prediction under Irregular Observations}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2606.01894
+      \endverb
+      \verb{eprint}
+      \verb 2606.01894
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2606.01894v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2606.01894v1
+      \endverb
     \endentry
     \entry{zontaPredictiveMaintenanceIndustry2020}{article}{}{}
       \name{author}{6}{}{%

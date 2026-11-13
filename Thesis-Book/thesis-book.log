@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.3.1)  30 OCT 2026 19:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.3.1)  8 NOV 2026 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1226,6 +1226,11 @@ although it is yet undefined on input line 8.
 Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
 although it is yet undefined on input line 8.
 
+Underfull \hbox (badness 1137) in paragraph at lines 8--9
+\T1/ptm/m/n/10.95 einem [][]Tem-po-ral Con-vo-lu-tional Net-work ([])[] und einem Mamba-basierten Mod-ell auf den
+ []
+
+
 
 [1
 
@@ -1240,29 +1245,32 @@ although it is yet undefined on input line 15.
 Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
 although it is yet undefined on input line 15.
 Package acronym Info: Label `acro:TCN' overridden on input line 15.
-Package acronym Info: Label `acro:CMAPSS' overridden on input line 19.
-Package acronym Info: Label `acro:NASA' overridden on input line 19.
-Package acronym Info: Label `acro:TSFM' overridden on input line 21.
+Package acronym Info: Label `acro:CMAPSS' overridden on input line 21.
+Package acronym Info: Label `acro:NASA' overridden on input line 21.
 
 
 [2
 
-])
+]
+Package acronym Info: Label `acro:TSFM' overridden on input line 23.
+)
 
 [3] (./thesis_book_chapters/02_relatedWork.tex
 Chapter 2.
+Package acronym Info: Label `acro:SSM' newly defined as it shall be overridden
+although it is yet undefined on input line 15.
 
 
 [4]
 Package acronym Info: Label `acro:GRUD' newly defined as it shall be overridden
-although it is yet undefined on input line 27.
+although it is yet undefined on input line 30.
 Package acronym Info: Label `acro:BRITS' newly defined as it shall be overridden
-although it is yet undefined on input line 27.
+although it is yet undefined on input line 30.
 
 
 [5]
 Package acronym Info: Label `acro:GPU' newly defined as it shall be overridden
-although it is yet undefined on input line 43.
+although it is yet undefined on input line 48.
 
 
 [6])
@@ -1275,106 +1283,81 @@ Chapter 3.
 Chapter 4.
 
 
-[9]
-<02_figures/architektur_rul_vergleichsframework.png, id=222, 3637.59pt x 1704.3675pt>
-File: 02_figures/architektur_rul_vergleichsframework.png Graphic file (type png)
-<use 02_figures/architektur_rul_vergleichsframework.png>
-Package pdftex.def Info: 02_figures/architektur_rul_vergleichsframework.png  used on input line 49.
-(pdftex.def)             Requested size: 624.25346pt x 292.46933pt.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 52.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 52.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 52.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 52.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 52.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
+[9] (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd) (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd) (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd) (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd) (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
 
 
-[10]
+[10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
-[11 <./02_figures/architektur_rul_vergleichsframework.png>]
-Package acronym Info: Label `acro:RMSE' overridden on input line 70.
-
-Underfull \hbox (badness 1107) in paragraph at lines 72--73
-[]\T1/ptm/m/n/10.95 Trainingsläufe wer-den mit un-ter-schiedlichen Zu-fallsini-tial-isierun-gen, also un-ter-schiedlichen
- []
-
+[11]
+Package acronym Info: Label `acro:RMSE' overridden on input line 145.
 
 
 [12]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 91.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Package acronym Info: Label `acro:MAE' overridden on input line 91.
+Package acronym Info: Label `acro:CPU' newly defined as it shall be overridden
+although it is yet undefined on input line 157.
+Package acronym Info: Label `acro:RAM' newly defined as it shall be overridden
+although it is yet undefined on input line 157.
+<02_figures/architektur_rul_vergleichsframework_aws.pdf, id=280, 1084.05pt x 624.83438pt>
+File: 02_figures/architektur_rul_vergleichsframework_aws.pdf Graphic file (type pdf)
+<use 02_figures/architektur_rul_vergleichsframework_aws.pdf>
+Package pdftex.def Info: 02_figures/architektur_rul_vergleichsframework_aws.pdf  used on input line 161.
+(pdftex.def)             Requested size: 624.25346pt x 359.82042pt.
 
 
 [13]
-Package acronym Info: Label `acro:CPU' newly defined as it shall be overridden
-although it is yet undefined on input line 108.
-Package acronym Info: Label `acro:RAM' newly defined as it shall be overridden
-although it is yet undefined on input line 108.
+
+[14 <./02_figures/architektur_rul_vergleichsframework_aws.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 185.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Package acronym Info: Label `acro:MAE' overridden on input line 185.
 
 
-[14]
+[15]
 
-[15]) (./thesis_book_chapters/06_results.tex
+[16]) (./thesis_book_chapters/06_results.tex
 Chapter 5.
+) (./thesis_book_chapters/07_conclusionAndFutureWork.tex
 
-
-[16]) (./thesis_book_chapters/07_conclusionAndFutureWork.tex
+[17]
 Chapter 6.
-
-
-[17])
+)
 
 [18]
 
-[19{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+[19]
 
-[20] (./thesis-book.aux)
+[20]
+
+[21] (./thesis-book.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis-book.out' has not changed.
-(rerunfilecheck)             Checksum: DB662EAA8EA59284BA471ADC016D35AD;5133.
+(rerunfilecheck)             Checksum: 97D1B7471348B42EBD607F920C7547EA;6505.
 Package logreq Info: Writing requests to 'thesis-book.run.xml'.
 \openout1 = `thesis-book.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45525 strings out of 473190
- 892191 string characters out of 5715801
- 2032456 words of memory out of 5000000
- 68061 multiletter control sequences out of 15000+600000
- 595887 words of font info for 85 fonts, out of 8000000 for 9000
+ 45705 strings out of 473190
+ 896230 string characters out of 5715801
+ 2035775 words of memory out of 5000000
+ 68216 multiletter control sequences out of 15000+600000
+ 602740 words of font info for 100 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 89i,11n,125p,2476b,7351s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis-book.pdf (20 pages, 384453 bytes).
+ 89i,12n,125p,2476b,7351s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis-book.pdf (21 pages, 251266 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

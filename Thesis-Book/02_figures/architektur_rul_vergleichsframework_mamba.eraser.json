@@ -1,0 +1,1085 @@
+{
+  "title": "RUL-Vergleichsframework bei Sensorausfällen",
+  "elements": [
+    {
+      "tag": "Textbox",
+      "text": "**RUL-Vergleichsframework bei Sensorausfällen**",
+      "color": "#1f2937",
+      "fontSize": 18,
+      "id": "title",
+      "x": 15,
+      "y": 15,
+      "width": 356.546875,
+      "height": 18.65625
+    },
+    {
+      "bgColor": "#eef2f7",
+      "borderColor": "#94a3b8",
+      "tag": "Shape",
+      "shape": "cylinder",
+      "texts": [
+        {
+          "text": "NASA C-MAPSS",
+          "fontSize": 14
+        },
+        {
+          "text": "FD001 / FD003",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "typeface": "clean",
+      "id": "src",
+      "x": 15,
+      "y": 335,
+      "width": 150,
+      "height": 110
+    },
+    {
+      "color": "#64748b",
+      "bgColor": "#f8fafc",
+      "borderColor": "#cbd5e1",
+      "tag": "Group",
+      "title": {
+        "text": "Cloud-Referenzumgebung · containerisiertes Vergleichsframework",
+        "fontSize": 16,
+        "icon": "cloud"
+      },
+      "id": "cloud",
+      "x": 205,
+      "y": 65,
+      "width": 1302,
+      "height": 730
+    },
+    {
+      "bgColor": "#e0ecfa",
+      "borderColor": "#7aa2d6",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Datenaufteilung",
+          "fontSize": 14
+        },
+        {
+          "text": "getrennte Triebwerke:",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Training · Validierung · Test",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "split",
+      "id": "split",
+      "x": 235,
+      "y": 305,
+      "width": 160,
+      "height": 170,
+      "containerId": "cloud"
+    },
+    {
+      "color": "#7aa2d6",
+      "bgColor": "#f1f6fd",
+      "borderColor": "#b9cfee",
+      "tag": "Group",
+      "title": {
+        "text": "Trainingspfad · ohne erzeugte Sensorausfälle",
+        "fontSize": 14
+      },
+      "id": "gtrain",
+      "x": 435,
+      "y": 115,
+      "width": 610,
+      "height": 165,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#7aa2d6",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Training & Modellauswahl",
+          "fontSize": 14
+        },
+        {
+          "text": "MOMENT: Encoder eingefroren, nur RUL-Kopf",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "LSTM / TCN / Mamba: vollständig trainieren",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "graduation-cap",
+      "id": "train",
+      "x": 455,
+      "y": 165,
+      "width": 330,
+      "height": 95,
+      "containerId": "gtrain"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#7aa2d6",
+      "tag": "Shape",
+      "shape": "cylinder",
+      "texts": [
+        {
+          "text": "Model Registry",
+          "fontSize": 14
+        },
+        {
+          "text": "Gewichte · Versionen",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "id": "reg",
+      "x": 835,
+      "y": 160,
+      "width": 190,
+      "height": 105,
+      "containerId": "gtrain"
+    },
+    {
+      "color": "#d08c4a",
+      "bgColor": "#fdf7f0",
+      "borderColor": "#ecc9a3",
+      "tag": "Group",
+      "title": {
+        "text": "Testpfad · fehlerskaliert",
+        "fontSize": 14
+      },
+      "id": "gtest",
+      "x": 435,
+      "y": 305,
+      "width": 1052,
+      "height": 290,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#d08c4a",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Sensorausfälle erzeugen",
+          "fontSize": 14
+        },
+        {
+          "text": "Einzelwerte · Lücken · Kanäle",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "vor Fensterbildung",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "zap-off",
+      "badge": {
+        "text": "gleiche Masken für alle Modelle",
+        "color": "#7a4a1a",
+        "bgColor": "#fbe3c8",
+        "fontSize": 12,
+        "shape": "rectangle",
+        "placement": "bottom-left"
+      },
+      "id": "fault",
+      "x": 455,
+      "y": 355,
+      "width": 175,
+      "height": 135,
+      "containerId": "gtest"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#d08c4a",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Gemeinsame Aufbereitung",
+          "fontSize": 14
+        },
+        {
+          "text": "kausale LOCF",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "trainierte Skalierung",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Sliding Windows",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "sliders-horizontal",
+      "id": "prep",
+      "x": 666,
+      "y": 355,
+      "width": 165,
+      "height": 135,
+      "containerId": "gtest"
+    },
+    {
+      "color": "#d08c4a",
+      "bgColor": "white",
+      "borderColor": "#d08c4a",
+      "tag": "Group",
+      "title": {
+        "text": "Prognosedienst · Modelladapter",
+        "fontSize": 14
+      },
+      "id": "gpred",
+      "x": 867,
+      "y": 345,
+      "width": 220,
+      "height": 230,
+      "containerId": "gtest"
+    },
+    {
+      "bgColor": "#fdf0e1",
+      "borderColor": "#ecc9a3",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "MOMENT-1-small + RUL-Kopf",
+          "fontSize": 12
+        }
+      ],
+      "id": "m1",
+      "x": 887,
+      "y": 395,
+      "width": 180,
+      "height": 28,
+      "containerId": "gpred"
+    },
+    {
+      "bgColor": "#fdf0e1",
+      "borderColor": "#ecc9a3",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "LSTM",
+          "fontSize": 12
+        }
+      ],
+      "id": "m2",
+      "x": 887,
+      "y": 430,
+      "width": 180,
+      "height": 28,
+      "containerId": "gpred"
+    },
+    {
+      "bgColor": "#fdf0e1",
+      "borderColor": "#ecc9a3",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "TCN",
+          "fontSize": 12
+        }
+      ],
+      "id": "m3",
+      "x": 887,
+      "y": 465,
+      "width": 180,
+      "height": 28,
+      "containerId": "gpred"
+    },
+    {
+      "bgColor": "#fdf0e1",
+      "borderColor": "#ecc9a3",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Mamba",
+          "fontSize": 12
+        }
+      ],
+      "id": "m4",
+      "x": 887,
+      "y": 500,
+      "width": 180,
+      "height": 28,
+      "containerId": "gpred"
+    },
+    {
+      "tag": "Textbox",
+      "text": "nacheinander, gleiche Hardware",
+      "color": "#6b7280",
+      "fontSize": 12,
+      "hAlign": "center",
+      "id": "seq",
+      "x": 882,
+      "y": 535,
+      "width": 158.640625,
+      "height": 13.4375,
+      "containerId": "gpred"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#d08c4a",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Wissenschaftliche Auswertung",
+          "fontSize": 14
+        },
+        {
+          "text": "MAE · RMSE · NASA-Score",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Robustheit & Qualitätsgrenzen",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "chart-bar",
+      "id": "eval",
+      "x": 1123,
+      "y": 355,
+      "width": 173.08657235827516,
+      "height": 135,
+      "containerId": "gtest"
+    },
+    {
+      "bgColor": "white",
+      "borderColor": "#d08c4a",
+      "tag": "Shape",
+      "shape": "cylinder",
+      "texts": [
+        {
+          "text": "Ergebnis­speicher",
+          "fontSize": 14
+        },
+        {
+          "text": "Prognosen · Messwerte",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Config · Versionen · Seeds",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "id": "store",
+      "x": 1332,
+      "y": 350,
+      "width": 140,
+      "height": 145,
+      "containerId": "gtest"
+    },
+    {
+      "bgColor": "#eef2f7",
+      "borderColor": "#94a3b8",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Versuchssteuerung",
+          "fontSize": 14
+        },
+        {
+          "text": "Konfiguration · Modellauswahl",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Ausfallszenarien · Seeds",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "settings",
+      "id": "ctrl",
+      "x": 235,
+      "y": 645,
+      "width": 200,
+      "height": 110,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "#eef2f7",
+      "borderColor": "#94a3b8",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Lastgenerator",
+          "fontSize": 14
+        }
+      ],
+      "icon": "activity",
+      "id": "load",
+      "x": 775,
+      "y": 645,
+      "width": 160,
+      "height": 70,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "#eef2f7",
+      "borderColor": "#94a3b8",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Monitoring & Kostenanalyse",
+          "fontSize": 14
+        },
+        {
+          "text": "Latenz · Durchsatz · CPU/RAM",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "optional GPU · €/1.000 Prognosen",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Training getrennt erfasst",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "gauge",
+      "id": "mon",
+      "x": 1015,
+      "y": 625,
+      "width": 250,
+      "height": 125,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "#e0ecfa",
+      "borderColor": "#7aa2d6",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Vergleichs-API",
+          "fontSize": 14
+        }
+      ],
+      "icon": "plug",
+      "id": "api",
+      "x": 1306,
+      "y": 645,
+      "width": 145,
+      "height": 70,
+      "containerId": "cloud"
+    },
+    {
+      "bgColor": "#e0ecfa",
+      "borderColor": "#7aa2d6",
+      "tag": "Shape",
+      "texts": [
+        {
+          "text": "Interaktives Dashboard",
+          "fontSize": 14
+        },
+        {
+          "text": "2 Modelle vergleichen",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "Ausfallszenario & Prioritäten wählen",
+          "color": "#6b7280",
+          "fontSize": 12
+        },
+        {
+          "text": "3D-Triebwerk zur Sensorauswahl",
+          "color": "#6b7280",
+          "fontSize": 12
+        }
+      ],
+      "icon": "layout-dashboard",
+      "id": "dash",
+      "x": 1547,
+      "y": 565,
+      "width": 250,
+      "height": 150
+    },
+    {
+      "tag": "Textbox",
+      "text": "zuerst gespeicherte Ergebnisse · neue Versuche ohne erneutes Training · außerhalb der Inferenzmessung",
+      "color": "#6b7280",
+      "fontSize": 12,
+      "hAlign": "center",
+      "id": "dnote",
+      "x": 1547,
+      "y": 720,
+      "width": 244.875,
+      "height": 34.3125
+    },
+    {
+      "tag": "Relationship",
+      "from": "src",
+      "to": "split",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r1",
+      "x": 165,
+      "y": 390,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          70,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "split",
+      "to": "train",
+      "textSize": "small",
+      "label": "Train / Val",
+      "color": "#475569",
+      "fromPort": "top",
+      "toPort": "left",
+      "labelPlacement": {
+        "x": 41,
+        "y": -100,
+        "width": 58,
+        "height": 16
+      },
+      "id": "r2",
+      "x": 315,
+      "y": 305,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -92
+        ],
+        [
+          140,
+          -92
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "train",
+      "to": "reg",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r3",
+      "x": 785,
+      "y": 213,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          50,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "split",
+      "to": "fault",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r4",
+      "x": 395,
+      "y": 406,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          60,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "fault",
+      "to": "prep",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r5",
+      "x": 630,
+      "y": 423,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "prep",
+      "to": "gpred",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r6",
+      "x": 831,
+      "y": 441,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "reg",
+      "to": "gpred",
+      "textSize": "small",
+      "label": "Modelle",
+      "color": "#475569",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "labelPlacement": {
+        "x": -23,
+        "y": 19.5,
+        "width": 46,
+        "height": 16
+      },
+      "id": "r7",
+      "x": 954,
+      "y": 265,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          80
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "gpred",
+      "to": "eval",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r8",
+      "x": 1087,
+      "y": 437,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "split",
+      "to": "eval",
+      "textSize": "small",
+      "label": "RUL-Zielwerte",
+      "color": "#475569",
+      "fromPort": "bottom",
+      "toPort": "bottom",
+      "labelPlacement": {
+        "x": 295,
+        "y": 69,
+        "width": 82,
+        "height": 16
+      },
+      "id": "r9",
+      "x": 315,
+      "y": 475,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          77
+        ],
+        [
+          895,
+          77
+        ],
+        [
+          895,
+          15
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "eval",
+      "to": "store",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "id": "r10",
+      "x": 1296,
+      "y": 423,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "ctrl",
+      "to": "gtest",
+      "lineStyle": "dashed",
+      "color": "#94a3b8",
+      "fromPort": "right",
+      "toPort": "bottom",
+      "id": "c1",
+      "x": 435,
+      "y": 700,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          332,
+          0
+        ],
+        [
+          332,
+          -105
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "load",
+      "to": "gpred",
+      "lineStyle": "dashed",
+      "color": "#94a3b8",
+      "fromPort": "top",
+      "toPort": "bottom",
+      "id": "c2",
+      "x": 855,
+      "y": 645,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -10
+        ],
+        [
+          72,
+          -10
+        ],
+        [
+          72,
+          -70
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "gpred",
+      "to": "mon",
+      "lineStyle": "dashed",
+      "color": "#94a3b8",
+      "fromPort": "right",
+      "toPort": "top",
+      "id": "c3",
+      "x": 1087,
+      "y": 560,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          18,
+          65
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "mon",
+      "to": "store",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "bottom",
+      "id": "r11",
+      "x": 1265,
+      "y": 637,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          121,
+          0
+        ],
+        [
+          121,
+          -142
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "store",
+      "to": "api",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "top",
+      "id": "r12",
+      "x": 1472,
+      "y": 423,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          112
+        ],
+        [
+          -78,
+          112
+        ],
+        [
+          -78,
+          222
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "api",
+      "to": "ctrl",
+      "lineStyle": "dashed",
+      "color": "#94a3b8",
+      "fromPort": "bottom",
+      "toPort": "bottom",
+      "startArrowhead": "triangle",
+      "id": "c4",
+      "x": 1379,
+      "y": 715,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          60
+        ],
+        [
+          -1044,
+          60
+        ],
+        [
+          -1044,
+          40
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Relationship",
+      "from": "api",
+      "to": "dash",
+      "color": "#475569",
+      "fromPort": "right",
+      "toPort": "left",
+      "startArrowhead": "triangle",
+      "id": "r13",
+      "x": 1451,
+      "y": 660,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          96,
+          0
+        ]
+      ],
+      "endArrowhead": "triangle",
+      "lineStyle": "solid",
+      "lineWidth": 0.75
+    },
+    {
+      "tag": "Divider",
+      "start": [
+        15,
+        830
+      ],
+      "end": [
+        65,
+        830
+      ],
+      "color": "#475569",
+      "lineWidth": 1,
+      "id": "lg1",
+      "x": 15,
+      "y": 826,
+      "width": 50,
+      "height": 8
+    },
+    {
+      "tag": "Textbox",
+      "text": "Datenfluss",
+      "color": "#475569",
+      "fontSize": 12,
+      "id": "lgt1",
+      "x": 75,
+      "y": 817,
+      "width": 52.53125,
+      "height": 13.4375
+    },
+    {
+      "tag": "Divider",
+      "start": [
+        195,
+        830
+      ],
+      "end": [
+        245,
+        830
+      ],
+      "color": "#94a3b8",
+      "lineStyle": "dashed",
+      "lineWidth": 1,
+      "id": "lg2",
+      "x": 195,
+      "y": 826,
+      "width": 50,
+      "height": 8
+    },
+    {
+      "tag": "Textbox",
+      "text": "Steuerung / Messung",
+      "color": "#475569",
+      "fontSize": 12,
+      "id": "lgt2",
+      "x": 255,
+      "y": 817,
+      "width": 105.4375,
+      "height": 13.4375
+    },
+    {
+      "tag": "Textbox",
+      "text": "Gleiche Komponenten auch lokal / On-Premises ausführbar. Training und Inferenz werden getrennt bewertet.",
+      "color": "#6b7280",
+      "fontSize": 12,
+      "id": "foot",
+      "x": 455,
+      "y": 817,
+      "width": 535.0625,
+      "height": 13.4375
+    }
+  ]
+}
